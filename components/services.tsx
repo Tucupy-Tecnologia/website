@@ -4,6 +4,8 @@ import { useState, useMemo } from 'react';
 import Image from "next/image";
 import { MarqueeItemData, TechMarquee } from "./tech-marquee";
 import { WebsiteFlowDiagram } from './flow-diagram';
+import { motion } from 'motion/react';
+import { FlowingDottedLine } from './dotted-line';
 
 export const marqueeItems: MarqueeItemData[] = [
 	{
@@ -48,6 +50,12 @@ export const marqueeItems: MarqueeItemData[] = [
 	},
 ];
 
+interface EmailItemProps {
+	email: string;
+	isMiddleItem: boolean;
+	isSecurityHovered: boolean;
+}
+
 function shuffleArray<T>(array: T[]): T[] {
 	const shuffled = [...array];
 	for (let i = shuffled.length - 1; i > 0; i--) {
@@ -57,13 +65,51 @@ function shuffleArray<T>(array: T[]): T[] {
 	return shuffled;
 }
 
+function EmailItem({ email, isMiddleItem, isSecurityHovered }: EmailItemProps): React.ReactElement {
+	const getDisplayText = (): string => {
+		if (isMiddleItem && isSecurityHovered) {
+			return '●●●●●●●●●●●●●●●●●●●';
+		}
+		return email;
+	};
+
+	const getBlurClass = (): string => {
+		if (isMiddleItem && !isSecurityHovered) {
+			return 'blur-sm';
+		}
+		return '';
+	};
+
+	return (
+		<div className='bg-primary border border-gray-400/20 rounded-md px-7 py-3 w-48'>
+			<p className={`transition-all duration-300 truncate ${getBlurClass()}`}>
+				{getDisplayText()}
+			</p>
+		</div>
+	);
+}
+
 export function Services(): React.ReactElement {
 	const [isHostingHovered, setIsHostingHovered] = useState<boolean>(false);
+	const [isSecurityHovered, setIsSecurityHovered] = useState<boolean>(false);
 
 	const shuffledItems = useMemo(() => ({
 		first: shuffleArray(marqueeItems),
 		second: shuffleArray(marqueeItems),
 		third: shuffleArray(marqueeItems),
+	}), []);
+
+	const emailData = useMemo(() => ({
+		leftColumn: [
+			'alice.smith@company.com',
+			'●●●●●●●●●●●●●●●●●●●',
+			'carol.wilson@tech.org'
+		],
+		rightColumn: [
+			'david.brown@agency.co',
+			'●●●●●●●●●●●●●●●●●●●',
+			'frank.miller@dev.com'
+		]
 	}), []);
 
 	return (
@@ -76,10 +122,10 @@ export function Services(): React.ReactElement {
 								<h3 className="text-sm/4 font-semibold text-gray-400">Website</h3>
 								<p className="mt-2 text-lg font-medium tracking-tight text-white">Design and development</p>
 								<p className="mt-2 max-w-lg text-sm/6 text-gray-400">
-									We create modern, responsive websites tailored to your needs. From concept to launch, we handle every step of the development process.
+									From concept to launch, we handle every step of the development process.
 								</p>
 							</div>
-							<div className="px-10 mt-6">
+							<div className="px-10 mt-10">
 								<WebsiteFlowDiagram />
 							</div>
 						</div>
@@ -94,7 +140,7 @@ export function Services(): React.ReactElement {
 								<h3 className="text-sm/4 font-semibold text-gray-400">Hosting</h3>
 								<p className="mt-2 text-lg font-medium tracking-tight text-white">Deployment and maintenance</p>
 								<p className="mt-2 max-w-lg text-sm/6 text-gray-400">
-									Curabitur auctor, ex quis auctor venenatis, eros arcu rhoncus massa.
+									Launch with confidence. Our deployment expertise ensures your website goes live smoothly and stays that way.
 								</p>
 							</div>
 
@@ -116,30 +162,61 @@ export function Services(): React.ReactElement {
 									play={isHostingHovered}
 								/>
 							</div>
-
 						</div>
 					</div>
 					<div className="flex p-px lg:col-span-2">
-						<div className="w-full overflow-hidden rounded-lg bg-primary outline outline-gray-400/20 lg:rounded-bl-2xl">
+						<div
+							className="w-full overflow-hidden rounded-lg bg-primary outline outline-gray-400/20 lg:rounded-bl-2xl"
+							onMouseEnter={() => setIsSecurityHovered(true)}
+							onMouseLeave={() => setIsSecurityHovered(false)}
+						>
 							<div className="p-10">
 								<h3 className="text-sm/4 font-semibold text-gray-400">Security</h3>
-								<p className="mt-2 text-lg font-medium tracking-tight text-white">Advanced access control</p>
+								<p className="mt-2 text-lg font-medium tracking-tight text-white">Security is our top priority</p>
 								<p className="mt-2 max-w-lg text-sm/6 text-gray-400">
-									Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia.
+									Security isn't an afterthought, it's woven into every line of code. Your data is safe in our hands.
 								</p>
+							</div>
+
+							<div className='flex items-center gap-2 -ml-6'>
+								<div className='space-y-3'>
+									{emailData.leftColumn.map((email: string, index: number) => (
+										<EmailItem
+											key={index}
+											email={email}
+											isMiddleItem={index === 1}
+											isSecurityHovered={isSecurityHovered}
+										/>
+									))}
+								</div>
+
+								<div className='space-y-3'>
+									{emailData.rightColumn.map((email: string, index: number) => (
+										<EmailItem
+											key={index}
+											email={email}
+											isMiddleItem={index === 1}
+											isSecurityHovered={isSecurityHovered}
+										/>
+									))}
+								</div>
 							</div>
 						</div>
 					</div>
 					<div className="flex p-px lg:col-span-4">
-						<div className="w-full overflow-hidden rounded-lg bg-primary outline outline-gray-400/20 max-lg:rounded-b-2xl lg:rounded-br-2xl">
+						<div
+							className="w-full overflow-hidden rounded-lg bg-primary outline outline-gray-400/20 max-lg:rounded-b-2xl lg:rounded-br-2xl"
+						>
 							<div className="p-10">
-								<h3 className="text-sm/4 font-semibold text-gray-400">Performance</h3>
-								<p className="mt-2 text-lg font-medium tracking-tight text-white">Lightning-fast builds</p>
+								<h3 className="text-sm/4 font-semibold text-gray-400">Development</h3>
+								<p className="mt-2 text-lg font-medium tracking-tight text-white">We ship really fast</p>
 								<p className="mt-2 max-w-lg text-sm/6 text-gray-400">
-									Sed congue eros non finibus molestie. Vestibulum euismod augue vel commodo vulputate. Maecenas at
-									augue sed elit dictum vulputate.
+									We don't just build fast—we think fast, adapt fast, and deliver fast. Your timeline becomes our mission, executed with surgical precision.
 								</p>
 							</div>
+
+
+							<FlowingDottedLine />
 						</div>
 					</div>
 				</div>
