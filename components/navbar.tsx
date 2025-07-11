@@ -8,7 +8,7 @@ import {
 	DropdownMenuItem,
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { ChevronDownIcon, GlobeIcon } from "lucide-react";
+import { ChevronDownIcon } from "lucide-react";
 
 const titillium = Titillium_Web({ weight: '600', subsets: ["latin"] });
 
@@ -20,10 +20,10 @@ const languages = [
 ];
 
 export default function Navbar() {
+
 	const currentLanguage = languages[0];
 
 	function handleLanguageChange(languageCode: string) {
-		// Handle language change logic here
 		console.log('Language changed to:', languageCode);
 	}
 
@@ -36,10 +36,10 @@ export default function Navbar() {
 				</div>
 				<ul className="flex items-center gap-1 mt-2">
 					<Link href="/" className="text-sm font-bold text-muted-foreground hover:text-foreground hover:bg-accent/10 px-2 py-1.5 rounded-md">
-						Work
+						Services
 					</Link>
 					<Link href="/about" className="text-sm font-bold text-muted-foreground hover:text-foreground hover:bg-accent/10 px-2 py-1.5 rounded-md">
-						Services
+						Work
 					</Link>
 					<Link href="/blog" className="text-sm font-bold text-muted-foreground hover:text-foreground hover:bg-accent/10 px-2 py-1.5 rounded-md">
 						About
