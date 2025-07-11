@@ -22,9 +22,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${InterVariable.variable} antialiased`}
+        className={`${InterVariable.variable} ${InterVariable.className} antialiased`}
       >
-        <ThemeProvider defaultTheme="dark" attribute="class" enableSystem>
+        <ThemeProvider attribute="class" forcedTheme="dark">
           {children}
         </ThemeProvider>
       </body>
