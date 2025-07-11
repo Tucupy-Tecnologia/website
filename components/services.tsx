@@ -3,6 +3,7 @@
 import { useState, useMemo } from 'react';
 import Image from "next/image";
 import { MarqueeItemData, TechMarquee } from "./tech-marquee";
+import { WebsiteFlowDiagram } from './flow-diagram';
 
 export const marqueeItems: MarqueeItemData[] = [
 	{
@@ -75,9 +76,11 @@ export function Services(): React.ReactElement {
 								<h3 className="text-sm/4 font-semibold text-gray-400">Website</h3>
 								<p className="mt-2 text-lg font-medium tracking-tight text-white">Design and development</p>
 								<p className="mt-2 max-w-lg text-sm/6 text-gray-400">
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit. In gravida justo et nulla efficitur, maximus
-									egestas sem pellentesque.
+									We create modern, responsive websites tailored to your needs. From concept to launch, we handle every step of the development process.
 								</p>
+							</div>
+							<div className="px-10 mt-6">
+								<WebsiteFlowDiagram />
 							</div>
 						</div>
 					</div>
@@ -91,28 +94,29 @@ export function Services(): React.ReactElement {
 								<h3 className="text-sm/4 font-semibold text-gray-400">Hosting</h3>
 								<p className="mt-2 text-lg font-medium tracking-tight text-white">Deployment and maintenance</p>
 								<p className="mt-2 max-w-lg text-sm/6 text-gray-400">
-									We take care of getting your application online and keeping it running smoothly. Focus on your business while we handle the technical details.
+									Curabitur auctor, ex quis auctor venenatis, eros arcu rhoncus massa.
 								</p>
 							</div>
 
 							<div className="space-y-10 pb-10">
 								<TechMarquee
 									items={shuffledItems.first}
-									speed={50}
+									speed={35}
 									play={isHostingHovered}
 								/>
 								<TechMarquee
 									items={shuffledItems.second}
-									speed={40}
+									speed={35}
 									direction="right"
 									play={isHostingHovered}
 								/>
 								<TechMarquee
 									items={shuffledItems.third}
-									speed={50}
+									speed={35}
 									play={isHostingHovered}
 								/>
 							</div>
+
 						</div>
 					</div>
 					<div className="flex p-px lg:col-span-2">
