@@ -37,7 +37,7 @@ export function PartnersMarquee() {
 				<Marquee>
 					<MarqueeFade side="left" />
 					<MarqueeFade side="right" />
-					<MarqueeContent speed={30}>
+					<MarqueeContent speed={30} pauseOnHover={false}>
 						{partners.concat(partners).map((partner, index) => (
 							<MarqueeItem key={index} className="mx-6">
 								<img

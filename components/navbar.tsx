@@ -19,7 +19,7 @@ const languages = [
 	{ code: 'fr', name: 'Français', flag: '🇫🇷' },
 ];
 
-export default function Navbar() {
+export function Navbar() {
 
 	const currentLanguage = languages[0];
 

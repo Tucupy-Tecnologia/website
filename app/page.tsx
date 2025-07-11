@@ -1,13 +1,15 @@
+import { Services } from "@/components/services";
+import { Navbar } from "@/components/navbar";
 import { Hero } from "@/components/hero";
-import Navbar from "@/components/navbar";
 
 export default function Home() {
 
 
   return (
-    <div className="bg-background h-screen">
+    <div className="bg-background min-h-screen">
       <Navbar />
       <Hero />
+      <Services />
     </div>
   );
 }
