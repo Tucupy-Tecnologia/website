@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 interface FlowingDottedLineProps {
 	className?: string;
 	speed?: 'slow' | 'normal' | 'fast';
-	dotSize?: 'sm' | 'md' | 'lg';
+	dotSize?: 'xs' | 'sm' | 'md' | 'lg';
 	color?: string;
 	dotSpacing?: number;
 }
@@ -25,6 +25,7 @@ export function FlowingDottedLine({
 
 	// Dot size configuration
 	const sizeMap: Record<typeof dotSize, string> = {
+		xs: 'w-0.5 h-0.5',
 		sm: 'w-1 h-1',
 		md: 'w-1.5 h-1.5',
 		lg: 'w-2 h-2'

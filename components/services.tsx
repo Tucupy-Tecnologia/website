@@ -1,11 +1,11 @@
 'use client';
 
-import { useState, useMemo } from 'react';
 import Image from "next/image";
+import { useState, useMemo } from 'react';
 import { MarqueeItemData, TechMarquee } from "./tech-marquee";
 import { WebsiteFlowDiagram } from './flow-diagram';
-import { motion } from 'motion/react';
 import { FlowingDottedLine } from './dotted-line';
+import { Network, Table2 } from "lucide-react";
 
 export const marqueeItems: MarqueeItemData[] = [
 	{
@@ -119,9 +119,9 @@ export function Services(): React.ReactElement {
 					<div className="flex p-px lg:col-span-4">
 						<div className="w-full overflow-hidden rounded-lg bg-primary outline outline-gray-400/20 max-lg:rounded-t-4xl lg:rounded-tl-2xl">
 							<div className="p-10">
-								<h3 className="text-sm/4 font-semibold text-gray-400">Website</h3>
-								<p className="mt-2 text-lg font-medium tracking-tight text-white">Design and development</p>
-								<p className="mt-2 max-w-lg text-sm/6 text-gray-400">
+								<h3 className="text-sm/4 font-semibold text-muted-foreground">Website</h3>
+								<p className="mt-2 text-lg font-medium tracking-tight text-foregroudn">Design and development</p>
+								<p className="mt-2 max-w-lg text-sm/6 text-muted-foreground">
 									From concept to launch, we handle every step of the development process.
 								</p>
 							</div>
@@ -137,9 +137,9 @@ export function Services(): React.ReactElement {
 							onMouseLeave={() => setIsHostingHovered(false)}
 						>
 							<div className="p-10">
-								<h3 className="text-sm/4 font-semibold text-gray-400">Hosting</h3>
-								<p className="mt-2 text-lg font-medium tracking-tight text-white">Deployment and maintenance</p>
-								<p className="mt-2 max-w-lg text-sm/6 text-gray-400">
+								<h3 className="text-sm/4 font-semibold text-muted-foreground">Hosting</h3>
+								<p className="mt-2 text-lg font-medium tracking-tight text-foreground">Deployment and maintenance</p>
+								<p className="mt-2 max-w-lg text-sm/6 text-muted-foreground">
 									Launch with confidence. Our deployment expertise ensures your website goes live smoothly and stays that way.
 								</p>
 							</div>
@@ -171,11 +171,9 @@ export function Services(): React.ReactElement {
 							onMouseLeave={() => setIsSecurityHovered(false)}
 						>
 							<div className="p-10">
-								<h3 className="text-sm/4 font-semibold text-gray-400">Security</h3>
-								<p className="mt-2 text-lg font-medium tracking-tight text-white">Security is our top priority</p>
-								<p className="mt-2 max-w-lg text-sm/6 text-gray-400">
-									Security isn't an afterthought, it's woven into every line of code. Your data is safe in our hands.
-								</p>
+								<h3 className="text-sm/4 font-semibold text-muted-foreground">Security</h3>
+								<p className="mt-2 text-lg font-medium tracking-tight text-foreground">Protecting what matters most</p>
+								<p className="mt-2 max-w-lg text-sm/6 text-muted-foreground">Your data deserves the highest level of protection, and that's exactly what we deliver.</p>
 							</div>
 
 							<div className='flex items-center gap-2 -ml-6'>
@@ -204,19 +202,160 @@ export function Services(): React.ReactElement {
 						</div>
 					</div>
 					<div className="flex p-px lg:col-span-4">
-						<div
-							className="w-full overflow-hidden rounded-lg bg-primary outline outline-gray-400/20 max-lg:rounded-b-2xl lg:rounded-br-2xl"
-						>
+						<div className="w-full overflow-hidden rounded-lg bg-primary outline outline-gray-400/20 max-lg:rounded-b-2xl lg:rounded-br-2xl">
 							<div className="p-10">
-								<h3 className="text-sm/4 font-semibold text-gray-400">Development</h3>
-								<p className="mt-2 text-lg font-medium tracking-tight text-white">We ship really fast</p>
-								<p className="mt-2 max-w-lg text-sm/6 text-gray-400">
+								<h3 className="text-sm/4 font-semibold text-muted-foreground">Development</h3>
+								<p className="mt-2 text-lg font-medium tracking-tight text-foreground">We ship really fast</p>
+								<p className="mt-2 max-w-lg text-sm/6 text-muted-foreground">
 									We don't just build fast—we think fast, adapt fast, and deliver fast. Your timeline becomes our mission, executed with surgical precision.
 								</p>
 							</div>
 
+							<div className='space-y-6 mt-2'>
+								<div className="relative flex items-center">
+									<div className="absolute -top-[19px] px-2 z-50 left-20 flex items-center gap-2">
+										<div className="bg-primary border border-gray-400/20 rounded-md w-fit flex items-center gap-2 px-2 py-1.5">
+											<Table2 size={16} className="text-muted-foreground" />
+											<span className="text-muted-foreground">
+												users
+											</span>
+										</div>
+										<div className="flex items-center gap-2 ml-16">
+											<div className="bg-primary border border-gray-400/20 rounded-full w-fit flex items-center gap-2 px-4 py-1.5">
+												<Network size={16} />
+												<span>
+													api/v1/me
+												</span>
+											</div>
+											<div className="bg-primary border border-gray-400/20 rounded-full w-fit flex items-center gap-2 px-4 py-1.5">
+												<Network size={16} />
+												<span>
+													api/v1/profile
+												</span>
+											</div>
+										</div>
+									</div>
+									<FlowingDottedLine dotSize='xs' />
+								</div>
 
-							<FlowingDottedLine />
+								<div className="relative flex items-center">
+									<div className="absolute -top-[19px] px-2 z-50 left-20 flex items-center gap-2">
+										<div className="bg-primary border border-gray-400/20 rounded-md w-fit flex items-center gap-2 px-2 py-1.5">
+											<Table2 size={16} className="text-muted-foreground" />
+											<span className="text-muted-foreground">
+												posts
+											</span>
+										</div>
+										<div className="flex items-center gap-2 ml-12">
+											<div className="bg-primary border border-gray-400/20 rounded-full w-fit flex items-center gap-2 px-4 py-1.5">
+												<Network size={16} />
+												<span>
+													api/v1/posts
+												</span>
+											</div>
+										</div>
+									</div>
+									<FlowingDottedLine dotSize='xs' />
+								</div>
+
+								<div className="relative flex items-center">
+									<div className="absolute -top-[19px] px-2 z-50 left-20 flex items-center gap-2">
+										<div className="bg-primary border border-gray-400/20 rounded-md w-fit flex items-center gap-2 px-2 py-1.5">
+											<Table2 size={16} className="text-muted-foreground" />
+											<span className="text-muted-foreground">
+												orders
+											</span>
+										</div>
+										<div className="flex items-center gap-2 ml-20">
+											<div className="bg-primary border border-gray-400/20 rounded-full w-fit flex items-center gap-2 px-4 py-1.5">
+												<Network size={16} />
+												<span>
+													api/v1/orders
+												</span>
+											</div>
+											<div className="bg-primary border border-gray-400/20 rounded-full w-fit flex items-center gap-2 px-4 py-1.5">
+												<Network size={16} />
+												<span>
+													api/v1/checkout
+												</span>
+											</div>
+										</div>
+									</div>
+									<FlowingDottedLine dotSize='xs' />
+								</div>
+
+								<div className="relative flex items-center">
+									<div className="absolute -top-[19px] px-2 z-50 left-20 flex items-center gap-2">
+										<div className="bg-primary border border-gray-400/20 rounded-md w-fit flex items-center gap-2 px-2 py-1.5">
+											<Table2 size={16} className="text-muted-foreground" />
+											<span className="text-muted-foreground">
+												sessions
+											</span>
+										</div>
+										<div className="flex items-center gap-2 ml-8">
+											<div className="bg-primary border border-gray-400/20 rounded-full w-fit flex items-center gap-2 px-4 py-1.5">
+												<Network size={16} />
+												<span>
+													api/v1/auth
+												</span>
+											</div>
+											<div className="bg-primary border border-gray-400/20 rounded-full w-fit flex items-center gap-2 px-4 py-1.5">
+												<Network size={16} />
+												<span>
+													api/v1/logout
+												</span>
+											</div>
+										</div>
+									</div>
+									<FlowingDottedLine dotSize='xs' />
+								</div>
+
+								<div className="relative flex items-center">
+									<div className="absolute -top-[19px] px-2 z-50 left-20 flex items-center gap-2">
+										<div className="bg-primary border border-gray-400/20 rounded-md w-fit flex items-center gap-2 px-2 py-1.5">
+											<Table2 size={16} className="text-muted-foreground" />
+											<span className="text-muted-foreground">
+												analytics
+											</span>
+										</div>
+										<div className="flex items-center gap-2 ml-14">
+											<div className="bg-primary border border-gray-400/20 rounded-full w-fit flex items-center gap-2 px-4 py-1.5">
+												<Network size={16} />
+												<span>
+													api/v1/stats
+												</span>
+											</div>
+										</div>
+									</div>
+									<FlowingDottedLine dotSize='xs' />
+								</div>
+
+								<div className="relative flex items-center">
+									<div className="absolute -top-[19px] px-2 z-50 left-20 flex items-center gap-2">
+										<div className="bg-primary border border-gray-400/20 rounded-md w-fit flex items-center gap-2 px-2 py-1.5">
+											<Table2 size={16} className="text-muted-foreground" />
+											<span className="text-muted-foreground">
+												notifications
+											</span>
+										</div>
+										<div className="flex items-center gap-2 ml-6">
+											<div className="bg-primary border border-gray-400/20 rounded-full w-fit flex items-center gap-2 px-4 py-1.5">
+												<Network size={16} />
+												<span>
+													api/v1/notify
+												</span>
+											</div>
+											<div className="bg-primary border border-gray-400/20 rounded-full w-fit flex items-center gap-2 px-4 py-1.5">
+												<Network size={16} />
+												<span>
+													api/v1/webhooks
+												</span>
+											</div>
+										</div>
+									</div>
+									<FlowingDottedLine dotSize='xs' />
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
