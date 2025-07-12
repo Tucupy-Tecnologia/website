@@ -213,23 +213,23 @@ export function Services(): React.ReactElement {
 
 							<div className='space-y-6 mt-2'>
 								<div className="relative flex items-center">
-									<div className="absolute -top-[19px] px-2 z-50 left-20 flex items-center gap-2">
-										<div className="bg-primary border border-gray-400/20 rounded-md w-fit flex items-center gap-2 px-2 py-1.5">
-											<Table2 size={16} className="text-muted-foreground" />
-											<span className="text-muted-foreground">
+									<div className="absolute -top-[17px] px-2 z-50 left-20 flex items-center gap-2">
+										<div className="bg-primary border border-gray-400/20 rounded-md w-fit flex items-center gap-1.5 px-2 py-1">
+											<Table2 size={14} className="text-muted-foreground" />
+											<span className="text-muted-foreground text-sm">
 												users
 											</span>
 										</div>
-										<div className="flex items-center gap-2 ml-16">
-											<div className="bg-primary border border-gray-400/20 rounded-full w-fit flex items-center gap-2 px-4 py-1.5">
-												<Network size={16} />
-												<span>
+										<div className="flex items-center gap-1.5 ml-16">
+											<div className="bg-primary border border-gray-400/20 rounded-full w-fit flex items-center gap-1.5 px-3 py-1">
+												<Network size={14} />
+												<span className="text-sm">
 													api/v1/me
 												</span>
 											</div>
-											<div className="bg-primary border border-gray-400/20 rounded-full w-fit flex items-center gap-2 px-4 py-1.5">
-												<Network size={16} />
-												<span>
+											<div className="bg-primary border border-gray-400/20 rounded-full w-fit flex items-center gap-1.5 px-3 py-1">
+												<Network size={14} />
+												<span className="text-sm">
 													api/v1/profile
 												</span>
 											</div>
@@ -239,17 +239,17 @@ export function Services(): React.ReactElement {
 								</div>
 
 								<div className="relative flex items-center">
-									<div className="absolute -top-[19px] px-2 z-50 left-20 flex items-center gap-2">
-										<div className="bg-primary border border-gray-400/20 rounded-md w-fit flex items-center gap-2 px-2 py-1.5">
-											<Table2 size={16} className="text-muted-foreground" />
-											<span className="text-muted-foreground">
+									<div className="absolute -top-[17px] px-2 z-50 left-20 flex items-center gap-2">
+										<div className="bg-primary border border-gray-400/20 rounded-md w-fit flex items-center gap-1.5 px-2 py-1">
+											<Table2 size={14} className="text-muted-foreground" />
+											<span className="text-muted-foreground text-sm">
 												posts
 											</span>
 										</div>
-										<div className="flex items-center gap-2 ml-12">
-											<div className="bg-primary border border-gray-400/20 rounded-full w-fit flex items-center gap-2 px-4 py-1.5">
-												<Network size={16} />
-												<span>
+										<div className="flex items-center gap-1.5 ml-12">
+											<div className="bg-primary border border-gray-400/20 rounded-full w-fit flex items-center gap-1.5 px-3 py-1">
+												<Network size={14} />
+												<span className="text-sm">
 													api/v1/posts
 												</span>
 											</div>
@@ -259,23 +259,23 @@ export function Services(): React.ReactElement {
 								</div>
 
 								<div className="relative flex items-center">
-									<div className="absolute -top-[19px] px-2 z-50 left-20 flex items-center gap-2">
-										<div className="bg-primary border border-gray-400/20 rounded-md w-fit flex items-center gap-2 px-2 py-1.5">
-											<Table2 size={16} className="text-muted-foreground" />
-											<span className="text-muted-foreground">
+									<div className="absolute -top-[17px] px-2 z-50 left-20 flex items-center gap-2">
+										<div className="bg-primary border border-gray-400/20 rounded-md w-fit flex items-center gap-1.5 px-2 py-1">
+											<Table2 size={14} className="text-muted-foreground" />
+											<span className="text-muted-foreground text-sm">
 												orders
 											</span>
 										</div>
-										<div className="flex items-center gap-2 ml-20">
-											<div className="bg-primary border border-gray-400/20 rounded-full w-fit flex items-center gap-2 px-4 py-1.5">
-												<Network size={16} />
-												<span>
+										<div className="flex items-center gap-4 ml-20">
+											<div className="bg-primary border border-gray-400/20 rounded-full w-fit flex items-center gap-1.5 px-3 py-1">
+												<Network size={14} />
+												<span className="text-sm">
 													api/v1/orders
 												</span>
 											</div>
-											<div className="bg-primary border border-gray-400/20 rounded-full w-fit flex items-center gap-2 px-4 py-1.5">
-												<Network size={16} />
-												<span>
+											<div className="bg-primary border border-gray-400/20 rounded-full w-fit flex items-center gap-1.5 px-3 py-1">
+												<Network size={14} />
+												<span className="text-sm">
 													api/v1/checkout
 												</span>
 											</div>
@@ -285,23 +285,23 @@ export function Services(): React.ReactElement {
 								</div>
 
 								<div className="relative flex items-center">
-									<div className="absolute -top-[19px] px-2 z-50 left-20 flex items-center gap-2">
-										<div className="bg-primary border border-gray-400/20 rounded-md w-fit flex items-center gap-2 px-2 py-1.5">
-											<Table2 size={16} className="text-muted-foreground" />
-											<span className="text-muted-foreground">
+									<div className="absolute -top-[17px] px-2 z-50 left-20 flex items-center gap-2">
+										<div className="bg-primary border border-gray-400/20 rounded-md w-fit flex items-center gap-1.5 px-2 py-1">
+											<Table2 size={14} className="text-muted-foreground" />
+											<span className="text-muted-foreground text-sm">
 												sessions
 											</span>
 										</div>
-										<div className="flex items-center gap-2 ml-8">
-											<div className="bg-primary border border-gray-400/20 rounded-full w-fit flex items-center gap-2 px-4 py-1.5">
-												<Network size={16} />
-												<span>
+										<div className="flex items-center gap-1.5 ml-8">
+											<div className="bg-primary border border-gray-400/20 rounded-full w-fit flex items-center gap-1.5 px-3 py-1">
+												<Network size={14} />
+												<span className="text-sm">
 													api/v1/auth
 												</span>
 											</div>
-											<div className="bg-primary border border-gray-400/20 rounded-full w-fit flex items-center gap-2 px-4 py-1.5">
-												<Network size={16} />
-												<span>
+											<div className="bg-primary border border-gray-400/20 rounded-full w-fit flex items-center gap-1.5 px-3 py-1">
+												<Network size={14} />
+												<span className="text-sm">
 													api/v1/logout
 												</span>
 											</div>
@@ -311,44 +311,18 @@ export function Services(): React.ReactElement {
 								</div>
 
 								<div className="relative flex items-center">
-									<div className="absolute -top-[19px] px-2 z-50 left-20 flex items-center gap-2">
-										<div className="bg-primary border border-gray-400/20 rounded-md w-fit flex items-center gap-2 px-2 py-1.5">
-											<Table2 size={16} className="text-muted-foreground" />
-											<span className="text-muted-foreground">
+									<div className="absolute -top-[17px] px-2 z-50 left-20 flex items-center gap-2">
+										<div className="bg-primary border border-gray-400/20 rounded-md w-fit flex items-center gap-1.5 px-2 py-1">
+											<Table2 size={14} className="text-muted-foreground" />
+											<span className="text-muted-foreground text-sm">
 												analytics
 											</span>
 										</div>
-										<div className="flex items-center gap-2 ml-14">
-											<div className="bg-primary border border-gray-400/20 rounded-full w-fit flex items-center gap-2 px-4 py-1.5">
-												<Network size={16} />
-												<span>
+										<div className="flex items-center gap-1.5 ml-14">
+											<div className="bg-primary border border-gray-400/20 rounded-full w-fit flex items-center gap-1.5 px-3 py-1">
+												<Network size={14} />
+												<span className="text-sm">
 													api/v1/stats
-												</span>
-											</div>
-										</div>
-									</div>
-									<FlowingDottedLine dotSize='xs' />
-								</div>
-
-								<div className="relative flex items-center">
-									<div className="absolute -top-[19px] px-2 z-50 left-20 flex items-center gap-2">
-										<div className="bg-primary border border-gray-400/20 rounded-md w-fit flex items-center gap-2 px-2 py-1.5">
-											<Table2 size={16} className="text-muted-foreground" />
-											<span className="text-muted-foreground">
-												notifications
-											</span>
-										</div>
-										<div className="flex items-center gap-2 ml-6">
-											<div className="bg-primary border border-gray-400/20 rounded-full w-fit flex items-center gap-2 px-4 py-1.5">
-												<Network size={16} />
-												<span>
-													api/v1/notify
-												</span>
-											</div>
-											<div className="bg-primary border border-gray-400/20 rounded-full w-fit flex items-center gap-2 px-4 py-1.5">
-												<Network size={16} />
-												<span>
-													api/v1/webhooks
 												</span>
 											</div>
 										</div>
