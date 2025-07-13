@@ -213,7 +213,7 @@ export function Services(): React.ReactElement {
 
 							<div className='space-y-6 mt-2'>
 								<div className="relative flex items-center">
-									<div className="absolute -top-[17px] px-2 z-50 left-20 flex items-center gap-2">
+									<div className="absolute -top-[15px] px-2 z-50 left-20 flex items-center gap-2">
 										<div className="bg-primary border border-gray-400/20 rounded-md w-fit flex items-center gap-1.5 px-2 py-1">
 											<Table2 size={14} className="text-muted-foreground" />
 											<span className="text-muted-foreground text-sm">
@@ -239,7 +239,7 @@ export function Services(): React.ReactElement {
 								</div>
 
 								<div className="relative flex items-center">
-									<div className="absolute -top-[17px] px-2 z-50 left-20 flex items-center gap-2">
+									<div className="absolute -top-[15px] px-2 z-50 left-20 flex items-center gap-2">
 										<div className="bg-primary border border-gray-400/20 rounded-md w-fit flex items-center gap-1.5 px-2 py-1">
 											<Table2 size={14} className="text-muted-foreground" />
 											<span className="text-muted-foreground text-sm">
@@ -259,7 +259,7 @@ export function Services(): React.ReactElement {
 								</div>
 
 								<div className="relative flex items-center">
-									<div className="absolute -top-[17px] px-2 z-50 left-20 flex items-center gap-2">
+									<div className="absolute -top-[15px] px-2 z-50 left-20 flex items-center gap-2">
 										<div className="bg-primary border border-gray-400/20 rounded-md w-fit flex items-center gap-1.5 px-2 py-1">
 											<Table2 size={14} className="text-muted-foreground" />
 											<span className="text-muted-foreground text-sm">
@@ -285,7 +285,7 @@ export function Services(): React.ReactElement {
 								</div>
 
 								<div className="relative flex items-center">
-									<div className="absolute -top-[17px] px-2 z-50 left-20 flex items-center gap-2">
+									<div className="absolute -top-[15px] px-2 z-50 left-20 flex items-center gap-2">
 										<div className="bg-primary border border-gray-400/20 rounded-md w-fit flex items-center gap-1.5 px-2 py-1">
 											<Table2 size={14} className="text-muted-foreground" />
 											<span className="text-muted-foreground text-sm">
@@ -311,7 +311,7 @@ export function Services(): React.ReactElement {
 								</div>
 
 								<div className="relative flex items-center">
-									<div className="absolute -top-[17px] px-2 z-50 left-20 flex items-center gap-2">
+									<div className="absolute -top-[15px] px-2 z-50 left-20 flex items-center gap-2">
 										<div className="bg-primary border border-gray-400/20 rounded-md w-fit flex items-center gap-1.5 px-2 py-1">
 											<Table2 size={14} className="text-muted-foreground" />
 											<span className="text-muted-foreground text-sm">
