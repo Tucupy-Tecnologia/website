@@ -20,7 +20,7 @@ export function Projects() {
 						<h2 className="text-foreground text-xl font-semibold">
 							Porto Exclusivo
 						</h2>
-						<p className="text-muted-foreground max-w-sm text-pretty pb-1">
+						<p className="text-muted-foreground text-pretty pb-1">
 							Travel company dedicated to offering unparalleled travel experiences, distinguished by <span className="text-brand">comfort</span>, <span className="text-brand">exclusivity</span> and <span className="text-brand">excellence</span>.
 						</p>
 					</div>
@@ -31,7 +31,7 @@ export function Projects() {
 						<h2 className="text-foreground text-xl font-semibold">
 							Porto Exclusivo
 						</h2>
-						<p className="text-muted-foreground max-w-sm text-pretty pb-1">
+						<p className="text-muted-foreground text-pretty pb-1">
 							Travel company dedicated to offering unparalleled travel experiences, distinguished by <span className="text-brand">comfort</span>, <span className="text-brand">exclusivity</span> and <span className="text-brand">excellence</span>.
 						</p>
 					</div>
