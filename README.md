@@ -1,4 +1,4 @@
-# Tucupy Website
+![Apresentação Tucupy_page-0001](https://github.com/user-attachments/assets/4fedf53a-859c-47df-8cfe-3a44d1380f8e)
 
 Bem-vindo ao repositório do website da Tucupy! Este projeto foi disponibilizado como open source para fins educativos, permitindo que desenvolvedores aprendam com nossa implementação.
 
