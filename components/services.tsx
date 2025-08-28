@@ -6,6 +6,7 @@ import { MarqueeItemData, TechMarquee } from "./tech-marquee";
 import { WebsiteFlowDiagram } from './flow-diagram';
 import { FlowingDottedLine } from './dotted-line';
 import { Network, Table2 } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 export const marqueeItems: MarqueeItemData[] = [
 	{
@@ -54,6 +55,7 @@ interface EmailItemProps {
 	email: string;
 	isMiddleItem: boolean;
 	isSecurityHovered: boolean;
+	alignRight?: boolean;
 }
 
 function shuffleArray<T>(array: T[]): T[] {
@@ -65,7 +67,7 @@ function shuffleArray<T>(array: T[]): T[] {
 	return shuffled;
 }
 
-function EmailItem({ email, isMiddleItem, isSecurityHovered }: EmailItemProps): React.ReactElement {
+function EmailItem({ email, isMiddleItem, isSecurityHovered, alignRight }: EmailItemProps): React.ReactElement {
 	const getDisplayText = (): string => {
 		if (isMiddleItem && isSecurityHovered) {
 			return '●●●●●●●●●●●●●●●●●●●';
@@ -81,8 +83,8 @@ function EmailItem({ email, isMiddleItem, isSecurityHovered }: EmailItemProps): 
 	};
 
 	return (
-		<div className='bg-primary border border-gray-400/20 rounded-md px-7 py-3 w-48'>
-			<p className={`transition-all duration-300 truncate ${getBlurClass()}`}>
+		<div className={cn('bg-primary border border-gray-400/20 rounded-md px-7 py-3 w-48 overflow-hidden')}>
+			<p className={`transition-all duration-150 ${getBlurClass()} whitespace-nowrap ${alignRight ? 'text-right -ml-20' : 'text-left'}`}>
 				{getDisplayText()}
 			</p>
 		</div>
@@ -113,7 +115,7 @@ export function Services(): React.ReactElement {
 	}), []);
 
 	return (
-		<div className="bg-background pb-20">
+		<div className="bg-background">
 			<div className="mx-auto max-w-2xl lg:max-w-6xl px-4">
 				<div className="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2">
 					<div className="flex p-px lg:col-span-4">
@@ -184,6 +186,7 @@ export function Services(): React.ReactElement {
 											email={email}
 											isMiddleItem={index === 1}
 											isSecurityHovered={isSecurityHovered}
+											alignRight={true}
 										/>
 									))}
 								</div>
@@ -195,6 +198,7 @@ export function Services(): React.ReactElement {
 											email={email}
 											isMiddleItem={index === 1}
 											isSecurityHovered={isSecurityHovered}
+											alignRight={false}
 										/>
 									))}
 								</div>

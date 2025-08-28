@@ -2,8 +2,8 @@ import Image from "next/image";
 
 interface Author {
 	name: string;
-	handle: string;
-	imageUrl: string;
+	role: string;
+	company: string;
 }
 
 interface Testimonial {
@@ -13,91 +13,82 @@ interface Testimonial {
 
 const testimonials: Testimonial[] = [
 	{
-		body: 'Laborum quis quam. Dolorum et ut quod quia. Voluptas numquam delectus nihil. Aut enim doloremque et ipsam.',
+		body: 'Tucupy transformed our outdated e-commerce platform into a modern, scalable solution in just 8 weeks. The performance improvements alone increased our conversion rate by 35%.',
 		author: {
-			name: 'Leslie Alexander',
-			handle: 'lesliealexander',
-			imageUrl:
-				'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+			name: 'Carlos Mendoza',
+			role: 'CTO',
+			company: 'Porto Exclusivo',
 		},
 	},
 	{
-		body: 'Anim sit consequat culpa commodo eu do nisi commodo ut aute aliqua. Laborum esse duis tempor consectetur officia mollit fugiat. Exercitation qui elit minim minim quis fugiat ex.',
+		body: 'Their team\'s expertise in cloud architecture saved us thousands in monthly infrastructure costs while improving our system reliability. We now have 99.9% uptime.',
 		author: {
-			name: 'Michael Foster',
-			handle: 'michaelfoster',
-			imageUrl:
-				'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+			name: 'Ana Silva',
+			role: 'Head of Engineering',
+			company: 'FinBank Digital',
 		},
 	},
 	{
-		body: 'Consequatur ut atque. Itaque nostrum molestiae id veniam eos cumque.',
+		body: 'The API integration was flawless. They delivered a complex multi-vendor marketplace ahead of schedule with zero critical bugs at launch.',
 		author: {
-			name: 'Dries Vincent',
-			handle: 'driesvincent',
-			imageUrl:
-				'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+			name: 'Roberto Almeida',
+			role: 'Product Manager',
+			company: 'MarketHub',
 		},
 	},
 	{
-		body: 'Excepteur consectetur deserunt id incididunt veniam mollit officia sint qui aute duis sit cillum. Reprehenderit fugiat amet aliqua in commodo minim sunt laborum.',
+		body: 'Working with Tucupy felt like having an extended tech team. They understood our business needs and translated them perfectly into technical solutions.',
 		author: {
-			name: 'Lindsay Walton',
-			handle: 'lindsaywalton',
-			imageUrl:
-				'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+			name: 'Juliana Costa',
+			role: 'CEO',
+			company: 'EduTech Brasil',
 		},
 	},
 	{
-		body: 'Distinctio facere aliquam est qui atque sint molestias ad. Fuga consequuntur asperiores voluptatum ipsum.',
+		body: 'They rebuilt our entire mobile app from scratch using React Native. The result? A single codebase that works perfectly on both iOS and Android, cutting our maintenance costs by 60%.',
 		author: {
-			name: 'Courtney Henry',
-			handle: 'courtneyhenry',
-			imageUrl:
-				'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+			name: 'Pedro Santos',
+			role: 'Mobile Team Lead',
+			company: 'FoodDelivery Pro',
 		},
 	},
 	{
-		body: 'Nam nesciunt dolorem dolor asperiores sint. Incidunt molestiae quis deleniti vitae ut in earum delectus iusto.',
+		body: 'The team\'s proactive approach to security helped us pass our SOC 2 audit on the first attempt. They think about problems before they become problems.',
 		author: {
-			name: 'Tom Cook',
-			handle: 'tomcook',
-			imageUrl:
-				'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+			name: 'Marina Oliveira',
+			role: 'CISO',
+			company: 'HealthTech Solutions',
 		},
 	},
 	{
-		body: 'Voluptas quos itaque ipsam in voluptatem est. Iste eos blanditiis repudiandae. Earum deserunt enim molestiae ipsum perferendis.',
+		body: 'Our platform now handles 10x the traffic with the same infrastructure. The optimization work they did was incredible - response times improved by 70%.',
 		author: {
-			name: 'Whitney Francis',
-			handle: 'whitneyfrancis',
-			imageUrl:
-				'https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+			name: 'Lucas Ferreira',
+			role: 'Technical Director',
+			company: 'StreamingNow',
 		},
 	},
 	{
-		body: 'Aliquid dolore praesentium ratione. Cumque ea officia repellendus laboriosam. Vitae quod id explicabo non sunt.',
+		body: 'Tucupy didn\'t just build what we asked for - they challenged our assumptions and delivered something better. Our users love the new interface.',
 		author: {
-			name: 'Leonard Krasner',
-			handle: 'leonardkrasner',
-			imageUrl:
-				'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+			name: 'Beatriz Lima',
+			role: 'Head of Product',
+			company: 'SocialConnect',
 		},
 	},
 	{
-		body: 'Molestias ea earum quos nostrum doloremque sed. Quaerat quasi aut velit incidunt excepturi rerum voluptatem minus harum.',
+		body: 'From MVP to Series A, they\'ve been our technical partners. They scale with us, adapting quickly to our changing needs without missing a beat.',
 		author: {
-			name: 'Floyd Miles',
-			handle: 'floydmiles',
-			imageUrl:
-				'https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+			name: 'Thiago Rodrigues',
+			role: 'Founder & CEO',
+			company: 'PropTech Innovations',
 		},
 	},
 ];
 
 export function Testimonials() {
 	return (
-		<div className="bg-background pb-20">
+		<div className="bg-background">
 			<div className="mx-auto max-w-2xl lg:max-w-6xl px-4">
 				<div className="mx-auto mt-16 flow-root max-w-2xl sm:mt-20 lg:mx-0 lg:max-w-none">
 					<div>
@@ -111,24 +102,15 @@ export function Testimonials() {
 					</div>
 
 					<div className="sm:-mx-4 sm:columns-2 sm:text-[0] lg:columns-3">
-						{testimonials.map((testimonial: Testimonial) => (
-							<div key={testimonial.author.handle} className="pt-8 sm:inline-block sm:w-full sm:px-4">
+						{testimonials.map((testimonial: Testimonial, index: number) => (
+							<div key={index} className="pt-8 sm:inline-block sm:w-full sm:px-4">
 								<figure className="rounded-2xl bg-primary outline outline-gray-400/20 p-8 text-sm/6">
 									<blockquote className="text-foreground">
 										<p>{`"${testimonial.body}"`}</p>
 									</blockquote>
-									<figcaption className="mt-6 flex items-center gap-x-4">
-										<img
-											src={testimonial.author.imageUrl}
-											alt={testimonial.author.name}
-											width={40}
-											height={40}
-											className="size-10 rounded-full bg-primary"
-										/>
-										<div>
-											<div className="font-semibold text-foreground">{testimonial.author.name}</div>
-											<div className="text-muted-foreground">{`@${testimonial.author.handle}`}</div>
-										</div>
+									<figcaption className="mt-6">
+										<div className="font-semibold text-foreground">{testimonial.author.name}</div>
+										<div className="text-muted-foreground">{testimonial.author.role} at {testimonial.author.company}</div>
 									</figcaption>
 								</figure>
 							</div>

@@ -1,11 +1,10 @@
-import { Link } from "lucide-react";
 import { Button } from "./ui/button";
 import { PartnersMarquee } from "./partners";
 
 export function Hero() {
 	return (
-		<main className="max-w-6xl mx-auto px-4 py-14 ">
-			<div className="mx-auto max-w-3xl py-20 mb-10">
+		<main className="max-w-6xl mx-auto px-4">
+			<div className="mx-auto max-w-3xl  mb-10">
 				<div className="hidden sm:mb-8 sm:flex sm:justify-center">
 					<div className="relative rounded-full px-3 py-1 text-sm/6 text-foreground ring-1 ring-gray-400/20 hover:ring-gray-400/30">
 						Latest insights on building software that scales.
