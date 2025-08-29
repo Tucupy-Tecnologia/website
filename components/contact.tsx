@@ -136,6 +136,7 @@ export function Contact(): React.ReactElement {
 
 	return (
 		<div className="bg-background">
+			<div className="size-1 opacity-0" id="contact" />
 			<div className="mx-auto max-w-2xl lg:max-w-6xl px-4">
 				<div>
 					<h2 className="text-base/7 font-semibold text-muted-foreground">Contact</h2>
@@ -165,9 +166,35 @@ export function Contact(): React.ReactElement {
 									</div>
 									<div>
 										<p className="text-foreground font-medium">Email us</p>
-										<a href="mailto:hello@yourcompany.com" className="text-muted-foreground hover:text-brand transition-colors">
+										<a href="mailto:contato@tucupy.com" className="text-muted-foreground hover:text-brand transition-colors">
 											contato@tucupy.com
 										</a>
+									</div>
+								</div>
+								
+								<div className="flex items-start gap-4">
+									<div className="flex-shrink-0 w-12 h-12 bg-brand/10 rounded-xl flex items-center justify-center">
+										<Phone className="w-5 h-5 text-brand" />
+									</div>
+									<div>
+										<p className="text-foreground font-medium">Call us</p>
+										<a href="tel:+5591991011351" className="text-muted-foreground hover:text-brand transition-colors">
+											+55 (91) 99101-1351
+										</a>
+									</div>
+								</div>
+								
+								<div className="flex items-start gap-4">
+									<div className="flex-shrink-0 w-12 h-12 bg-brand/10 rounded-xl flex items-center justify-center">
+										<MapPin className="w-5 h-5 text-brand" />
+									</div>
+									<div>
+										<p className="text-foreground font-medium">Visit us</p>
+										<p className="text-muted-foreground">
+											Ed. Connext, Salas 807-808<br />
+											Tv. Dom Romualdo de Seixas, 1560<br />
+											Umarizal, Belém - PA, 66055-200
+										</p>
 									</div>
 								</div>
 							</div>

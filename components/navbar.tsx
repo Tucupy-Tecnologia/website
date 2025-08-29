@@ -1,7 +1,11 @@
+'use client';
+
 import Image from "next/image";
 import { Titillium_Web } from "next/font/google";
 import { cn } from "@/lib/utils";
+import { scrollToSection } from "@/lib/scroll";
 import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 import {
 	DropdownMenu,
 	DropdownMenuContent,
@@ -20,12 +24,22 @@ const languages = [
 ];
 
 export function Navbar() {
-
+	const pathname = usePathname();
+	const router = useRouter();
 	const currentLanguage = languages[0];
 
 	function handleLanguageChange(languageCode: string) {
 		console.log('Language changed to:', languageCode);
 	}
+
+	const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+		e.preventDefault();
+		if (pathname === '/') {
+			scrollToSection(sectionId);
+		} else {
+			router.push(`/#${sectionId}`);
+		}
+	};
 
 	return (
 		<nav className="bg-background text-white max-w-6xl mx-auto px-4 pt-6 flex items-center justify-between">
@@ -37,13 +51,21 @@ export function Navbar() {
 					</div>
 				</Link>
 				<ul className="flex items-center gap-1 mt-2">
-					<Link href="/" className="text-sm font-bold text-muted-foreground hover:text-foreground hover:bg-accent/10 px-2 py-1.5 rounded-md">
+					<a 
+						href="/#services" 
+						onClick={(e) => handleNavClick(e, 'services')}
+						className="text-sm font-bold text-muted-foreground hover:text-foreground hover:bg-accent/10 px-2 py-1.5 rounded-md cursor-pointer"
+					>
 						Services
-					</Link>
-					<Link href="/about" className="text-sm font-bold text-muted-foreground hover:text-foreground hover:bg-accent/10 px-2 py-1.5 rounded-md">
+					</a>
+					<a 
+						href="/#projects" 
+						onClick={(e) => handleNavClick(e, 'projects')}
+						className="text-sm font-bold text-muted-foreground hover:text-foreground hover:bg-accent/10 px-2 py-1.5 rounded-md cursor-pointer"
+					>
 						Work
-					</Link>
-					<Link href="/blog" className="text-sm font-bold text-muted-foreground hover:text-foreground hover:bg-accent/10 px-2 py-1.5 rounded-md">
+					</a>
+					<Link href="/about" className="text-sm font-bold text-muted-foreground hover:text-foreground hover:bg-accent/10 px-2 py-1.5 rounded-md">
 						About
 					</Link>
 					<Link href="/blog" className="text-sm font-bold text-muted-foreground hover:text-foreground hover:bg-accent/10 px-2 py-1.5 rounded-md">

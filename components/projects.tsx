@@ -3,6 +3,8 @@ import Image from "next/image";
 export function Projects() {
 	return (
 		<div className="mx-auto max-w-2xl lg:max-w-6xl px-4">
+			<div className="size-1 opacity-0" id="projects" />
+
 			<div>
 				<h2 className="text-base/7 font-semibold text-muted-foreground">Projects</h2>
 				<p className="mt-2 text-4xl font-semibold tracking-tight text-pretty  sm:text-5xl text-foreground">

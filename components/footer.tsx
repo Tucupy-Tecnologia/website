@@ -62,15 +62,6 @@ export function Footer(): React.ReactElement {
 
 						{/* Contact Info */}
 						<div className="space-y-4">
-							<div className="flex items-center gap-3">
-								<div className="w-10 h-10 bg-brand/10 rounded-lg flex items-center justify-center flex-shrink-0">
-									<MapPin className="w-4 h-4 text-brand" />
-								</div>
-								<div>
-									<p className="text-foreground text-sm font-medium">123 Tech Street</p>
-									<p className="text-muted-foreground text-sm">San Francisco, CA 94105</p>
-								</div>
-							</div>
 
 							<div className="flex items-center gap-3">
 								<div className="w-10 h-10 bg-brand/10 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -78,10 +69,10 @@ export function Footer(): React.ReactElement {
 								</div>
 								<div>
 									<a
-										href="mailto:hello@tucupy.com"
+										href="mailto:contato@tucupy.com"
 										className="text-foreground text-sm font-medium hover:text-brand transition-colors"
 									>
-										hello@tucupy.com
+										contato@tucupy.com
 									</a>
 								</div>
 							</div>
@@ -99,6 +90,18 @@ export function Footer(): React.ReactElement {
 									</a>
 								</div>
 							</div>
+
+							<div className="flex items-start gap-3">
+								<div className="w-10 h-10 bg-brand/10 rounded-lg flex items-center justify-center flex-shrink-0">
+									<MapPin className="w-4 h-4 text-brand" />
+								</div>
+								<div>
+									<p className="text-foreground text-sm font-medium">Ed. Connext, Salas 807-808</p>
+									<p className="text-muted-foreground text-sm">Tv. Dom Romualdo de Seixas, 1560</p>
+									<p className="text-muted-foreground text-sm">Umarizal, Belém - PA, 66055-200</p>
+								</div>
+							</div>
+
 						</div>
 					</div>
 

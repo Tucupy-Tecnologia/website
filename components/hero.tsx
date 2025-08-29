@@ -1,7 +1,14 @@
+'use client';
+
 import { Button } from "./ui/button";
 import { PartnersMarquee } from "./partners";
+import { scrollToSection } from "@/lib/scroll";
+import Link from "next/link";
 
 export function Hero() {
+
+
+
 	return (
 		<main className="max-w-6xl mx-auto px-4">
 			<div className="mx-auto max-w-3xl  mb-10">
@@ -23,12 +30,19 @@ export function Hero() {
 						We make it simple.
 					</p>
 					<div className="mt-10 flex items-center justify-center gap-x-4">
-						<Button variant="brand">
+						<Button
+							variant="brand"
+							onClick={() => scrollToSection('contact')}
+						>
 							Let's build together
 						</Button>
-						<Button className="text-sm/6 font-semibold text-foreground ring ring-gray-400/20">
-							Learn more <span aria-hidden="true">→</span>
-						</Button>
+						<Link href="/about">
+							<Button
+								className="text-sm/6 font-semibold text-foreground ring ring-gray-400/20"
+							>
+								Learn more <span aria-hidden="true">→</span>
+							</Button>
+						</Link>
 					</div>
 				</div>
 			</div>

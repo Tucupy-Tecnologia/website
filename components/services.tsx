@@ -116,6 +116,7 @@ export function Services(): React.ReactElement {
 
 	return (
 		<div className="bg-background">
+			<div className="bg-red-50 size-1 opacity-0" id="services" />
 			<div className="mx-auto max-w-2xl lg:max-w-6xl px-4">
 				<div className="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2">
 					<div className="flex p-px lg:col-span-4">
