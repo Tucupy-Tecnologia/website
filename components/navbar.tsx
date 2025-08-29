@@ -30,10 +30,12 @@ export function Navbar() {
 	return (
 		<nav className="bg-background text-white max-w-6xl mx-auto px-4 pt-6 flex items-center justify-between">
 			<div className="flex items-center gap-6">
-				<div className="flex items-center gap-2 group cursor-pointer">
-					<Image src="/tucupy.svg" alt="logo" width={15} height={15} />
-					<h1 className={cn("text-3xl font-bold text-foreground group-hover:text-brand transition-colors ease-out mb-1", titillium.className)}>tucupy</h1>
-				</div>
+				<Link href="/">
+					<div className="flex items-center gap-2 group cursor-pointer">
+						<Image src="/tucupy.svg" alt="logo" width={15} height={15} />
+						<h1 className={cn("text-3xl font-bold text-foreground group-hover:text-brand transition-colors ease-out mb-1", titillium.className)}>tucupy</h1>
+					</div>
+				</Link>
 				<ul className="flex items-center gap-1 mt-2">
 					<Link href="/" className="text-sm font-bold text-muted-foreground hover:text-foreground hover:bg-accent/10 px-2 py-1.5 rounded-md">
 						Services
@@ -47,7 +49,7 @@ export function Navbar() {
 					<Link href="/blog" className="text-sm font-bold text-muted-foreground hover:text-foreground hover:bg-accent/10 px-2 py-1.5 rounded-md">
 						Blog
 					</Link>
-					<Link href="/blog" className="text-sm font-bold text-muted-foreground hover:text-foreground hover:bg-accent/10 px-2 py-1.5 rounded-md">
+					<Link href="/careers" className="text-sm font-bold text-muted-foreground hover:text-foreground hover:bg-accent/10 px-2 py-1.5 rounded-md">
 						Work with us
 					</Link>
 				</ul>

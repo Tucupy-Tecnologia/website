@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { Search } from "lucide-react";
 import { useState } from "react";
+import { Post } from "./Post";
 
 export function PostList() {
   const [selectedCategory, setSelectedCategory] = useState("all");
@@ -15,7 +16,6 @@ export function PostList() {
   return (
     <div>
       <div className="mt-12 flex items-center justify-between">
-
         <ToggleGroup
           type="single"
           value={selectedCategory}
@@ -63,12 +63,26 @@ export function PostList() {
 
         </ToggleGroup>
 
-        <div className="relative">
+        <div className="relative pr-3">
           <Search className="absolute top-0 bottom-0 my-auto left-2.5 size-4" />
           <Input className="w-full bg-red-50 pl-8 placeholder:text-xs" placeholder="Search blog" />
         </div>
       </div>
 
+
+
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 mt-10">
+        <Post />
+        <Post />
+        <Post />
+        <Post />
+        <Post />
+        <Post />
+        <Post />
+        <Post />
+        <Post />
+
+      </div>
 
 
 

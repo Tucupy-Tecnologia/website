@@ -1,11 +1,12 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import banner from "@/public/hackaton.png"
 import Image from "next/image"
+import Link from "next/link"
 
 
 export function FeaturedPost() {
   return (
-    <div className="flex items-center gap-10 hover:bg-neutral-500/5 p-3 rounded-lg ease-out transition-colors cursor-pointer">
+    <Link href="/blog/tucupy-launch-week-15-hackathon-winner-announcement" className="flex items-center gap-10 hover:bg-neutral-500/5 p-3 rounded-xl ease-out transition-colors cursor-pointer">
       <Image src={banner} alt="hackaton" width={450} height={350} className="rounded-lg border border-gray-400/20" />
 
       <div className="flex flex-col gap-3 pr-4">
@@ -33,6 +34,6 @@ export function FeaturedPost() {
         </div>
 
       </div>
-    </div>
+    </Link>
   )
 }
