@@ -14,7 +14,6 @@ import {
   Target,
   CheckCircle2,
   Building2,
-  Calendar,
   Activity,
   MapPin,
   Code,
@@ -95,38 +94,6 @@ const howWeWork = [
   },
 ];
 
-const milestones = [
-  {
-    year: '2020',
-    title: 'Tucupy is founded',
-    description:
-      'Started with a simple goal: build software that just works—and ships fast.',
-  },
-  {
-    year: '2021',
-    title: 'First 25 launches',
-    description:
-      'From MVPs to production apps, momentum grew through word of mouth.',
-  },
-  {
-    year: '2022',
-    title: 'Platform scale',
-    description:
-      'We took products from thousands to millions of requests reliably.',
-  },
-  {
-    year: '2024',
-    title: 'Specialized squads',
-    description:
-      'Introduced dedicated squads for web, product, and platform work.',
-  },
-  {
-    year: '2025',
-    title: 'Relentless focus',
-    description:
-      'Doubling down on craftsmanship, speed, and long-term partnerships.',
-  },
-];
 
 export default function AboutPage() {
   const router = useRouter();
@@ -164,7 +131,7 @@ export default function AboutPage() {
                 variant="brand"
                 onClick={handleContactClick}
               >
-                Let's build together
+                Let&apos;s build together
               </Button>
               <Button
                 className="text-sm/6 font-semibold text-foreground ring ring-gray-400/20"

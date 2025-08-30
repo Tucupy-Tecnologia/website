@@ -9,7 +9,7 @@ import Image from "next/image";
 import { MDXRemote } from "next-mdx-remote-client/rsc";
 import { Footer } from "@/components/footer";
 import { TableOfContents } from "@/components/blog/TableOfContents";
-import { useMDXComponents } from "@/components/mdx-components";
+import mdxComponents from "@/components/mdx-components";
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>
@@ -25,7 +25,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   const toc = getTableOfContents(post.content)
   const formattedDate = format(new Date(post.date), 'dd MMM yyyy')
-  const components = useMDXComponents()
 
   return (
     <div className="bg-background min-h-screen">
@@ -97,7 +96,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
               {/* Article content */}
               <div className="prose">
-                <MDXRemote source={post.content} components={components} />
+                <MDXRemote source={post.content} components={mdxComponents} />
               </div>
             </article>
           </div>

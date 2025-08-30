@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/navbar";
-import { MapPin, Briefcase, Clock, Users, Lightbulb, Heart, Trophy, Rocket, Home, DollarSign, Target, Activity, Gift, Calendar, Code, MessageSquare, TrendingUp, CheckCircle2, Building2 } from "lucide-react";
+import { MapPin, Clock, Users, Lightbulb, Heart, Trophy, Rocket, Target, TrendingUp, Building2, DollarSign, Gift } from "lucide-react";
 import { Footer } from "@/components/footer";
 import Link from "next/link";
 
@@ -99,7 +99,7 @@ export default function Page() {
             </div>
           </div>
           <div className="text-left">
-            <h1 className="text-5xl font-semibold">We're on a mission to deliver exceptional software solutions</h1>
+            <h1 className="text-5xl font-semibold">We&apos;re on a mission to deliver exceptional software solutions</h1>
             <p className="mt-8 text-lg font-medium text-pretty text-muted-foreground sm:text-xl/8">
               Explore career opportunities and join our team of experts shaping the future of technology.
             </p>
@@ -177,7 +177,7 @@ export default function Page() {
                 <h3 className="text-lg font-semibold text-foreground">Results-Focused</h3>
               </div>
               <p className="text-muted-foreground">
-                We measure success by outcomes, not hours. Deliver exceptional results and manage your time as you see fit. We trust you to do what's needed.
+                We measure success by outcomes, not hours. Deliver exceptional results and manage your time as you see fit. We trust you to do what&apos;s needed.
               </p>
             </div>
             <div className="bg-primary border border-gray-400/20 rounded-lg p-8">
@@ -186,7 +186,7 @@ export default function Page() {
                 <h3 className="text-lg font-semibold text-foreground">Grow With Us</h3>
               </div>
               <p className="text-muted-foreground">
-                We're looking for people who see themselves as owners, not employees. Your success is our success, and we'll grow together.
+                We&apos;re looking for people who see themselves as owners, not employees. Your success is our success, and we&apos;ll grow together.
               </p>
             </div>
             <div className="bg-primary border border-gray-400/20 rounded-lg p-8">
@@ -218,7 +218,7 @@ export default function Page() {
                 <h3 className="font-semibold text-foreground">Competitive Salary</h3>
               </div>
               <p className="text-sm text-muted-foreground">
-                Market-rate compensation that reflects your skills and experience. We pay what you're worth.
+                Market-rate compensation that reflects your skills and experience. We pay what you&apos;re worth.
               </p>
             </div>
             <div className="bg-primary border border-gray-400/20 rounded-lg p-6">
@@ -276,7 +276,7 @@ export default function Page() {
             <h2 className="text-3xl font-semibold text-foreground">Open positions</h2>
             <p className="mt-2 text-lg text-muted-foreground">
               Want to build exceptional digital solutions?<br />
-              We'd love to talk to you.
+              We&apos;d love to talk to you.
             </p>
           </div>
 

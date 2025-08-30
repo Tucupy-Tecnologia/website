@@ -1,5 +1,4 @@
 import type { MDXComponents } from 'mdx/types'
-import Image, { ImageProps } from 'next/image'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
 import { CodePlayground, InteractiveChart, TabsComponent } from '@/components/mdx'
@@ -107,13 +106,14 @@ const components = {
       </h6>
     )
   },
-  a: ({ className, ...props }: React.HTMLAttributes<HTMLAnchorElement>) => (
+  a: ({ className, href = "#", ...props }: React.HTMLAttributes<HTMLAnchorElement> & { href?: string }) => (
     <Link
+      href={href}
       className={cn(
         "font-medium text-primary underline underline-offset-4 hover:text-primary/80",
         className
       )}
-      {...(props as any)}
+      {...props}
     />
   ),
   p: ({ className, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => (
@@ -145,18 +145,20 @@ const components = {
     alt,
     src,
     ...props
-  }: React.ImgHTMLAttributes<HTMLImageElement>) => (
-    <Image
-      className={cn("rounded-md border border-neutral-800", className)}
-      alt={alt || ''}
-      src={src || ''}
-      width={800}
-      height={400}
-      sizes="100vw"
-      style={{ width: '100%', height: 'auto' }}
-      {...props}
-    />
-  ),
+  }: React.ImgHTMLAttributes<HTMLImageElement>) => {
+    // For MDX content, we'll use a regular img tag instead of Next.js Image
+    // since the src might be external or a blob URL
+    return (
+      // eslint-disable-next-line @next/next/no-img-element
+      <img
+        className={cn("rounded-md border border-neutral-800", className)}
+        alt={alt || ''}
+        src={src || ''}
+        style={{ width: '100%', height: 'auto' }}
+        {...props}
+      />
+    )
+  },
   hr: ({ ...props }: React.HTMLAttributes<HTMLHRElement>) => (
     <hr className="my-8 border-neutral-800" {...props} />
   ),
@@ -222,3 +224,5 @@ const components = {
 export function useMDXComponents(): MDXComponents {
   return components
 }
+
+export default components

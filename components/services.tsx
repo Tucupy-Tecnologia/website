@@ -176,7 +176,7 @@ export function Services(): React.ReactElement {
 							<div className="p-10">
 								<h3 className="text-sm/4 font-semibold text-muted-foreground">Security</h3>
 								<p className="mt-2 text-lg font-medium tracking-tight text-foreground">Protecting what matters most</p>
-								<p className="mt-2 max-w-lg text-sm/6 text-muted-foreground">Your data deserves the highest level of protection, and that's exactly what we deliver.</p>
+								<p className="mt-2 max-w-lg text-sm/6 text-muted-foreground">Your data deserves the highest level of protection, and that&apos;s exactly what we deliver.</p>
 							</div>
 
 							<div className='flex items-center gap-2 -ml-6'>
@@ -212,7 +212,7 @@ export function Services(): React.ReactElement {
 								<h3 className="text-sm/4 font-semibold text-muted-foreground">Development</h3>
 								<p className="mt-2 text-lg font-medium tracking-tight text-foreground">We ship really fast</p>
 								<p className="mt-2 max-w-lg text-sm/6 text-muted-foreground">
-									We don't just build fast—we think fast, adapt fast, and deliver fast. Your timeline becomes our mission, executed with surgical precision.
+									We don&apos;t just build fast—we think fast, adapt fast, and deliver fast. Your timeline becomes our mission, executed with surgical precision.
 								</p>
 							</div>
 

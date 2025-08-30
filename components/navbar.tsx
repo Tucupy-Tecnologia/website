@@ -28,9 +28,6 @@ export function Navbar() {
 	const router = useRouter();
 	const currentLanguage = languages[0];
 
-	function handleLanguageChange(languageCode: string) {
-		console.log('Language changed to:', languageCode);
-	}
 
 	const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
 		e.preventDefault();
@@ -51,20 +48,20 @@ export function Navbar() {
 					</div>
 				</Link>
 				<ul className="flex items-center gap-1 mt-2">
-					<a
+					<Link
 						href="/#services"
 						onClick={(e) => handleNavClick(e, 'services')}
 						className="text-sm font-bold text-muted-foreground hover:text-foreground hover:bg-accent/10 px-2 py-1.5 rounded-md cursor-pointer"
 					>
 						Services
-					</a>
-					<a
+					</Link>
+					<Link
 						href="/#projects"
 						onClick={(e) => handleNavClick(e, 'projects')}
 						className="text-sm font-bold text-muted-foreground hover:text-foreground hover:bg-accent/10 px-2 py-1.5 rounded-md cursor-pointer"
 					>
 						Work
-					</a>
+					</Link>
 					<Link href="/about" className="text-sm font-bold text-muted-foreground hover:text-foreground hover:bg-accent/10 px-2 py-1.5 rounded-md">
 						About
 					</Link>

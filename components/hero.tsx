@@ -34,7 +34,7 @@ export function Hero() {
 							variant="brand"
 							onClick={() => scrollToSection('contact')}
 						>
-							Let's build together
+							Let&apos;s build together
 						</Button>
 						<Link href="/about">
 							<Button

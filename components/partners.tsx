@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import {
 	Marquee,
 	MarqueeItem,
@@ -46,7 +47,7 @@ export function PartnersMarquee() {
 					<MarqueeContent speed={30} pauseOnHover={false}>
 						{partners.concat(partners).map((partner, index) => (
 							<MarqueeItem key={index} className="mx-6">
-								<img
+								<Image
 									src={partner.src}
 									alt={partner.name}
 									width={80}

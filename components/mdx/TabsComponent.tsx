@@ -1,7 +1,6 @@
 "use client"
 
 import { useState, ReactNode } from "react"
-import { Button } from "@/components/ui/button"
 
 interface Tab {
   label: string

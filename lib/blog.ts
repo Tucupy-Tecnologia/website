@@ -63,6 +63,7 @@ export function getAllBlogPosts(locale: string = 'en'): BlogMetadata[] {
       if (!post) return null
 
       // Return metadata without content for listing
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const { content, ...metadata } = post
       return metadata
     })

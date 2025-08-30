@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { Button } from './ui/button';
-import { Mail, MessageSquare, User, Building2, MapPin, Phone } from 'lucide-react';
+import { Mail, MapPin, Phone } from 'lucide-react';
 
 interface FormData {
 	firstName: string;
@@ -96,10 +96,10 @@ export function Contact(): React.ReactElement {
 					<div>
 						<h2 className="text-base/7 font-semibold text-muted-foreground">Contact</h2>
 						<p className="mt-2 text-4xl font-semibold tracking-tight text-pretty sm:text-5xl text-foreground">
-							Let's build something <span className="text-brand">amazing together</span>
+							Let&apos;s build something <span className="text-brand">amazing together</span>
 						</p>
 						<p className="mt-6 text-lg/8 text-muted-foreground max-w-3xl">
-							Ready to turn your vision into reality? Tell us about your project and we'll show you how we can help.
+							Ready to turn your vision into reality? Tell us about your project and we&apos;ll show you how we can help.
 						</p>
 					</div>
 
@@ -112,7 +112,7 @@ export function Contact(): React.ReactElement {
 								Message sent successfully!
 							</h3>
 							<p className="text-lg text-muted-foreground mb-8 text-center">
-								Thank you for reaching out. We'll get back to you within 24 hours.
+								Thank you for reaching out. We&apos;ll get back to you within 24 hours.
 							</p>
 							<Button
 								variant="brand"
@@ -141,10 +141,10 @@ export function Contact(): React.ReactElement {
 				<div>
 					<h2 className="text-base/7 font-semibold text-muted-foreground">Contact</h2>
 					<p className="mt-2 text-4xl font-semibold tracking-tight text-pretty sm:text-5xl text-foreground">
-						Let's build something <span className="text-brand">amazing together</span>
+						Let&apos;s build something <span className="text-brand">amazing together</span>
 					</p>
 					<p className="mt-6 text-lg/8 text-muted-foreground max-w-3xl">
-						Ready to turn your vision into reality? Tell us about your project and we'll show you how we can help.
+						Ready to turn your vision into reality? Tell us about your project and we&apos;ll show you how we can help.
 					</p>
 				</div>
 
@@ -156,7 +156,7 @@ export function Contact(): React.ReactElement {
 								Get in touch
 							</h3>
 							<p className="text-muted-foreground mb-10 text-lg">
-								Ready to start your project? We're here to help bring your vision to life with cutting-edge solutions and expert guidance.
+								Ready to start your project? We&apos;re here to help bring your vision to life with cutting-edge solutions and expert guidance.
 							</p>
 
 							<div className="space-y-6">

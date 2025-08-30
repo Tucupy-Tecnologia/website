@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/theme-provider";
-import { ScrollHandler } from "@/components/scroll-handler";
 import { Inter } from "next/font/google";
 
 import "./globals.css";
