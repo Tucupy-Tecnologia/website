@@ -1,18 +1,21 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export function Projects() {
+interface ProjectsProps {
+	lang: string;
+	dict: any;
+}
+
+export function Projects({ lang, dict }: ProjectsProps) {
 	return (
 		<div className="mx-auto max-w-2xl lg:max-w-6xl px-4">
 			<div className="size-1 opacity-0" id="projects" />
 
 			<div>
-				<h2 className="text-base/7 font-semibold text-muted-foreground">Projects</h2>
-				<p className="mt-2 text-4xl font-semibold tracking-tight text-pretty  sm:text-5xl text-foreground">
-					Built to <span className="text-brand"> make a difference </span>
-				</p>
+				<h2 className="text-base/7 font-semibold text-muted-foreground">{dict.projects.section}</h2>
+				<p className="mt-2 text-4xl font-semibold tracking-tight text-pretty  sm:text-5xl text-foreground" dangerouslySetInnerHTML={{ __html: dict.projects.title }} />
 				<p className="mt-6 text-lg/8 text-muted-foreground max-w-3xl">
-					Discover how we turn complex challenges into elegant, user-centered solutions.
+					{dict.projects.description}
 				</p>
 			</div>
 
@@ -22,11 +25,9 @@ export function Projects() {
 					<Image unoptimized width={400} height={400} src="/maratona.png" alt="Meia Maratona Da Amazônia" className="w-full rounded-lg border border-gray-400/20" />
 					<div className="pl-2 space-y-2">
 						<h2 className="text-foreground text-xl font-semibold">
-							Meia Maratona Da Amazônia
+							{dict.projects.maratona.title}
 						</h2>
-						<p className="text-muted-foreground text-pretty pb-1">
-							Sustainable half-marathon uniting <span className="text-brand">elite performance</span> with <span className="text-brand">environmental responsibility</span>. Carbon neutral event that plants trees in the Amazon.
-						</p>
+						<p className="text-muted-foreground text-pretty pb-1" dangerouslySetInnerHTML={{ __html: dict.projects.maratona.description }} />
 					</div>
 				</Link>
 
@@ -34,11 +35,9 @@ export function Projects() {
 					<Image unoptimized width={350} height={350} src="/global-discounting.png" alt="Global Discounting" className="w-full rounded-lg border border-gray-400/20" />
 					<div className="pl-2 space-y-2">
 						<h2 className="text-foreground text-xl font-semibold">
-							Global Discounting
+							{dict.projects.globalDiscounting.title}
 						</h2>
-						<p className="text-muted-foreground text-pretty pb-1">
-							Specializing in <span className="text-brand">TV</span>, <span className="text-brand">film</span>, and <span className="text-brand">sports</span> content licensing. Digital financing solutions helping media businesses unlock working capital.
-						</p>
+						<p className="text-muted-foreground text-pretty pb-1" dangerouslySetInnerHTML={{ __html: dict.projects.globalDiscounting.description }} />
 					</div>
 				</Link>
 
@@ -47,11 +46,9 @@ export function Projects() {
 					<Image unoptimized width={350} height={350} src="/porto-exclusivo.png" alt="Porto Exclusivo" className="w-full rounded-lg border border-gray-400/20" />
 					<div className="pl-2 space-y-2">
 						<h2 className="text-foreground text-xl font-semibold">
-							Porto Exclusivo
+							{dict.projects.portoExclusivo.title}
 						</h2>
-						<p className="text-muted-foreground text-pretty pb-1">
-							Travel company dedicated to offering unparalleled travel experiences, distinguished by <span className="text-brand">comfort</span>, <span className="text-brand">exclusivity</span> and <span className="text-brand">excellence</span>.
-						</p>
+						<p className="text-muted-foreground text-pretty pb-1" dangerouslySetInnerHTML={{ __html: dict.projects.portoExclusivo.description }} />
 					</div>
 				</Link>
 
@@ -60,11 +57,9 @@ export function Projects() {
 					<Image unoptimized width={350} height={350} src="/biblia.png" alt="Bíblia Livro por Livro" className="w-full rounded-lg border border-gray-400/20" />
 					<div className="pl-2 space-y-2">
 						<h2 className="text-foreground text-xl font-semibold">
-							Bíblia Livro por Livro
+							{dict.projects.bibliaLivro.title}
 						</h2>
-						<p className="text-muted-foreground text-pretty pb-1">
-							Comprehensive Bible study material covering all <span className="text-brand">66 books</span> with <span className="text-brand">12 exclusive study guides</span>. A transformative journey through Scripture.
-						</p>
+						<p className="text-muted-foreground text-pretty pb-1" dangerouslySetInnerHTML={{ __html: dict.projects.bibliaLivro.description }} />
 					</div>
 				</Link>
 
@@ -72,11 +67,9 @@ export function Projects() {
 					<Image unoptimized width={350} height={350} src="/decktimus.png" alt="Decktimus" className="w-full rounded-lg border border-gray-400/20" />
 					<div className="pl-2 space-y-2">
 						<h2 className="text-foreground text-xl font-semibold">
-							Decktimus
+							{dict.projects.decktimus.title}
 						</h2>
-						<p className="text-muted-foreground text-pretty pb-1">
-							Comprehensive maritime solutions helping ship owners achieve superior <span className="text-brand">safety</span>, <span className="text-brand">security</span>, and <span className="text-brand">pollution prevention</span> standards.
-						</p>
+						<p className="text-muted-foreground text-pretty pb-1" dangerouslySetInnerHTML={{ __html: dict.projects.decktimus.description }} />
 					</div>
 				</Link>
 
@@ -84,11 +77,9 @@ export function Projects() {
 					<Image unoptimized width={350} height={350} src="/pinheiro-diniz.png" alt="Pinheiro Diniz" className="w-full rounded-lg border border-gray-400/20" />
 					<div className="pl-2 space-y-2">
 						<h2 className="text-foreground text-xl font-semibold">
-							Pinheiro Diniz
+							{dict.projects.pinheiroDiniz.title}
 						</h2>
-						<p className="text-muted-foreground text-pretty pb-1">
-							Social security law specialists ensuring your <span className="text-brand">pension benefits</span> are fully <span className="text-brand">recognized</span> and <span className="text-brand">respected</span>. Expert legal guidance from home.
-						</p>
+						<p className="text-muted-foreground text-pretty pb-1" dangerouslySetInnerHTML={{ __html: dict.projects.pinheiroDiniz.description }} />
 					</div>
 				</Link>
 			</div>

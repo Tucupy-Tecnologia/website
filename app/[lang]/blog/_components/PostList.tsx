@@ -7,12 +7,14 @@ import { useState, useMemo } from "react";
 import { Post } from "./Post";
 import type { BlogMetadata } from "@/lib/blog-types";
 import { categories } from "@/lib/blog-types";
+import { translateCategory } from "@/lib/translate-tag";
 
 interface PostListProps {
   posts: BlogMetadata[]
+  dict: any
 }
 
-export function PostList({ posts }: PostListProps) {
+export function PostList({ posts, dict }: PostListProps) {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -67,9 +69,9 @@ export function PostList({ posts }: PostListProps) {
                 key={category}
                 size='sm'
                 value={category}
-                className="rounded-full border border-gray-400/20 h-7 text-xs data-[state=on]:bg-neutral-50/10 hover:border-gray-200/20 hover:bg-background data-[state=on]:text-foreground hover:text-foreground px-4 whitespace-nowrap"
+                className="rounded-full border border-gray-400/20 h-7 text-xs data-[state=on]:bg-neutral-50/10 hover:border-gray-200/20 hover:bg-background data-[state=on]:text-foreground hover:text-foreground px-8 whitespace-nowrap"
               >
-                {category}
+                {translateCategory(category, dict)}
               </ToggleGroupItem>
             ))}
           </ToggleGroup>
@@ -79,7 +81,7 @@ export function PostList({ posts }: PostListProps) {
           <Search className="absolute top-0 bottom-0 my-auto left-2.5 size-4" />
           <Input
             className="w-full bg-background pl-8 placeholder:text-xs"
-            placeholder="Search blog"
+            placeholder={dict.blog.searchPlaceholder}
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
@@ -93,7 +95,7 @@ export function PostList({ posts }: PostListProps) {
           ))
         ) : (
           <div className="col-span-full text-center py-12 text-neutral-400">
-            No posts found matching your criteria.
+            {dict.blog.emptyState}
           </div>
         )}
       </div>

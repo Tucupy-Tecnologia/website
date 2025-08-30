@@ -97,7 +97,12 @@ function EmailItem({ email, isMiddleItem, isSecurityHovered, alignRight, middleC
 	);
 }
 
-export function Services(): React.ReactElement {
+interface ServicesProps {
+	lang: string;
+	dict: any;
+}
+
+export function Services({ lang, dict }: ServicesProps): React.ReactElement {
 	const [isHostingHovered, setIsHostingHovered] = useState<boolean>(false);
 	const [isSecurityHovered, setIsSecurityHovered] = useState<boolean>(false);
 
@@ -128,10 +133,10 @@ export function Services(): React.ReactElement {
 					<div className="flex p-px lg:col-span-4">
 						<div className="w-full overflow-hidden rounded-lg bg-primary outline outline-gray-400/20 max-lg:rounded-t-4xl lg:rounded-tl-2xl">
 							<div className="p-10">
-								<h3 className="text-sm/4 font-semibold text-muted-foreground">Website</h3>
-								<p className="mt-2 text-lg font-medium tracking-tight text-foregroudn">Design and development</p>
+								<h3 className="text-sm/4 font-semibold text-muted-foreground">{dict.services.website.title}</h3>
+								<p className="mt-2 text-lg font-medium tracking-tight text-foregroudn">{dict.services.website.subtitle}</p>
 								<p className="mt-2 max-w-lg text-sm/6 text-muted-foreground">
-									From concept to launch, we handle every step of the development process.
+									{dict.services.website.description}
 								</p>
 							</div>
 							<div className="px-10 mt-10">
@@ -146,10 +151,10 @@ export function Services(): React.ReactElement {
 							onMouseLeave={() => setIsHostingHovered(false)}
 						>
 							<div className="p-10">
-								<h3 className="text-sm/4 font-semibold text-muted-foreground">Hosting</h3>
-								<p className="mt-2 text-lg font-medium tracking-tight text-foreground">Deployment and maintenance</p>
+								<h3 className="text-sm/4 font-semibold text-muted-foreground">{dict.services.hosting.title}</h3>
+								<p className="mt-2 text-lg font-medium tracking-tight text-foreground">{dict.services.hosting.subtitle}</p>
 								<p className="mt-2 max-w-lg text-sm/6 text-muted-foreground">
-									Launch with confidence. Our deployment expertise ensures your website goes live smoothly and stays that way.
+									{dict.services.hosting.description}
 								</p>
 							</div>
 
@@ -180,9 +185,9 @@ export function Services(): React.ReactElement {
 							onMouseLeave={() => setIsSecurityHovered(false)}
 						>
 							<div className="p-10">
-								<h3 className="text-sm/4 font-semibold text-muted-foreground">Security</h3>
-								<p className="mt-2 text-lg font-medium tracking-tight text-foreground">Protecting what matters most</p>
-								<p className="mt-2 max-w-lg text-sm/6 text-muted-foreground">Your data deserves the highest level of protection, and that&apos;s exactly what we deliver.</p>
+								<h3 className="text-sm/4 font-semibold text-muted-foreground">{dict.services.security.title}</h3>
+								<p className="mt-2 text-lg font-medium tracking-tight text-foreground">{dict.services.security.subtitle}</p>
+								<p className="mt-2 max-w-lg text-sm/6 text-muted-foreground">{dict.services.security.description}</p>
 							</div>
 
 							<div className='flex items-center gap-2 -ml-6'>
@@ -240,10 +245,10 @@ export function Services(): React.ReactElement {
 					<div className="flex p-px lg:col-span-4">
 						<div className="pb-10 lg:pb-0 w-full overflow-hidden rounded-lg bg-primary outline outline-gray-400/20 max-lg:rounded-b-2xl lg:rounded-br-2xl">
 							<div className="p-10">
-								<h3 className="text-sm/4 font-semibold text-muted-foreground">Development</h3>
-								<p className="mt-2 text-lg font-medium tracking-tight text-foreground">We ship really fast</p>
+								<h3 className="text-sm/4 font-semibold text-muted-foreground">{dict.services.development.title}</h3>
+								<p className="mt-2 text-lg font-medium tracking-tight text-foreground">{dict.services.development.subtitle}</p>
 								<p className="mt-2 max-w-lg text-sm/6 text-muted-foreground">
-									We don&apos;t just build fast—we think fast, adapt fast, and deliver fast. Your timeline becomes our mission, executed with surgical precision.
+									{dict.services.development.description}
 								</p>
 							</div>
 

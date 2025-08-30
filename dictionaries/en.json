@@ -1,0 +1,398 @@
+{
+  "nav": {
+    "services": "Services",
+    "work": "Work", 
+    "about": "About",
+    "blog": "Blog",
+    "careers": "Work with us"
+  },
+  "hero": {
+    "title1": "Your idea, our execution",
+    "title2": "Software that just works",
+    "description": "We partner with ambitious companies to build software that grows with them. From MVPs that ship in weeks to platforms that serve millions.",
+    "subtitle": "We make it simple.",
+    "cta": "Let's build together",
+    "learnMore": "Learn more"
+  },
+  "services": {
+    "website": {
+      "title": "Website",
+      "subtitle": "Design and development", 
+      "description": "From concept to launch, we handle every step of the development process."
+    },
+    "hosting": {
+      "title": "Hosting",
+      "subtitle": "Deployment and maintenance",
+      "description": "Launch with confidence. Our deployment expertise ensures your website goes live smoothly and stays that way."
+    },
+    "security": {
+      "title": "Security", 
+      "subtitle": "Protecting what matters most",
+      "description": "Your data deserves the highest level of protection, and that's exactly what we deliver."
+    },
+    "development": {
+      "title": "Development",
+      "subtitle": "We ship really fast",
+      "description": "We don't just build fast—we think fast, adapt fast, and deliver fast. Your timeline becomes our mission, executed with surgical precision."
+    }
+  },
+  "projects": {
+    "section": "Projects",
+    "title": "Built to <span class=\"text-brand\"> make a difference </span>",
+    "description": "Discover how we turn complex challenges into elegant, user-centered solutions.",
+    "maratona": {
+      "title": "Meia Maratona Da Amazônia",
+      "description": "Sustainable half-marathon uniting <span class=\"text-brand\">elite performance</span> with <span class=\"text-brand\">environmental responsibility</span>. Carbon neutral event that plants trees in the Amazon."
+    },
+    "globalDiscounting": {
+      "title": "Global Discounting",
+      "description": "Specializing in <span class=\"text-brand\">TV</span>, <span class=\"text-brand\">film</span>, and <span class=\"text-brand\">sports</span> content licensing. Digital financing solutions helping media businesses unlock working capital."
+    },
+    "portoExclusivo": {
+      "title": "Porto Exclusivo",
+      "description": "Travel company dedicated to offering unparalleled travel experiences, distinguished by <span class=\"text-brand\">comfort</span>, <span class=\"text-brand\">exclusivity</span> and <span class=\"text-brand\">excellence</span>."
+    },
+    "bibliaLivro": {
+      "title": "Bíblia Livro por Livro",
+      "description": "Comprehensive Bible study material covering all <span class=\"text-brand\">66 books</span> with <span class=\"text-brand\">12 exclusive study guides</span>. A transformative journey through Scripture."
+    },
+    "decktimus": {
+      "title": "Decktimus",
+      "description": "Comprehensive maritime solutions helping ship owners achieve superior <span class=\"text-brand\">safety</span>, <span class=\"text-brand\">security</span>, and <span class=\"text-brand\">pollution prevention</span> standards."
+    },
+    "pinheiroDiniz": {
+      "title": "Pinheiro Diniz",
+      "description": "Social security law specialists ensuring your <span class=\"text-brand\">pension benefits</span> are fully <span class=\"text-brand\">recognized</span> and <span class=\"text-brand\">respected</span>. Expert legal guidance from home."
+    }
+  },
+  "testimonials": {
+    "section": "Testimonials",
+    "title": "What our clients say about us",
+    "description": "Discover how we turn complex challenges into elegant, user-centered solutions.",
+    "items": [
+      {
+        "body": "Tucupy transformed our outdated e-commerce platform into a modern, scalable solution in just 8 weeks. The performance improvements alone increased our conversion rate by 35%.",
+        "author": {
+          "name": "Carlos M.",
+          "role": "CTO"
+        }
+      },
+      {
+        "body": "Their team's expertise in cloud architecture saved us thousands in monthly infrastructure costs while improving our system reliability. We now have 99.9% uptime.",
+        "author": {
+          "name": "Ana S.",
+          "role": "Head of Engineering"
+        }
+      },
+      {
+        "body": "The API integration was flawless. They delivered a complex multi-vendor marketplace ahead of schedule with zero critical bugs at launch.",
+        "author": {
+          "name": "Roberto A.",
+          "role": "Product Manager"
+        }
+      },
+      {
+        "body": "Working with Tucupy felt like having an extended tech team. They understood our business needs and translated them perfectly into technical solutions.",
+        "author": {
+          "name": "Juliana C.",
+          "role": "CEO"
+        }
+      },
+      {
+        "body": "They rebuilt our entire mobile app from scratch using React Native. The result? A single codebase that works perfectly on both iOS and Android, cutting our maintenance costs by 60%.",
+        "author": {
+          "name": "Pedro S.",
+          "role": "Mobile Team Lead"
+        }
+      },
+      {
+        "body": "The team's proactive approach to security helped us pass our SOC 2 audit on the first attempt. They think about problems before they become problems.",
+        "author": {
+          "name": "Marina O.",
+          "role": "CISO"
+        }
+      },
+      {
+        "body": "Our platform now handles 10x the traffic with the same infrastructure. The optimization work they did was incredible - response times improved by 70%.",
+        "author": {
+          "name": "Lucas F.",
+          "role": "Technical Director"
+        }
+      },
+      {
+        "body": "Tucupy didn't just build what we asked for - they challenged our assumptions and delivered something better. Our users love the new interface.",
+        "author": {
+          "name": "Beatriz L.",
+          "role": "Head of Product"
+        }
+      },
+      {
+        "body": "From MVP to Series A, they've been our technical partners. They scale with us, adapting quickly to our changing needs without missing a beat.",
+        "author": {
+          "name": "Thiago R.",
+          "role": "Founder & CEO"
+        }
+      }
+    ]
+  },
+  "contact": {
+    "section": "Contact",
+    "title": "Let's build something <span class=\"text-brand\">amazing together</span>",
+    "description": "Ready to turn your vision into reality? Tell us about your project and we'll show you how we can help.",
+    "form": {
+      "getInTouch": "Get in touch",
+      "getInTouchDescription": "Ready to start your project? We're here to help bring your vision to life with cutting-edge solutions and expert guidance.",
+      "firstName": "First Name",
+      "lastName": "Last Name", 
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "company": "Company",
+      "message": "Project Details",
+      "messagePlaceholder": "Tell us about your project, timeline, budget, and any specific requirements...",
+      "send": "Send Message",
+      "sending": "Sending...",
+      "required": "*",
+      "firstNamePlaceholder": "John",
+      "lastNamePlaceholder": "Doe",
+      "emailPlaceholder": "john@company.com",
+      "phonePlaceholder": "+1 (234) 567-890",
+      "companyPlaceholder": "Your Company"
+    },
+    "info": {
+      "emailUs": "Email us",
+      "email": "contato@tucupy.com",
+      "callUs": "Call us", 
+      "phone": "+55 (91) 99101-1351",
+      "visitUs": "Visit us",
+      "address": "Ed. Connext, Salas 807-808\nTv. Dom Romualdo de Seixas, 1560\nUmarizal, Belém - PA, 66055-200"
+    },
+    "success": {
+      "title": "Message sent successfully!",
+      "description": "Thank you for reaching out. We'll get back to you within 24 hours.",
+      "sendAnother": "Send another message",
+      "onTheWay": "Your message is on its way"
+    },
+    "validation": {
+      "firstNameRequired": "First name is required",
+      "lastNameRequired": "Last name is required", 
+      "emailRequired": "Email is required",
+      "emailInvalid": "Please enter a valid email address",
+      "messageRequired": "Message is required"
+    }
+  },
+  "aboutCta": {
+    "title": "Ready to build something great?",
+    "description": "Tell us about your product and timeline. We'll get back within 24 hours.",
+    "startProject": "Start a project",
+    "joinTeam": "Join the team"
+  },
+  "about": {
+    "hero": {
+      "badge": "About Tucupy",
+      "title": "We build reliable software with speed and care",
+      "description": "We're a hands-on team that partners with ambitious companies to ship products that scale. Small, senior squads. Clear ownership. Zero drama—just great software."
+    },
+    "stats": [
+      { "label": "Active Users in Our Projects", "value": "250.000+" },
+      { "label": "Average Launch Time", "value": "6–10 weeks" },
+      { "label": "Client Satisfaction", "value": "98%" },
+      { "label": "Years Building", "value": "10+" }
+    ],
+    "principles": {
+      "section": "Our principles",
+      "title": "How we make software that lasts",
+      "description": "These principles guide how we think, build, and collaborate—with our clients and with each other.",
+      "items": [
+        {
+          "title": "Think Clearly",
+          "description": "Simple solutions beat complex ones. We design for clarity first."
+        },
+        {
+          "title": "Small, Senior Teams",
+          "description": "Experienced squads ship faster, with fewer handoffs and more ownership."
+        },
+        {
+          "title": "Care Deeply",
+          "description": "We obsess over quality and outcomes that matter for our clients."
+        },
+        {
+          "title": "Raise the Bar",
+          "description": "We review, iterate, and continuously improve how we build and deliver."
+        },
+        {
+          "title": "Bias to Ship",
+          "description": "Momentum compounds. We deliver value early and often, then refine."
+        },
+        {
+          "title": "Own the Outcome",
+          "description": "We operate like owners and measure success by client impact."
+        }
+      ]
+    },
+    "howWeWork": {
+      "section": "How we work",
+      "title": "Craftsmanship meets speed",
+      "description": "We favor small, senior teams that move quickly and own outcomes end to end. Fewer handoffs, sharper thinking, faster delivery.",
+      "items": [
+        {
+          "title": "In-Person by Design",
+          "description": "Co-located teamwork accelerates decisions and unlocks creative flow."
+        },
+        {
+          "title": "Engineering Rigor",
+          "description": "Clean abstractions, thoughtful architecture, and reliable delivery."
+        },
+        {
+          "title": "Transparent Comms",
+          "description": "Clear weekly updates, demos, and a shared roadmap—no black boxes."
+        },
+        {
+          "title": "Results > Hours",
+          "description": "We optimize for outcomes, not timesheets. Quality and speed together."
+        }
+      ]
+    },
+    "location": {
+      "section": "Where we are",
+      "title": "Built in-office for speed and focus",
+      "description": "We're fully in-person. It's how we make faster decisions, build tighter feedback loops, and ship with confidence.",
+      "office": {
+        "title": "Office",
+        "address": "Ed. Connext, Salas 807-808\nTv. Dom Romualdo de Seixas, 1560\nUmarizal, Belém - PA"
+      },
+      "whatWeDo": {
+        "title": "What we do",
+        "description": "Product strategy, web & platform engineering, cloud, and end‑to‑end delivery."
+      },
+      "whoWeHelp": {
+        "title": "Who we help",
+        "description": "Startups shipping MVPs and companies scaling to millions of users."
+      }
+    },
+    "buttons": {
+      "buildTogether": "Let's build together",
+      "seeOurWork": "See our work"
+    }
+  },
+  "careers": {
+    "hero": {
+      "badge": "Careers at Tucupy",
+      "title": "We're on a mission to deliver exceptional software solutions",
+      "description": "Explore career opportunities and join our team of experts shaping the future of technology.",
+      "seeOurWork": "See our work"
+    },
+    "values": {
+      "section": "Our values",
+      "title": "What drives us forward",
+      "description": "Our values shape everything we do, from how we work together to how we serve our clients.",
+      "items": [
+        {
+          "title": "Innovation First",
+          "description": "We embrace cutting-edge technologies and creative problem-solving to deliver exceptional solutions."
+        },
+        {
+          "title": "Collaborative Spirit",
+          "description": "Success comes from working together, sharing knowledge, and supporting each other's growth."
+        },
+        {
+          "title": "Client-Centered",
+          "description": "We're passionate about understanding and exceeding our clients' expectations in every project."
+        },
+        {
+          "title": "Excellence Always",
+          "description": "We hold ourselves to the highest standards, constantly pushing boundaries to deliver quality."
+        },
+        {
+          "title": "Fast Execution",
+          "description": "We move with purpose and precision, delivering results quickly without compromising quality."
+        },
+        {
+          "title": "Ownership Mindset",
+          "description": "We seek people who treat the business as their own and are passionate about growing with us."
+        }
+      ]
+    },
+    "culture": {
+      "section": "Work culture",
+      "title": "In-person collaboration, exceptional results",
+      "description": "We work fully in-person because we believe the best ideas, strongest relationships, and fastest execution happen when talented people work side by side. Our office is where innovation thrives.",
+      "items": [
+        {
+          "title": "100% In-Person Team",
+          "description": "We work together in our office every day. This creates deeper connections, faster decision-making, and the energy that drives breakthrough solutions."
+        },
+        {
+          "title": "Results-Focused",
+          "description": "We measure success by outcomes, not hours. Deliver exceptional results and manage your time as you see fit. We trust you to do what's needed."
+        },
+        {
+          "title": "Grow With Us",
+          "description": "We're looking for people who see themselves as owners, not employees. Your success is our success, and we'll grow together."
+        },
+        {
+          "title": "Flexible Schedule",
+          "description": "While we work in-person, we offer flexibility in your daily schedule. Early bird or night owl, structure your day to maximize your productivity."
+        }
+      ]
+    },
+    "benefits": {
+      "section": "What we offer",
+      "title": "Compensation that matches your impact",
+      "description": "We believe in rewarding talent fairly and providing the essentials you need to succeed.",
+      "items": [
+        {
+          "title": "Competitive Salary",
+          "description": "Market-rate compensation that reflects your skills and experience. We pay what you're worth."
+        },
+        {
+          "title": "Equity Opportunity",
+          "description": "For exceptional contributors who demonstrate ownership mindset, we offer equity participation to align long-term success."
+        },
+        {
+          "title": "Flexible Hours",
+          "description": "Structure your workday around your peak productivity. We care about results, not when you clock in."
+        },
+        {
+          "title": "Premium Equipment",
+          "description": "Top-tier hardware and all the software tools you need. No compromises on the tools of your trade."
+        },
+        {
+          "title": "Team Building",
+          "description": "Regular team events, dinners, and celebrations. We work hard and celebrate our wins together."
+        },
+        {
+          "title": "Career Growth",
+          "description": "Direct mentorship from leadership and clear paths for advancement. Your growth is our priority."
+        }
+      ]
+    },
+    "openPositions": {
+      "title": "Open positions",
+      "description": "Want to build exceptional digital solutions?\nWe'd love to talk to you.",
+      "applyButton": "Apply for position",
+      "buttonText": "Open positions"
+    }
+  },
+  "blog": {
+    "searchPlaceholder": "Search blog",
+    "emptyState": "No posts found matching your criteria.",
+    "categories": {
+      "All": "All",
+      "Products": "Products",
+      "Company": "Company",
+      "Databases": "Databases",
+      "Engineering": "Engineering"
+    }
+  },
+  "footer": {
+    "company": "Company",
+    "aboutUs": "About Us",
+    "ourWork": "Our Work", 
+    "blog": "Blog",
+    "careers": "Careers",
+    "resources": "Resources",
+    "openSource": "Open Source",
+    "support": "Support",
+    "copyright": "© 2025 Tucupy. All rights reserved."
+  }
+}

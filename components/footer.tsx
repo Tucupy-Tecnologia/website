@@ -16,26 +16,33 @@ interface FooterSection {
 	links: FooterLink[];
 }
 
-const footerSections: FooterSection[] = [
+const getFooterSections = (lang: string, dict: any): FooterSection[] => [
 	{
-		title: "Company",
+		title: dict.footer.company,
 		links: [
-			{ label: "About Us", href: "/about" },
-			{ label: "Our Work", href: "/#projects" },
-			{ label: "Blog", href: "/blog" },
-			{ label: "Careers", href: "/careers" },
+			{ label: dict.footer.aboutUs, href: `/${lang}/about` },
+			{ label: dict.footer.ourWork, href: `/${lang}#projects` },
+			{ label: dict.footer.blog, href: `/${lang}/blog` },
+			{ label: dict.footer.careers, href: `/${lang}/careers` },
 		]
 	},
 	{
-		title: "Resources",
+		title: dict.footer.resources,
 		links: [
-			{ label: "Open Source", href: "https://github.com/Tucupy-Tecnologia" },
-			{ label: "Support", href: "mailto:contato@tucupy.com" },
+			{ label: dict.footer.openSource, href: "https://github.com/Tucupy-Tecnologia" },
+			{ label: dict.footer.support, href: "mailto:contato@tucupy.com" },
 		]
 	}
 ];
 
-export function Footer(): React.ReactElement {
+interface FooterProps {
+	lang: string;
+	dict: any;
+}
+
+export function Footer({ lang, dict }: FooterProps): React.ReactElement {
+	const footerSections = getFooterSections(lang, dict);
+	
 	return (
 		<footer className="bg-background border-gray-400/20 mt-20 sm:mt-40">
 			<div className="mx-auto max-w-2xl lg:max-w-6xl px-4 py-8 sm:py-16">
@@ -127,7 +134,7 @@ export function Footer(): React.ReactElement {
 					<div className="flex flex-col sm:flex-row items-center justify-between gap-4">
 						<div className="flex items-center gap-6">
 							<p className="text-muted-foreground text-xs sm:text-sm text-center sm:text-left">
-								© 2025 Tucupy. All rights reserved.
+								{dict.footer.copyright}
 							</p>
 						</div>
 

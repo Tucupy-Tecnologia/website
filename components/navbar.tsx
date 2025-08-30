@@ -24,21 +24,32 @@ const languages = [
 	{ code: 'fr', name: 'Français', flag: '🇫🇷' },
 ];
 
-export function Navbar() {
+interface NavbarProps {
+	lang: string;
+	dict: any;
+}
+
+export function Navbar({ lang, dict }: NavbarProps) {
 	const pathname = usePathname();
 	const router = useRouter();
-	const currentLanguage = languages[0];
+	const currentLanguage = languages.find(l => l.code === lang) || languages[0];
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 
 
 	const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
 		e.preventDefault();
 		setIsMenuOpen(false);
-		if (pathname === '/') {
+		if (pathname === `/${lang}`) {
 			scrollToSection(sectionId);
 		} else {
-			router.push(`/#${sectionId}`);
+			router.push(`/${lang}#${sectionId}`);
 		}
+	};
+
+	const handleLanguageChange = (newLang: string) => {
+		setIsMenuOpen(false);
+		const currentPath = pathname.replace(/^\/[a-z]{2}/, '') || '/';
+		router.push(`/${newLang}${currentPath}`);
 	};
 
 	return (
@@ -52,27 +63,27 @@ export function Navbar() {
 				</Link>
 				<ul className="hidden lg:flex items-center gap-1 mt-2">
 					<Link
-						href="/#services"
+						href={`/${lang}#services`}
 						onClick={(e) => handleNavClick(e, 'services')}
 						className="text-sm font-bold text-muted-foreground hover:text-foreground hover:bg-accent/10 px-2 py-1.5 rounded-md cursor-pointer"
 					>
-						Services
+						{dict.nav.services}
 					</Link>
 					<Link
-						href="/#projects"
+						href={`/${lang}#projects`}
 						onClick={(e) => handleNavClick(e, 'projects')}
 						className="text-sm font-bold text-muted-foreground hover:text-foreground hover:bg-accent/10 px-2 py-1.5 rounded-md cursor-pointer"
 					>
-						Work
+						{dict.nav.work}
 					</Link>
-					<Link href="/about" className="text-sm font-bold text-muted-foreground hover:text-foreground hover:bg-accent/10 px-2 py-1.5 rounded-md">
-						About
+					<Link href={`/${lang}/about`} className="text-sm font-bold text-muted-foreground hover:text-foreground hover:bg-accent/10 px-2 py-1.5 rounded-md">
+						{dict.nav.about}
 					</Link>
-					<Link href="/blog" className="text-sm font-bold text-muted-foreground hover:text-foreground hover:bg-accent/10 px-2 py-1.5 rounded-md">
-						Blog
+					<Link href={`/${lang}/blog`} className="text-sm font-bold text-muted-foreground hover:text-foreground hover:bg-accent/10 px-2 py-1.5 rounded-md">
+						{dict.nav.blog}
 					</Link>
-					<Link href="/careers" className="text-sm font-bold text-muted-foreground hover:text-foreground hover:bg-accent/10 px-2 py-1.5 rounded-md">
-						Work with us
+					<Link href={`/${lang}/careers`} className="text-sm font-bold text-muted-foreground hover:text-foreground hover:bg-accent/10 px-2 py-1.5 rounded-md">
+						{dict.nav.careers}
 					</Link>
 				</ul>
 			</div>
@@ -94,6 +105,7 @@ export function Navbar() {
 						{languages.map((language) => (
 							<DropdownMenuItem
 								key={language.code}
+								onClick={() => handleLanguageChange(language.code)}
 								className="flex items-center gap-2 cursor-pointer focus:bg-gray-400/20"
 							>
 								<span className="text-base">{language.flag}</span>
@@ -118,39 +130,39 @@ export function Navbar() {
 				<div className="absolute top-full left-0 right-0 bg-background border-t border-gray-400/20 lg:hidden z-50">
 					<div className="px-4 py-4 space-y-2">
 						<Link
-							href="/#services"
+							href={`/${lang}#services`}
 							onClick={(e) => handleNavClick(e, 'services')}
 							className="block text-sm font-bold text-muted-foreground hover:text-foreground hover:bg-accent/10 px-3 py-2 rounded-md"
 						>
-							Services
+							{dict.nav.services}
 						</Link>
 						<Link
-							href="/#projects"
+							href={`/${lang}#projects`}
 							onClick={(e) => handleNavClick(e, 'projects')}
 							className="block text-sm font-bold text-muted-foreground hover:text-foreground hover:bg-accent/10 px-3 py-2 rounded-md"
 						>
-							Work
+							{dict.nav.work}
 						</Link>
 						<Link
-							href="/about"
+							href={`/${lang}/about`}
 							onClick={() => setIsMenuOpen(false)}
 							className="block text-sm font-bold text-muted-foreground hover:text-foreground hover:bg-accent/10 px-3 py-2 rounded-md"
 						>
-							About
+							{dict.nav.about}
 						</Link>
 						<Link
-							href="/blog"
+							href={`/${lang}/blog`}
 							onClick={() => setIsMenuOpen(false)}
 							className="block text-sm font-bold text-muted-foreground hover:text-foreground hover:bg-accent/10 px-3 py-2 rounded-md"
 						>
-							Blog
+							{dict.nav.blog}
 						</Link>
 						<Link
-							href="/careers"
+							href={`/${lang}/careers`}
 							onClick={() => setIsMenuOpen(false)}
 							className="block text-sm font-bold text-muted-foreground hover:text-foreground hover:bg-accent/10 px-3 py-2 rounded-md"
 						>
-							Work with us
+							{dict.nav.careers}
 						</Link>
 						<div className="border-t border-gray-400/20 mt-4 pt-4 space-y-2">
 							<Link
@@ -175,7 +187,7 @@ export function Navbar() {
 									{languages.map((language) => (
 										<DropdownMenuItem
 											key={language.code}
-											onClick={() => setIsMenuOpen(false)}
+											onClick={() => handleLanguageChange(language.code)}
 											className="flex items-center gap-2 cursor-pointer focus:bg-gray-400/20"
 										>
 											<span className="text-base">{language.flag}</span>

@@ -1,0 +1,398 @@
+{
+  "nav": {
+    "services": "Serviços",
+    "work": "Trabalhos", 
+    "about": "Sobre",
+    "blog": "Blog",
+    "careers": "Trabalhe conosco"
+  },
+  "hero": {
+    "title1": "Sua ideia, nossa execução",
+    "title2": "Software que simplesmente funciona",
+    "description": "Fazemos parceria com empresas ambiciosas para construir software que cresce com elas. De MVPs que são lançados em semanas a plataformas que atendem milhões.",
+    "subtitle": "Nós simplificamos.",
+    "cta": "Vamos construir juntos",
+    "learnMore": "Saiba mais"
+  },
+  "services": {
+    "website": {
+      "title": "Website",
+      "subtitle": "Design e desenvolvimento", 
+      "description": "Do conceito ao lançamento, cuidamos de cada etapa do processo de desenvolvimento."
+    },
+    "hosting": {
+      "title": "Hospedagem",
+      "subtitle": "Deploy e manutenção",
+      "description": "Lance com confiança. Nossa expertise em deployment garante que seu website entre no ar suavemente e continue assim."
+    },
+    "security": {
+      "title": "Segurança", 
+      "subtitle": "Protegendo o que mais importa",
+      "description": "Seus dados merecem o mais alto nível de proteção, e é exatamente isso que entregamos."
+    },
+    "development": {
+      "title": "Desenvolvimento",
+      "subtitle": "Nós entregamos muito rápido",
+      "description": "Não apenas construímos rápido—pensamos rápido, nos adaptamos rápido e entregamos rápido. Seu cronograma se torna nossa missão, executada com precisão cirúrgica."
+    }
+  },
+  "projects": {
+    "section": "Projetos",
+    "title": "Construído para <span class=\"text-brand\"> fazer a diferença </span>",
+    "description": "Descubra como transformamos desafios complexos em soluções elegantes e centradas no usuário.",
+    "maratona": {
+      "title": "Meia Maratona Da Amazônia",
+      "description": "Meia maratona sustentável unindo <span class=\"text-brand\">performance de elite</span> com <span class=\"text-brand\">responsabilidade ambiental</span>. Evento carbono neutro que planta árvores na Amazônia."
+    },
+    "globalDiscounting": {
+      "title": "Global Discounting",
+      "description": "Especializada em licenciamento de conteúdo de <span class=\"text-brand\">TV</span>, <span class=\"text-brand\">filme</span> e <span class=\"text-brand\">esportes</span>. Soluções de financiamento digital ajudando empresas de mídia a desbloquear capital de giro."
+    },
+    "portoExclusivo": {
+      "title": "Porto Exclusivo",
+      "description": "Empresa de viagens dedicada a oferecer experiências de viagem incomparáveis, distinguidas pelo <span class=\"text-brand\">conforto</span>, <span class=\"text-brand\">exclusividade</span> e <span class=\"text-brand\">excelência</span>."
+    },
+    "bibliaLivro": {
+      "title": "Bíblia Livro por Livro",
+      "description": "Material abrangente de estudo bíblico cobrindo todos os <span class=\"text-brand\">66 livros</span> com <span class=\"text-brand\">12 guias de estudo exclusivos</span>. Uma jornada transformadora através das Escrituras."
+    },
+    "decktimus": {
+      "title": "Decktimus",
+      "description": "Soluções marítimas abrangentes ajudando proprietários de navios a alcançar padrões superiores de <span class=\"text-brand\">segurança</span>, <span class=\"text-brand\">proteção</span> e <span class=\"text-brand\">prevenção de poluição</span>."
+    },
+    "pinheiroDiniz": {
+      "title": "Pinheiro Diniz",
+      "description": "Especialistas em direito previdenciário garantindo que seus <span class=\"text-brand\">benefícios de pensão</span> sejam totalmente <span class=\"text-brand\">reconhecidos</span> e <span class=\"text-brand\">respeitados</span>. Orientação jurídica especializada de casa."
+    }
+  },
+  "testimonials": {
+    "section": "Depoimentos",
+    "title": "O que nossos clientes dizem sobre nós",
+    "description": "Descubra como transformamos desafios complexos em soluções elegantes e centradas no usuário.",
+    "items": [
+      {
+        "body": "A Tucupy transformou nossa plataforma de e-commerce desatualizada em uma solução moderna e escalável em apenas 8 semanas. Só as melhorias de performance aumentaram nossa taxa de conversão em 35%.",
+        "author": {
+          "name": "Carlos M.",
+          "role": "CTO"
+        }
+      },
+      {
+        "body": "A expertise da equipe em arquitetura de nuvem nos economizou milhares em custos mensais de infraestrutura enquanto melhorava a confiabilidade do nosso sistema. Agora temos 99,9% de uptime.",
+        "author": {
+          "name": "Ana S.",
+          "role": "Head de Engenharia"
+        }
+      },
+      {
+        "body": "A integração de API foi impecável. Eles entregaram um marketplace complexo com múltiplos fornecedores antes do prazo, sem bugs críticos no lançamento.",
+        "author": {
+          "name": "Roberto A.",
+          "role": "Gerente de Produto"
+        }
+      },
+      {
+        "body": "Trabalhar com a Tucupy foi como ter uma equipe técnica estendida. Eles entenderam nossas necessidades de negócio e as traduziram perfeitamente em soluções técnicas.",
+        "author": {
+          "name": "Juliana C.",
+          "role": "CEO"
+        }
+      },
+      {
+        "body": "Eles reconstruíram nosso app mobile inteiro do zero usando React Native. O resultado? Uma base de código única que funciona perfeitamente no iOS e Android, reduzindo nossos custos de manutenção em 60%.",
+        "author": {
+          "name": "Pedro S.",
+          "role": "Líder da Equipe Mobile"
+        }
+      },
+      {
+        "body": "A abordagem proativa da equipe em segurança nos ajudou a passar na auditoria SOC 2 na primeira tentativa. Eles pensam nos problemas antes que se tornem problemas.",
+        "author": {
+          "name": "Marina O.",
+          "role": "CISO"
+        }
+      },
+      {
+        "body": "Nossa plataforma agora lida com 10x mais tráfego com a mesma infraestrutura. O trabalho de otimização que fizeram foi incrível - tempos de resposta melhoraram 70%.",
+        "author": {
+          "name": "Lucas F.",
+          "role": "Diretor Técnico"
+        }
+      },
+      {
+        "body": "A Tucupy não apenas construiu o que pedimos - eles questionaram nossas suposições e entregaram algo melhor. Nossos usuários adoram a nova interface.",
+        "author": {
+          "name": "Beatriz L.",
+          "role": "Head de Produto"
+        }
+      },
+      {
+        "body": "Do MVP à Série A, eles têm sido nossos parceiros técnicos. Eles escalam conosco, se adaptando rapidamente às nossas necessidades em mudança sem perder o ritmo.",
+        "author": {
+          "name": "Thiago R.",
+          "role": "Fundador & CEO"
+        }
+      }
+    ]
+  },
+  "contact": {
+    "section": "Contato",
+    "title": "Vamos construir algo <span class=\"text-brand\">incrível juntos</span>",
+    "description": "Pronto para transformar sua visão em realidade? Nos conte sobre seu projeto e mostraremos como podemos ajudar.",
+    "form": {
+      "getInTouch": "Entre em contato",
+      "getInTouchDescription": "Pronto para começar seu projeto? Estamos aqui para ajudar a dar vida à sua visão com soluções de ponta e orientação especializada.",
+      "firstName": "Nome",
+      "lastName": "Sobrenome", 
+      "email": "Endereço de Email",
+      "phone": "Número de Telefone",
+      "company": "Empresa",
+      "message": "Detalhes do Projeto",
+      "messagePlaceholder": "Nos conte sobre seu projeto, cronograma, orçamento e quaisquer requisitos específicos...",
+      "send": "Enviar Mensagem",
+      "sending": "Enviando...",
+      "required": "*",
+      "firstNamePlaceholder": "João",
+      "lastNamePlaceholder": "Silva",
+      "emailPlaceholder": "joao@empresa.com",
+      "phonePlaceholder": "+55 (11) 99999-9999",
+      "companyPlaceholder": "Sua Empresa"
+    },
+    "info": {
+      "emailUs": "Envie um email",
+      "email": "contato@tucupy.com",
+      "callUs": "Ligue para nós", 
+      "phone": "+55 (91) 99101-1351",
+      "visitUs": "Visite-nos",
+      "address": "Ed. Connext, Salas 807-808\nTv. Dom Romualdo de Seixas, 1560\nUmarizal, Belém - PA, 66055-200"
+    },
+    "success": {
+      "title": "Mensagem enviada com sucesso!",
+      "description": "Obrigado por entrar em contato. Retornaremos em até 24 horas.",
+      "sendAnother": "Enviar outra mensagem",
+      "onTheWay": "Sua mensagem está a caminho"
+    },
+    "validation": {
+      "firstNameRequired": "Nome é obrigatório",
+      "lastNameRequired": "Sobrenome é obrigatório", 
+      "emailRequired": "Email é obrigatório",
+      "emailInvalid": "Por favor, insira um endereço de email válido",
+      "messageRequired": "Mensagem é obrigatória"
+    }
+  },
+  "aboutCta": {
+    "title": "Pronto para construir algo incrível?",
+    "description": "Nos conte sobre seu produto e cronograma. Retornaremos em até 24 horas.",
+    "startProject": "Iniciar um projeto",
+    "joinTeam": "Junte-se ao time"
+  },
+  "about": {
+    "hero": {
+      "badge": "Sobre a Tucupy",
+      "title": "Construímos software confiável com velocidade e cuidado",
+      "description": "Somos uma equipe prática que faz parceria com empresas ambiciosas para enviar produtos que escalam. Esquipes pequenas e seniores. Propriedade clara. Zero drama—apenas ótimo software."
+    },
+    "stats": [
+      { "label": "Usuários Ativos em Nossos Projetos", "value": "250.000+" },
+      { "label": "Tempo Médio de Lançamento", "value": "6–10 semanas" },
+      { "label": "Satisfação do Cliente", "value": "98%" },
+      { "label": "Anos Construindo", "value": "10+" }
+    ],
+    "principles": {
+      "section": "Nossos princípios",
+      "title": "Como fazemos software que perdura",
+      "description": "Esses princípios guiam como pensamos, construímos e colaboramos—com nossos clientes e uns com os outros.",
+      "items": [
+        {
+          "title": "Pensar Claramente",
+          "description": "Soluções simples superam as complexas. Projetamos para clareza primeiro."
+        },
+        {
+          "title": "Equipes Pequenas e Seniores",
+          "description": "Esquipes experientes entregam mais rápido, com menos transferências e mais propriedade."
+        },
+        {
+          "title": "Cuidar Profundamente",
+          "description": "Somos obcecados por qualidade e resultados que importam para nossos clientes."
+        },
+        {
+          "title": "Elevar o Padrão",
+          "description": "Revisamos, iteramos e melhoramos continuamente como construímos e entregamos."
+        },
+        {
+          "title": "Viés para Entregar",
+          "description": "O momentum se acumula. Entregamos valor cedo e frequentemente, depois refinamos."
+        },
+        {
+          "title": "Ser Dono do Resultado",
+          "description": "Operamos como donos e medimos sucesso pelo impacto no cliente."
+        }
+      ]
+    },
+    "howWeWork": {
+      "section": "Como trabalhamos",
+      "title": "Artesanato encontra velocidade",
+      "description": "Favorecemos equipes pequenas e seniores que se movem rapidamente e possuem resultados de ponta a ponta. Menos transferências, pensamento mais afiado, entrega mais rápida.",
+      "items": [
+        {
+          "title": "Presencial por Design",
+          "description": "Trabalho em equipe co-localizado acelera decisões e libera fluxo criativo."
+        },
+        {
+          "title": "Rigor de Engenharia",
+          "description": "Abstrações limpas, arquitetura cuidadosa e entrega confiável."
+        },
+        {
+          "title": "Comunicação Transparente",
+          "description": "Atualizações semanais claras, demos e um roadmap compartilhado—sem caixas pretas."
+        },
+        {
+          "title": "Resultados > Horas",
+          "description": "Otimizamos para resultados, não planilhas de horas. Qualidade e velocidade juntas."
+        }
+      ]
+    },
+    "location": {
+      "section": "Onde estamos",
+      "title": "Construído no escritório para velocidade e foco",
+      "description": "Somos totalmente presenciais. É assim que tomamos decisões mais rápidas, construímos loops de feedback mais apertados e entregamos com confiança.",
+      "office": {
+        "title": "Escritório",
+        "address": "Ed. Connext, Salas 807-808\nTv. Dom Romualdo de Seixas, 1560\nUmarizal, Belém - PA"
+      },
+      "whatWeDo": {
+        "title": "O que fazemos",
+        "description": "Estratégia de produto, engenharia web e de plataforma, nuvem e entrega ponta a ponta."
+      },
+      "whoWeHelp": {
+        "title": "Quem ajudamos",
+        "description": "Startups enviando MVPs e empresas escalando para milhões de usuários."
+      }
+    },
+    "buttons": {
+      "buildTogether": "Vamos construir juntos",
+      "seeOurWork": "Veja nosso trabalho"
+    }
+  },
+  "careers": {
+    "hero": {
+      "badge": "Carreiras na Tucupy",
+      "title": "Estamos em uma missão para entregar soluções de software excepcionais",
+      "description": "Explore oportunidades de carreira e junte-se ao nosso time de especialistas moldando o futuro da tecnologia.",
+      "seeOurWork": "Veja nosso trabalho"
+    },
+    "values": {
+      "section": "Nossos valores",
+      "title": "O que nos impulsiona",
+      "description": "Nossos valores moldam tudo o que fazemos, desde como trabalhamos juntos até como servimos nossos clientes.",
+      "items": [
+        {
+          "title": "Inovação em Primeiro Lugar",
+          "description": "Abraçamos tecnologias de ponta e resolução criativa de problemas para entregar soluções excepcionais."
+        },
+        {
+          "title": "Espírito Colaborativo",
+          "description": "O sucesso vem do trabalho conjunto, compartilhamento de conhecimento e apoio mútuo ao crescimento."
+        },
+        {
+          "title": "Centrado no Cliente",
+          "description": "Somos apaixonados por entender e superar as expectativas dos nossos clientes em cada projeto."
+        },
+        {
+          "title": "Excelência Sempre",
+          "description": "Nos mantemos nos mais altos padrões, constantemente empurrando limites para entregar qualidade."
+        },
+        {
+          "title": "Execução Rápida",
+          "description": "Nos movemos com propósito e precisão, entregando resultados rapidamente sem comprometer a qualidade."
+        },
+        {
+          "title": "Mentalidade de Dono",
+          "description": "Buscamos pessoas que tratam o negócio como seu e são apaixonadas por crescer conosco."
+        }
+      ]
+    },
+    "culture": {
+      "section": "Cultura de trabalho",
+      "title": "Colaboração presencial, resultados excepcionais",
+      "description": "Trabalhamos totalmente presencial porque acreditamos que as melhores ideias, relacionamentos mais fortes e execução mais rápida acontecem quando pessoas talentosas trabalham lado a lado. Nosso escritório é onde a inovação prospera.",
+      "items": [
+        {
+          "title": "100% Equipe Presencial",
+          "description": "Trabalhamos juntos em nosso escritório todos os dias. Isso cria conexões mais profundas, tomada de decisão mais rápida e a energia que impulsiona soluções revolucionárias."
+        },
+        {
+          "title": "Focado em Resultados",
+          "description": "Medimos sucesso por resultados, não horas. Entregue resultados excepcionais e gerencie seu tempo como achar melhor. Confiamos em você para fazer o que é necessário."
+        },
+        {
+          "title": "Cresça Conosco",
+          "description": "Estamos procurando pessoas que se veem como donos, não funcionários. Seu sucesso é nosso sucesso, e cresceremos juntos."
+        },
+        {
+          "title": "Horário Flexível",
+          "description": "Embora trabalhemos presencial, oferecemos flexibilidade em sua agenda diária. Madrugador ou coruja, estruture seu dia para maximizar sua produtividade."
+        }
+      ]
+    },
+    "benefits": {
+      "section": "O que oferecemos",
+      "title": "Compensação que combina com seu impacto",
+      "description": "Acreditamos em recompensar talentos de forma justa e fornecer o essencial que você precisa para ter sucesso.",
+      "items": [
+        {
+          "title": "Salário Competitivo",
+          "description": "Compensação de mercado que reflete suas habilidades e experiência. Pagamos o que você vale."
+        },
+        {
+          "title": "Oportunidade de Equity",
+          "description": "Para contribuidores excepcionais que demonstram mentalidade de dono, oferecemos participação acionária para alinhar sucesso de longo prazo."
+        },
+        {
+          "title": "Horários Flexíveis",
+          "description": "Estruture seu dia de trabalho em torno de sua produtividade máxima. Nos importamos com resultados, não quando você bate o ponto."
+        },
+        {
+          "title": "Equipamento Premium",
+          "description": "Hardware de primeira linha e todas as ferramentas de software que você precisa. Sem compromissos nas ferramentas do seu ofício."
+        },
+        {
+          "title": "Integração da Equipe",
+          "description": "Eventos regulares da equipe, jantares e celebrações. Trabalhamos duro e comemoramos nossas vitórias juntos."
+        },
+        {
+          "title": "Crescimento de Carreira",
+          "description": "Mentoria direta da liderança e caminhos claros para avanço. Seu crescimento é nossa prioridade."
+        }
+      ]
+    },
+    "openPositions": {
+      "title": "Vagas abertas",
+      "description": "Quer construir soluções digitais excepcionais?\nAdoraríamos conversar com você.",
+      "applyButton": "Candidatar-se à vaga",
+      "buttonText": "Vagas abertas"
+    }
+  },
+  "blog": {
+    "searchPlaceholder": "Pesquisar blog",
+    "emptyState": "Nenhum post encontrado que corresponda aos seus critérios.",
+    "categories": {
+      "All": "Todos",
+      "Products": "Produtos",
+      "Company": "Empresa",
+      "Databases": "Bancos de Dados",
+      "Engineering": "Engenharia"
+    }
+  },
+  "footer": {
+    "company": "Empresa",
+    "aboutUs": "Sobre Nós",
+    "ourWork": "Nosso Trabalho", 
+    "blog": "Blog",
+    "careers": "Carreiras",
+    "resources": "Recursos",
+    "openSource": "Código Aberto",
+    "support": "Suporte",
+    "copyright": "© 2025 Tucupy. Todos os direitos reservados."
+  }
+}

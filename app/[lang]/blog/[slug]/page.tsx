@@ -10,14 +10,16 @@ import { MDXRemote } from "next-mdx-remote-client/rsc";
 import { Footer } from "@/components/footer";
 import { TableOfContents } from "@/components/blog/TableOfContents";
 import mdxComponents from "@/components/mdx-components";
+import { getDictionary } from "../../dictionaries";
 
 interface BlogPostPageProps {
-  params: Promise<{ slug: string }>
+  params: Promise<{ slug: string; lang: 'en' | 'pt' | 'es' | 'fr' }>
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
-  const { slug } = await params
-  const post = getBlogPost(slug, 'en')
+  const { slug, lang } = await params
+  const dict = await getDictionary(lang)
+  const post = getBlogPost(slug, lang)
 
   if (!post) {
     notFound()
@@ -28,13 +30,13 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   return (
     <div className="bg-background min-h-screen">
-      <Navbar />
+      <Navbar lang={lang} dict={dict} />
 
       <main className="max-w-6xl mx-auto px-4 py-8">
         {/* Header with back button */}
         <div className="mb-8">
           <Link
-            href="/blog"
+            href={`/${lang}/blog`}
             className="flex items-center gap-2 text-sm text-neutral-400 hover:text-foreground transition-colors mb-4"
           >
             <ChevronLeft className="size-4" />
@@ -130,13 +132,20 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         </div>
       </main>
 
-      <Footer />
+      <Footer lang={lang} dict={dict} />
     </div>
   )
 }
 
 export async function generateStaticParams() {
-  const slugs = getAllBlogSlugs('en')
-  return slugs.map((slug) => ({ slug }))
+  const locales = ['en', 'pt', 'es', 'fr']
+  const allParams: { slug: string; lang: string }[] = []
+  
+  for (const lang of locales) {
+    const slugs = getAllBlogSlugs(lang)
+    allParams.push(...slugs.map((slug) => ({ slug, lang })))
+  }
+  
+  return allParams
 }
 
