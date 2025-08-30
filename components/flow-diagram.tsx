@@ -47,7 +47,7 @@ export function WebsiteFlowDiagram({
 			)}
 			ref={containerRef}
 		>
-			<div className="flex h-full w-full flex-row items-center justify-between gap-8">
+			<div className="grid grid-cols-2 sm:grid-cols-4 h-full w-full items-center justify-between gap-8">
 				<FlowNode ref={designRef} label="design">
 					<Icons.design />
 				</FlowNode>
@@ -66,39 +66,42 @@ export function WebsiteFlowDiagram({
 			</div>
 
 			{/* Progressive beam flow - one continuous journey */}
-			<AnimatedBeam
-				containerRef={containerRef as React.RefObject<HTMLElement>}
-				fromRef={designRef as React.RefObject<HTMLElement>}
-				toRef={developmentRef as React.RefObject<HTMLElement>}
-				curvature={0}
-				duration={12}
-				delay={0}
-				pathColor="rgb(156 163 175)"
-				gradientStartColor="#febe01"
-				gradientStopColor="#febe01"
-			/>
-			<AnimatedBeam
-				containerRef={containerRef as React.RefObject<HTMLElement>}
-				fromRef={developmentRef as React.RefObject<HTMLElement>}
-				toRef={testingRef as React.RefObject<HTMLElement>}
-				curvature={0}
-				duration={12}
-				delay={1.5}
-				pathColor="rgb(156 163 175)"
-				gradientStartColor="#febe01"
-				gradientStopColor="#febe01"
-			/>
-			<AnimatedBeam
-				containerRef={containerRef as React.RefObject<HTMLElement>}
-				fromRef={testingRef as React.RefObject<HTMLElement>}
-				toRef={deploymentRef as React.RefObject<HTMLElement>}
-				curvature={0}
-				duration={12}
-				delay={3}
-				pathColor="rgb(156 163 175)"
-				gradientStartColor="#febe01"
-				gradientStopColor="#febe01"
-			/>
+			<div className="hidden sm:block">
+				<AnimatedBeam
+					containerRef={containerRef as React.RefObject<HTMLElement>}
+					fromRef={designRef as React.RefObject<HTMLElement>}
+					toRef={developmentRef as React.RefObject<HTMLElement>}
+					curvature={0}
+					duration={12}
+					delay={0}
+					pathColor="rgb(156 163 175)"
+					gradientStartColor="#febe01"
+					gradientStopColor="#febe01"
+				/>
+				<AnimatedBeam
+					containerRef={containerRef as React.RefObject<HTMLElement>}
+					fromRef={developmentRef as React.RefObject<HTMLElement>}
+					toRef={testingRef as React.RefObject<HTMLElement>}
+					curvature={0}
+					duration={12}
+					delay={1.5}
+					pathColor="rgb(156 163 175)"
+					gradientStartColor="#febe01"
+					gradientStopColor="#febe01"
+				/>
+				<AnimatedBeam
+					containerRef={containerRef as React.RefObject<HTMLElement>}
+					fromRef={testingRef as React.RefObject<HTMLElement>}
+					toRef={deploymentRef as React.RefObject<HTMLElement>}
+					curvature={0}
+					duration={12}
+					delay={3}
+					pathColor="rgb(156 163 175)"
+					gradientStartColor="#febe01"
+					gradientStopColor="#febe01"
+				/>
+			</div>
+
 		</div>
 	);
 }

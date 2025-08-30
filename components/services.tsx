@@ -55,6 +55,7 @@ interface EmailItemProps {
 	email: string;
 	isMiddleItem: boolean;
 	isSecurityHovered: boolean;
+	middleColumn?: boolean;
 	alignRight?: boolean;
 }
 
@@ -67,7 +68,7 @@ function shuffleArray<T>(array: T[]): T[] {
 	return shuffled;
 }
 
-function EmailItem({ email, isMiddleItem, isSecurityHovered, alignRight }: EmailItemProps): React.ReactElement {
+function EmailItem({ email, isMiddleItem, isSecurityHovered, alignRight, middleColumn }: EmailItemProps): React.ReactElement {
 	const getDisplayText = (): string => {
 		if (isMiddleItem && isSecurityHovered) {
 			return '●●●●●●●●●●●●●●●●●●●';
@@ -84,7 +85,12 @@ function EmailItem({ email, isMiddleItem, isSecurityHovered, alignRight }: Email
 
 	return (
 		<div className={cn('bg-primary border border-gray-400/20 rounded-md px-7 py-3 w-48 overflow-hidden')}>
-			<p className={`transition-all duration-150 ${getBlurClass()} whitespace-nowrap ${alignRight ? 'text-right -ml-20' : 'text-left'}`}>
+			<p className={cn(
+				"transition-all duration-150 whitespace-nowrap",
+				getBlurClass(),
+				alignRight ? "text-right -ml-20" : "text-left",
+				middleColumn ? "px-0 -ml-4" : ""
+			)}>
 				{getDisplayText()}
 			</p>
 		</div>
@@ -169,7 +175,7 @@ export function Services(): React.ReactElement {
 					</div>
 					<div className="flex p-px lg:col-span-2">
 						<div
-							className="w-full overflow-hidden rounded-lg bg-primary outline outline-gray-400/20 lg:rounded-bl-2xl"
+							className="pb-10 lg:pb-0 w-full overflow-hidden rounded-lg bg-primary outline outline-gray-400/20 lg:rounded-bl-2xl"
 							onMouseEnter={() => setIsSecurityHovered(true)}
 							onMouseLeave={() => setIsSecurityHovered(false)}
 						>
@@ -193,6 +199,31 @@ export function Services(): React.ReactElement {
 								</div>
 
 								<div className='space-y-3'>
+									{emailData.leftColumn.map((email: string, index: number) => (
+										<EmailItem
+											key={index}
+											email={email}
+											isMiddleItem={index === 1}
+											middleColumn={true}
+											isSecurityHovered={isSecurityHovered}
+										/>
+									))}
+								</div>
+
+								<div className='space-y-3 lg:hidden'>
+									{emailData.rightColumn.map((email: string, index: number) => (
+										<EmailItem
+											key={index}
+											email={email}
+											isMiddleItem={index === 1}
+											middleColumn={true}
+											isSecurityHovered={isSecurityHovered}
+										/>
+									))}
+								</div>
+
+
+								<div className='space-y-3'>
 									{emailData.rightColumn.map((email: string, index: number) => (
 										<EmailItem
 											key={index}
@@ -207,7 +238,7 @@ export function Services(): React.ReactElement {
 						</div>
 					</div>
 					<div className="flex p-px lg:col-span-4">
-						<div className="w-full overflow-hidden rounded-lg bg-primary outline outline-gray-400/20 max-lg:rounded-b-2xl lg:rounded-br-2xl">
+						<div className="pb-10 lg:pb-0 w-full overflow-hidden rounded-lg bg-primary outline outline-gray-400/20 max-lg:rounded-b-2xl lg:rounded-br-2xl">
 							<div className="p-10">
 								<h3 className="text-sm/4 font-semibold text-muted-foreground">Development</h3>
 								<p className="mt-2 text-lg font-medium tracking-tight text-foreground">We ship really fast</p>
