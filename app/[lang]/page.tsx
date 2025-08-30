@@ -6,6 +6,24 @@ import { Testimonials } from "@/components/testimonials";
 import { Contact } from "@/components/contact";
 import { Footer } from "@/components/footer";
 import { getDictionary } from "./dictionaries";
+import { createMetadata } from "@/lib/seo";
+import type { Metadata } from "next";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: 'en' | 'pt' | 'es' | 'fr' }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  const dict = await getDictionary(lang);
+
+  return createMetadata({
+    title: dict.seo.home.title,
+    description: dict.seo.home.description,
+    keywords: dict.seo.home.keywords,
+    url: `/${lang}`,
+  });
+}
 
 export default async function Home({
   params,

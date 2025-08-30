@@ -394,5 +394,27 @@
     "openSource": "Código Aberto",
     "support": "Suporte",
     "copyright": "© 2025 Tucupy. Todos os direitos reservados."
+  },
+  "seo": {
+    "home": {
+      "title": "Tucupy - Soluções Digitais Personalizadas",
+      "description": "Fazemos parceria com empresas ambiciosas para construir software que cresce com elas. De MVPs que lançam em semanas a plataformas que servem milhões.",
+      "keywords": "desenvolvimento de software, soluções digitais personalizadas, desenvolvimento web, aplicativos móveis, tecnologia startup, desenvolvimento mvp"
+    },
+    "about": {
+      "title": "Sobre - Tucupy",
+      "description": "Conheça a missão da Tucupy de construir software confiável com velocidade e cuidado. Conheça nossa equipe de engenheiros sêniores entregando soluções digitais excepcionais.",
+      "keywords": "sobre tucupy, equipe de desenvolvimento de software, empresa de tecnologia, engenheiros sêniores, soluções digitais"
+    },
+    "blog": {
+      "title": "Blog - Tucupy",
+      "description": "Insights, tutoriais e reflexões sobre desenvolvimento de software, tendências tecnológicas e construção de produtos digitais que escalam.",
+      "keywords": "blog desenvolvimento de software, insights tecnológicos, tutoriais programação, notícias indústria tech"
+    },
+    "careers": {
+      "title": "Carreiras - Tucupy",
+      "description": "Junte-se ao nosso time de engenheiros excepcionais construindo o futuro da tecnologia. Explore oportunidades de carreira na Tucupy.",
+      "keywords": "vagas engenharia de software, carreiras desenvolvedor, empregos tecnologia, trabalho remoto, carreiras startup"
+    }
   }
 }

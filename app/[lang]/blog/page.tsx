@@ -4,6 +4,24 @@ import { PostList } from "./_components/PostList";
 import { Footer } from "@/components/footer";
 import { getAllBlogPosts, getFeaturedBlogPost } from "@/lib/blog";
 import { getDictionary } from "../dictionaries";
+import { createMetadata } from "@/lib/seo";
+import type { Metadata } from "next";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: 'en' | 'pt' | 'es' | 'fr' }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  const dict = await getDictionary(lang);
+  
+  return createMetadata({
+    title: dict.seo.blog.title,
+    description: dict.seo.blog.description,
+    keywords: dict.seo.blog.keywords,
+    url: `/${lang}/blog`,
+  });
+}
 
 export default async function Page({
   params,

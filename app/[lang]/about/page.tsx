@@ -3,6 +3,8 @@ import { Footer } from '@/components/footer';
 import { getDictionary } from '../dictionaries';
 import { AboutContent } from '@/components/about-content';
 import { AboutCTA } from '@/components/about-cta';
+import { createMetadata } from '@/lib/seo';
+import type { Metadata } from 'next';
 import {
   Lightbulb,
   Users,
@@ -18,6 +20,22 @@ import {
   MessageSquare,
   Briefcase,
 } from 'lucide-react';
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: 'en' | 'pt' | 'es' | 'fr' }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  const dict = await getDictionary(lang);
+  
+  return createMetadata({
+    title: dict.seo.about.title,
+    description: dict.seo.about.description,
+    keywords: dict.seo.about.keywords,
+    url: `/${lang}/about`,
+  });
+}
 
 export default async function AboutPage({
   params,

@@ -11,9 +11,32 @@ import { Footer } from "@/components/footer";
 import { TableOfContents } from "@/components/blog/TableOfContents";
 import mdxComponents from "@/components/mdx-components";
 import { getDictionary } from "../../dictionaries";
+import { Metadata } from "next";
+import { createMetadata } from "@/lib/seo";
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string; lang: 'en' | 'pt' | 'es' | 'fr' }>
+}
+
+export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
+  const { slug, lang } = await params;
+  const post = getBlogPost(slug, lang);
+
+  if (!post) {
+    return {};
+  }
+
+  return createMetadata({
+    title: post.title,
+    description: post.description,
+    keywords: post.tags.join(', '),
+    url: `/${lang}/blog/${slug}`,
+    image: post.image,
+    type: 'article',
+    publishedTime: post.date,
+    author: post.author.name,
+    section: post.category,
+  });
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
@@ -140,12 +163,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 export async function generateStaticParams() {
   const locales = ['en', 'pt', 'es', 'fr']
   const allParams: { slug: string; lang: string }[] = []
-  
+
   for (const lang of locales) {
     const slugs = getAllBlogSlugs(lang)
     allParams.push(...slugs.map((slug) => ({ slug, lang })))
   }
-  
+
   return allParams
 }
 

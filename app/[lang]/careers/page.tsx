@@ -5,6 +5,24 @@ import { Footer } from "@/components/footer";
 import Link from "next/link";
 import { getDictionary } from "../dictionaries";
 import { CareersContent } from "@/components/careers-content";
+import { createMetadata } from "@/lib/seo";
+import type { Metadata } from "next";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: 'en' | 'pt' | 'es' | 'fr' }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  const dict = await getDictionary(lang);
+  
+  return createMetadata({
+    title: dict.seo.careers.title,
+    description: dict.seo.careers.description,
+    keywords: dict.seo.careers.keywords,
+    url: `/${lang}/careers`,
+  });
+}
 
 export default async function Page({
   params,

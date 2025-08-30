@@ -394,5 +394,27 @@
     "openSource": "Open Source",
     "support": "Support",
     "copyright": "© 2025 Tucupy. All rights reserved."
+  },
+  "seo": {
+    "home": {
+      "title": "Tucupy - Custom Digital Solutions",
+      "description": "We partner with ambitious companies to build software that grows with them. From MVPs that ship in weeks to platforms that serve millions.",
+      "keywords": "software development, custom digital solutions, web development, mobile apps, startup technology, mvp development"
+    },
+    "about": {
+      "title": "About - Tucupy",
+      "description": "Learn about Tucupy's mission to build reliable software with speed and care. Meet our team of senior engineers delivering exceptional digital solutions.",
+      "keywords": "about tucupy, software development team, technology company, senior engineers, digital solutions"
+    },
+    "blog": {
+      "title": "Blog - Tucupy",
+      "description": "Insights, tutorials, and thoughts on software development, technology trends, and building digital products that scale.",
+      "keywords": "software development blog, technology insights, programming tutorials, tech industry news"
+    },
+    "careers": {
+      "title": "Careers - Tucupy",
+      "description": "Join our team of exceptional engineers building the future of technology. Explore career opportunities at Tucupy.",
+      "keywords": "software engineering jobs, developer careers, technology jobs, remote work, startup careers"
+    }
   }
 }
