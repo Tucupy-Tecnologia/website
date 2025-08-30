@@ -7,26 +7,32 @@ import {
 	MarqueeContent,
 } from '@/components/ui/marquee';
 
+import decktimus from '@/public/decktimus.svg';
+import globalDiscounting from '@/public/global-discounting.svg';
+import maratona from '@/public/maratona.svg';
+import portoExclusivo from '@/public/porto-exclusivo.svg';
+import pinheiroDiniz from '@/public/pinheiro-diniz.svg';
+
 const partners = [
 	{
-		name: "Transistor",
-		src: "https://tailwindcss.com/plus-assets/img/logos/158x48/transistor-logo-white.svg",
+		name: "Meia Maratona da amazônia",
+		src: maratona.src,
 	},
 	{
-		name: "Reform",
-		src: "https://tailwindcss.com/plus-assets/img/logos/158x48/reform-logo-white.svg",
+		name: "Decktimus",
+		src: decktimus.src,
 	},
 	{
-		name: "Tuple",
-		src: "https://tailwindcss.com/plus-assets/img/logos/158x48/tuple-logo-white.svg",
+		name: "Porto Exclusivo",
+		src: portoExclusivo.src,
 	},
 	{
-		name: "SavvyCal",
-		src: "https://tailwindcss.com/plus-assets/img/logos/158x48/savvycal-logo-white.svg",
+		name: "Global Discounting",
+		src: globalDiscounting.src,
 	},
 	{
-		name: "Statamic",
-		src: "https://tailwindcss.com/plus-assets/img/logos/158x48/statamic-logo-white.svg",
+		name: "Pinheiro Diniz",
+		src: pinheiroDiniz.src,
 	},
 ];
 

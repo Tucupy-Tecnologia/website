@@ -9,7 +9,7 @@ import Image from "next/image";
 import { MDXRemote } from "next-mdx-remote-client/rsc";
 import { Footer } from "@/components/footer";
 import { TableOfContents } from "@/components/blog/TableOfContents";
-import { useMDXComponents } from "@/mdx-components";
+import { useMDXComponents } from "@/components/mdx-components";
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>
