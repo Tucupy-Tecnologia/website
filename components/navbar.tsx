@@ -51,15 +51,15 @@ export function Navbar() {
 					</div>
 				</Link>
 				<ul className="flex items-center gap-1 mt-2">
-					<a 
-						href="/#services" 
+					<a
+						href="/#services"
 						onClick={(e) => handleNavClick(e, 'services')}
 						className="text-sm font-bold text-muted-foreground hover:text-foreground hover:bg-accent/10 px-2 py-1.5 rounded-md cursor-pointer"
 					>
 						Services
 					</a>
-					<a 
-						href="/#projects" 
+					<a
+						href="/#projects"
 						onClick={(e) => handleNavClick(e, 'projects')}
 						className="text-sm font-bold text-muted-foreground hover:text-foreground hover:bg-accent/10 px-2 py-1.5 rounded-md cursor-pointer"
 					>
@@ -77,7 +77,7 @@ export function Navbar() {
 				</ul>
 			</div>
 			<div className="flex items-center gap-4">
-				<Link href="/blog" className="text-sm font-bold text-muted-foreground hover:text-foreground hover:bg-accent/10 px-2 py-1.5 rounded-md flex items-center gap-2">
+				<Link href="https://github.com/Tucupy-Tecnologia/website" target="_blank" className="text-sm font-bold text-muted-foreground hover:text-foreground hover:bg-accent/10 px-2 py-1.5 rounded-md flex items-center gap-2">
 					<Image src="/github.svg" alt="github" width={16} height={16} />
 					Github
 				</Link>

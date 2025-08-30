@@ -3,7 +3,6 @@ import Image from "next/image";
 interface Author {
 	name: string;
 	role: string;
-	company: string;
 }
 
 interface Testimonial {
@@ -15,73 +14,64 @@ const testimonials: Testimonial[] = [
 	{
 		body: 'Tucupy transformed our outdated e-commerce platform into a modern, scalable solution in just 8 weeks. The performance improvements alone increased our conversion rate by 35%.',
 		author: {
-			name: 'Carlos Mendoza',
+			name: 'Carlos M.',
 			role: 'CTO',
-			company: 'Porto Exclusivo',
 		},
 	},
 	{
 		body: 'Their team\'s expertise in cloud architecture saved us thousands in monthly infrastructure costs while improving our system reliability. We now have 99.9% uptime.',
 		author: {
-			name: 'Ana Silva',
+			name: 'Ana S.',
 			role: 'Head of Engineering',
-			company: 'FinBank Digital',
 		},
 	},
 	{
 		body: 'The API integration was flawless. They delivered a complex multi-vendor marketplace ahead of schedule with zero critical bugs at launch.',
 		author: {
-			name: 'Roberto Almeida',
+			name: 'Roberto A.',
 			role: 'Product Manager',
-			company: 'MarketHub',
 		},
 	},
 	{
 		body: 'Working with Tucupy felt like having an extended tech team. They understood our business needs and translated them perfectly into technical solutions.',
 		author: {
-			name: 'Juliana Costa',
+			name: 'Juliana C.',
 			role: 'CEO',
-			company: 'EduTech Brasil',
 		},
 	},
 	{
 		body: 'They rebuilt our entire mobile app from scratch using React Native. The result? A single codebase that works perfectly on both iOS and Android, cutting our maintenance costs by 60%.',
 		author: {
-			name: 'Pedro Santos',
+			name: 'Pedro S.',
 			role: 'Mobile Team Lead',
-			company: 'FoodDelivery Pro',
 		},
 	},
 	{
 		body: 'The team\'s proactive approach to security helped us pass our SOC 2 audit on the first attempt. They think about problems before they become problems.',
 		author: {
-			name: 'Marina Oliveira',
+			name: 'Marina O.',
 			role: 'CISO',
-			company: 'HealthTech Solutions',
 		},
 	},
 	{
 		body: 'Our platform now handles 10x the traffic with the same infrastructure. The optimization work they did was incredible - response times improved by 70%.',
 		author: {
-			name: 'Lucas Ferreira',
+			name: 'Lucas F.',
 			role: 'Technical Director',
-			company: 'StreamingNow',
 		},
 	},
 	{
 		body: 'Tucupy didn\'t just build what we asked for - they challenged our assumptions and delivered something better. Our users love the new interface.',
 		author: {
-			name: 'Beatriz Lima',
+			name: 'Beatriz L.',
 			role: 'Head of Product',
-			company: 'SocialConnect',
 		},
 	},
 	{
 		body: 'From MVP to Series A, they\'ve been our technical partners. They scale with us, adapting quickly to our changing needs without missing a beat.',
 		author: {
-			name: 'Thiago Rodrigues',
+			name: 'Thiago R.',
 			role: 'Founder & CEO',
-			company: 'PropTech Innovations',
 		},
 	},
 ];
@@ -110,7 +100,7 @@ export function Testimonials() {
 									</blockquote>
 									<figcaption className="mt-6">
 										<div className="font-semibold text-foreground">{testimonial.author.name}</div>
-										<div className="text-muted-foreground">{testimonial.author.role} at {testimonial.author.company}</div>
+										<div className="text-muted-foreground">{testimonial.author.role}</div>
 									</figcaption>
 								</figure>
 							</div>

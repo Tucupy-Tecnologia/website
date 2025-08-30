@@ -23,10 +23,10 @@ import {
 } from 'lucide-react';
 
 const stats = [
-  { label: 'Projects Delivered', value: '120+' },
+  { label: 'Active Users in Our Projects', value: '250.000+' },
   { label: 'Average Launch Time', value: '6–10 weeks' },
   { label: 'Client Satisfaction', value: '98%' },
-  { label: 'Years Building', value: '5+' },
+  { label: 'Years Building', value: '10+' },
 ];
 
 const principles = [
@@ -130,15 +130,15 @@ const milestones = [
 
 export default function AboutPage() {
   const router = useRouter();
-  
+
   const handleContactClick = () => {
     router.push('/#contact');
   };
-  
+
   const handleProjectsClick = () => {
     router.push('/#projects');
   };
-  
+
   return (
     <div className="bg-background min-h-screen space-y-16">
       <Navbar />
@@ -160,13 +160,13 @@ export default function AboutPage() {
               Zero drama—just great software.
             </p>
             <div className="mt-10 flex items-center justify-start gap-x-4">
-              <Button 
+              <Button
                 variant="brand"
                 onClick={handleContactClick}
               >
                 Let's build together
               </Button>
-              <Button 
+              <Button
                 className="text-sm/6 font-semibold text-foreground ring ring-gray-400/20"
                 onClick={handleProjectsClick}
               >
@@ -324,7 +324,7 @@ export default function AboutPage() {
                 </p>
               </div>
               <div className="flex items-center gap-3">
-                <Button 
+                <Button
                   variant="brand"
                   onClick={handleContactClick}
                 >
