@@ -16,7 +16,7 @@ interface FooterSection {
 	links: FooterLink[];
 }
 
-const getFooterSections = (lang: string, dict: any): FooterSection[] => [
+const getFooterSections = (lang: string, dict: Record<string, any>): FooterSection[] => [
 	{
 		title: dict.footer.company,
 		links: [
@@ -37,7 +37,7 @@ const getFooterSections = (lang: string, dict: any): FooterSection[] => [
 
 interface FooterProps {
 	lang: string;
-	dict: any;
+	dict: Record<string, any>;
 }
 
 export function Footer({ lang, dict }: FooterProps): React.ReactElement {

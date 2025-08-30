@@ -19,10 +19,10 @@ export default async function Home({
     <div className="bg-background min-h-screen space-y-28">
       <Navbar lang={lang} dict={dict} />
       <Hero lang={lang} dict={dict} />
-      <Services lang={lang} dict={dict} />
-      <Projects lang={lang} dict={dict} />
-      <Testimonials lang={lang} dict={dict} />
-      <Contact lang={lang} dict={dict} />
+      <Services dict={dict} />
+      <Projects dict={dict} />
+      <Testimonials dict={dict} />
+      <Contact dict={dict} />
       <Footer lang={lang} dict={dict} />
     </div>
   );

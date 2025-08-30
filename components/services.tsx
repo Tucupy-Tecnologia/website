@@ -98,11 +98,10 @@ function EmailItem({ email, isMiddleItem, isSecurityHovered, alignRight, middleC
 }
 
 interface ServicesProps {
-	lang: string;
-	dict: any;
+	dict: Record<string, any>;
 }
 
-export function Services({ lang, dict }: ServicesProps): React.ReactElement {
+export function Services({ dict }: ServicesProps): React.ReactElement {
 	const [isHostingHovered, setIsHostingHovered] = useState<boolean>(false);
 	const [isSecurityHovered, setIsSecurityHovered] = useState<boolean>(false);
 

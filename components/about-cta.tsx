@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { useRouter } from 'next/navigation';
 
 interface AboutCTAProps {
-  dict: any;
+  dict: Record<string, any>;
 }
 
 export function AboutCTA({ dict }: AboutCTAProps) {

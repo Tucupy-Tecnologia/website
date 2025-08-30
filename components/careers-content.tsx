@@ -3,11 +3,10 @@
 import { Button } from '@/components/ui/button';
 
 interface CareersContentProps {
-  lang: string;
-  dict: any;
+  dict: Record<string, any>;
 }
 
-export function CareersContent({ lang, dict }: CareersContentProps) {
+export function CareersContent({ dict }: CareersContentProps) {
   const handleScrollToPositions = () => {
     document.getElementById('open-positions')?.scrollIntoView({ behavior: 'smooth' });
   };

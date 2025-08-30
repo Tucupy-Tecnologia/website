@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 
 interface AboutContentProps {
   lang: string;
-  dict: any;
+  dict: Record<string, any>;
 }
 
 export function AboutContent({ lang, dict }: AboutContentProps) {

@@ -26,7 +26,7 @@ const languages = [
 
 interface NavbarProps {
 	lang: string;
-	dict: any;
+	dict: Record<string, any>;
 }
 
 export function Navbar({ lang, dict }: NavbarProps) {

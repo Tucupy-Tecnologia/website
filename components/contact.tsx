@@ -5,7 +5,6 @@ import { useForm } from 'react-hook-form';
 import * as z from 'zod';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
-import { Label } from './ui/label';
 import { Textarea } from './ui/textarea';
 import {
 	Form,
@@ -30,11 +29,10 @@ const formSchema = z.object({
 type FormData = z.infer<typeof formSchema>;
 
 interface ContactProps {
-	lang: string;
-	dict: any;
+	dict: Record<string, any>;
 }
 
-export function Contact({ lang, dict }: ContactProps): React.ReactElement {
+export function Contact({ dict }: ContactProps): React.ReactElement {
 	const form = useForm<FormData>({
 		resolver: zodResolver(formSchema),
 		defaultValues: {
@@ -52,7 +50,7 @@ export function Contact({ lang, dict }: ContactProps): React.ReactElement {
 
 	async function onSubmit(values: FormData) {
 		try {
-			// Simulate API call
+			console.log(values)
 			await new Promise(resolve => setTimeout(resolve, 1500));
 			setIsSubmitted(true);
 			form.reset();

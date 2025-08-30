@@ -4,7 +4,7 @@ import { HeroContent } from "./hero-content";
 
 interface HeroProps {
 	lang: string;
-	dict: any;
+	dict: Record<string, any>;
 }
 
 export async function Hero({ lang, dict }: HeroProps) {

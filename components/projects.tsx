@@ -2,11 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 interface ProjectsProps {
-	lang: string;
-	dict: any;
+	dict: Record<string, any>;
 }
 
-export function Projects({ lang, dict }: ProjectsProps) {
+export function Projects({ dict }: ProjectsProps) {
 	return (
 		<div className="mx-auto max-w-2xl lg:max-w-6xl px-4">
 			<div className="size-1 opacity-0" id="projects" />

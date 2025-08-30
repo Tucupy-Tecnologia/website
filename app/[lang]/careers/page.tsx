@@ -321,7 +321,7 @@ export default async function Page({
                   {dict.careers.hero.seeOurWork}
                 </Button>
               </Link>
-              <CareersContent lang={lang} dict={dict} />
+              <CareersContent dict={dict} />
             </div>
           </div>
         </div>

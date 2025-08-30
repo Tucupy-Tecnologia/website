@@ -11,7 +11,7 @@ import { translateCategory } from "@/lib/translate-tag";
 
 interface PostListProps {
   posts: BlogMetadata[]
-  dict: any
+  dict: Record<string, any>
 }
 
 export function PostList({ posts, dict }: PostListProps) {

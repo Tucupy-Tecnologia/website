@@ -11,11 +11,10 @@ interface Testimonial {
 
 
 interface TestimonialsProps {
-	lang: string;
-	dict: any;
+	dict: Record<string, any>;
 }
 
-export function Testimonials({ lang, dict }: TestimonialsProps) {
+export function Testimonials({ dict }: TestimonialsProps) {
 	return (
 		<div className="bg-background">
 			<div className="mx-auto max-w-2xl lg:max-w-6xl px-4">

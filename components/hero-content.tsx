@@ -8,7 +8,7 @@ import { BlogMetadata } from "@/lib/blog";
 interface HeroContentProps {
   featuredPost: BlogMetadata | null;
   lang: string;
-  dict: any;
+  dict: Record<string, any>;
 }
 
 export function HeroContent({ featuredPost, lang, dict }: HeroContentProps) {
