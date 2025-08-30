@@ -99,11 +99,11 @@ export default function Page() {
             </div>
           </div>
           <div className="text-left">
-            <h1 className="text-5xl font-semibold">We&apos;re on a mission to deliver exceptional software solutions</h1>
-            <p className="mt-8 text-lg font-medium text-pretty text-muted-foreground sm:text-xl/8">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold">We&apos;re on a mission to deliver exceptional software solutions</h1>
+            <p className="mt-6 sm:mt-8 text-base sm:text-lg font-medium text-pretty text-muted-foreground sm:text-xl/8">
               Explore career opportunities and join our team of experts shaping the future of technology.
             </p>
-            <div className="mt-10 flex items-center justify-start gap-x-4">
+            <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-start sm:items-center justify-start gap-4">
               <Link href="/#projects">
                 <Button variant="brand">
                   See our work
@@ -120,12 +120,12 @@ export default function Page() {
         </div>
 
         {/* Values Section */}
-        <div className="mt-32">
+        <div className="mt-20 sm:mt-32">
           <h2 className="text-base/7 font-semibold text-muted-foreground">Our values</h2>
-          <p className="mt-2 text-3xl font-semibold tracking-tight text-pretty text-foreground">
+          <p className="mt-2 text-2xl sm:text-3xl font-semibold tracking-tight text-pretty text-foreground">
             What drives us forward
           </p>
-          <p className="mt-4 text-lg/8 text-muted-foreground max-w-3xl">
+          <p className="mt-4 text-base sm:text-lg/8 text-muted-foreground max-w-3xl">
             Our values shape everything we do, from how we work together to how we serve our clients.
           </p>
 
@@ -152,12 +152,12 @@ export default function Page() {
         </div>
 
         {/* Office Culture Section */}
-        <div className="mt-32">
+        <div className="mt-20 sm:mt-32">
           <h2 className="text-base/7 font-semibold text-muted-foreground">Work culture</h2>
-          <p className="mt-2 text-3xl font-semibold tracking-tight text-pretty text-foreground">
+          <p className="mt-2 text-2xl sm:text-3xl font-semibold tracking-tight text-pretty text-foreground">
             In-person collaboration, exceptional results
           </p>
-          <p className="mt-4 text-lg/8 text-muted-foreground max-w-3xl">
+          <p className="mt-4 text-base sm:text-lg/8 text-muted-foreground max-w-3xl">
             We work fully in-person because we believe the best ideas, strongest relationships, and fastest execution happen when talented people work side by side. Our office is where innovation thrives.
           </p>
 
@@ -202,12 +202,12 @@ export default function Page() {
         </div>
 
         {/* Benefits Section */}
-        <div className="mt-32">
+        <div className="mt-20 sm:mt-32">
           <h2 className="text-base/7 font-semibold text-muted-foreground">What we offer</h2>
-          <p className="mt-2 text-3xl font-semibold tracking-tight text-pretty text-foreground">
+          <p className="mt-2 text-2xl sm:text-3xl font-semibold tracking-tight text-pretty text-foreground">
             Compensation that matches your impact
           </p>
-          <p className="mt-4 text-lg/8 text-muted-foreground max-w-3xl">
+          <p className="mt-4 text-base sm:text-lg/8 text-muted-foreground max-w-3xl">
             We believe in rewarding talent fairly and providing the essentials you need to succeed.
           </p>
 
@@ -271,10 +271,10 @@ export default function Page() {
 
 
         {/* Open Positions Section */}
-        <div id="open-positions" className="mt-32 scroll-mt-20 mb-20">
+        <div id="open-positions" className="mt-20 sm:mt-32 scroll-mt-20 mb-20">
           <div className="mb-10">
-            <h2 className="text-3xl font-semibold text-foreground">Open positions</h2>
-            <p className="mt-2 text-lg text-muted-foreground">
+            <h2 className="text-2xl sm:text-3xl font-semibold text-foreground">Open positions</h2>
+            <p className="mt-2 text-base sm:text-lg text-muted-foreground">
               Want to build exceptional digital solutions?<br />
               We&apos;d love to talk to you.
             </p>
@@ -288,16 +288,20 @@ export default function Page() {
                   {category.positions.map((position, positionIndex) => (
                     <div
                       key={positionIndex}
-                      className="bg-primary  first:border border-gray-400/20 first:border-b-0 border-x last:border-b first:rounded-t-lg last:rounded-b-lg px-6 py-5 hover:border-gray-400/30 transition-all duration-200 group cursor-pointer"
+                      className="bg-primary first:border border-gray-400/20 first:border-b-0 border-x last:border-b first:rounded-t-lg last:rounded-b-lg px-4 sm:px-6 py-4 sm:py-5 hover:border-gray-400/30 transition-all duration-200 group cursor-pointer"
                     >
-                      <div className="flex items-center justify-between">
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                         <div className="flex-1">
-                          <h4 className="text-base font-medium text-foreground">
+                          <h4 className="text-sm sm:text-base font-medium text-foreground">
                             {position.title}
                           </h4>
+                          <div className="flex items-center gap-2 mt-2 sm:hidden">
+                            <MapPin className="w-3 h-3 text-muted-foreground" />
+                            <span className="text-xs text-muted-foreground">{position.location}</span>
+                          </div>
                         </div>
-                        <div className="flex items-center gap-8">
-                          <div className="flex items-center gap-2">
+                        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-8">
+                          <div className="hidden sm:flex items-center gap-2">
                             <div className="bg-background border border-gray-400/20 rounded-full px-3 py-1 flex items-center gap-2">
                               <MapPin className="w-3 h-3 text-muted-foreground" />
                               <span className="text-sm text-muted-foreground">{position.location}</span>
@@ -306,7 +310,7 @@ export default function Page() {
                           <Button
                             variant="ghost"
                             size="sm"
-                            className="text-sm font-medium hover:bg-neutral-500/5 hover:text-foreground"
+                            className="text-xs sm:text-sm bg-neutral-500/10 font-medium hover:bg-neutral-500/5 hover:text-foreground w-full sm:w-auto"
                           >
                             Apply for position
                           </Button>

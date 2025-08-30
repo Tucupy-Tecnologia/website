@@ -12,13 +12,13 @@ export function Post({ post }: PostProps) {
 
   return (
     <Link href={`/blog/${post.slug}`} className="flex flex-col hover:bg-neutral-500/5 p-4 rounded-xl ease-out transition-colors cursor-pointer h-full">
-      <div className="w-full mb-4">
+      <div className="relative w-full aspect-[16/10] mb-4">
         <Image 
           src={post.image} 
           alt={post.title} 
-          width={400} 
-          height={240} 
-          className="rounded-lg border border-gray-400/20 w-full h-48 object-cover" 
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          className="rounded-lg border border-gray-400/20 object-cover" 
         />
       </div>
 

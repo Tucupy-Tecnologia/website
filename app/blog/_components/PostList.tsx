@@ -45,26 +45,37 @@ export function PostList({ posts }: PostListProps) {
 
   return (
     <div>
-      <div className="mt-12 flex items-center justify-between">
-        <ToggleGroup
-          type="single"
-          value={selectedCategory}
-          onValueChange={handleCategoryChange}
-          className="px-3 gap-2"
-        >
-          {categories.map((category) => (
-            <ToggleGroupItem
-              key={category}
-              size='sm'
-              value={category}
-              className="rounded-full border border-gray-400/20 h-6 text-xs data-[state=on]:bg-neutral-50/10 hover:border-gray-200/20 hover:bg-background data-[state=on]:text-foreground hover:text-foreground px-3"
-            >
-              {category}
-            </ToggleGroupItem>
-          ))}
-        </ToggleGroup>
+      <div className="mt-8 sm:mt-12 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:justify-between">
+        <div className="w-full sm:w-auto overflow-x-auto scrollbar-hide">
+          <style jsx>{`
+            .scrollbar-hide {
+              -ms-overflow-style: none;  /* IE and Edge */
+              scrollbar-width: none;  /* Firefox */
+            }
+            .scrollbar-hide::-webkit-scrollbar {
+              display: none;  /* Chrome, Safari and Opera */
+            }
+          `}</style>
+          <ToggleGroup
+            type="single"
+            value={selectedCategory}
+            onValueChange={handleCategoryChange}
+            className="flex flex-nowrap px-0 sm:px-3 gap-2 min-w-max"
+          >
+            {categories.map((category) => (
+              <ToggleGroupItem
+                key={category}
+                size='sm'
+                value={category}
+                className="rounded-full border border-gray-400/20 h-7 text-xs data-[state=on]:bg-neutral-50/10 hover:border-gray-200/20 hover:bg-background data-[state=on]:text-foreground hover:text-foreground px-4 whitespace-nowrap"
+              >
+                {category}
+              </ToggleGroupItem>
+            ))}
+          </ToggleGroup>
+        </div>
 
-        <div className="relative pr-3">
+        <div className="relative w-full sm:w-auto sm:pr-3">
           <Search className="absolute top-0 bottom-0 my-auto left-2.5 size-4" />
           <Input
             className="w-full bg-background pl-8 placeholder:text-xs"

@@ -37,57 +37,57 @@ const footerSections: FooterSection[] = [
 
 export function Footer(): React.ReactElement {
 	return (
-		<footer className="bg-background border-gray-400/20 mt-40">
-			<div className="mx-auto max-w-2xl lg:max-w-6xl px-4 py-16">
-				<div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+		<footer className="bg-background border-gray-400/20 mt-20 sm:mt-40">
+			<div className="mx-auto max-w-2xl lg:max-w-6xl px-4 py-8 sm:py-16">
+				<div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
 					{/* Company Info */}
 					<div className="lg:col-span-5">
-						<div className="flex items-center gap-2 group cursor-pointer mb-6">
+						<div className="flex items-center gap-2 group cursor-pointer mb-4 sm:mb-6">
 							<Image src="/tucupy.svg" alt="logo" width={12} height={12} />
-							<h2 className={cn("text-3xl mb-1 font-bold text-foreground group-hover:text-brand transition-colors ease-out", titillium.className)}>
+							<h2 className={cn("text-2xl sm:text-3xl mb-1 font-bold text-foreground group-hover:text-brand transition-colors ease-out", titillium.className)}>
 								tucupy
 							</h2>
 						</div>
 
 						{/* Contact Info */}
-						<div className="space-y-4">
+						<div className="space-y-3 sm:space-y-4">
 
-							<div className="flex items-center gap-3">
-								<div className="w-10 h-10 bg-brand/10 rounded-lg flex items-center justify-center flex-shrink-0">
-									<Mail className="w-4 h-4 text-brand" />
+							<div className="flex items-center gap-2 sm:gap-3">
+								<div className="w-8 h-8 sm:w-10 sm:h-10 bg-brand/10 rounded-lg flex items-center justify-center flex-shrink-0">
+									<Mail className="w-3 h-3 sm:w-4 sm:h-4 text-brand" />
 								</div>
 								<div>
 									<a
 										href="mailto:contato@tucupy.com"
-										className="text-foreground text-sm font-medium hover:text-brand transition-colors"
+										className="text-foreground text-xs sm:text-sm font-medium hover:text-brand transition-colors"
 									>
 										contato@tucupy.com
 									</a>
 								</div>
 							</div>
 
-							<div className="flex items-center gap-3">
-								<div className="w-10 h-10 bg-brand/10 rounded-lg flex items-center justify-center flex-shrink-0">
-									<Phone className="w-4 h-4 text-brand" />
+							<div className="flex items-center gap-2 sm:gap-3">
+								<div className="w-8 h-8 sm:w-10 sm:h-10 bg-brand/10 rounded-lg flex items-center justify-center flex-shrink-0">
+									<Phone className="w-3 h-3 sm:w-4 sm:h-4 text-brand" />
 								</div>
 								<div>
 									<a
 										href="tel:+5591991011351"
-										className="text-foreground text-sm font-medium hover:text-brand transition-colors"
+										className="text-foreground text-xs sm:text-sm font-medium hover:text-brand transition-colors"
 									>
 										+55 (91) 99101-1351
 									</a>
 								</div>
 							</div>
 
-							<div className="flex items-start gap-3">
-								<div className="w-10 h-10 bg-brand/10 rounded-lg flex items-center justify-center flex-shrink-0">
-									<MapPin className="w-4 h-4 text-brand" />
+							<div className="flex items-start gap-2 sm:gap-3">
+								<div className="w-8 h-8 sm:w-10 sm:h-10 bg-brand/10 rounded-lg flex items-center justify-center flex-shrink-0">
+									<MapPin className="w-3 h-3 sm:w-4 sm:h-4 text-brand" />
 								</div>
 								<div>
-									<p className="text-foreground text-sm font-medium">Ed. Connext, Salas 807-808</p>
-									<p className="text-muted-foreground text-sm">Tv. Dom Romualdo de Seixas, 1560</p>
-									<p className="text-muted-foreground text-sm">Umarizal, Belém - PA, 66055-200</p>
+									<p className="text-foreground text-xs sm:text-sm font-medium">Ed. Connext, Salas 807-808</p>
+									<p className="text-muted-foreground text-xs sm:text-sm">Tv. Dom Romualdo de Seixas, 1560</p>
+									<p className="text-muted-foreground text-xs sm:text-sm">Umarizal, Belém - PA, 66055-200</p>
 								</div>
 							</div>
 
@@ -96,20 +96,20 @@ export function Footer(): React.ReactElement {
 
 					{/* Footer Links */}
 					<div className="lg:col-span-7">
-						<div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-							<div></div>
+						<div className="grid grid-cols-2 sm:grid-cols-3 gap-6 sm:gap-8">
+							<div className="hidden lg:block"></div>
 							{footerSections.map((section: FooterSection) => (
 								<div key={section.title}>
-									<h3 className="text-foreground font-semibold mb-4">
+									<h3 className="text-foreground text-sm sm:text-base font-semibold mb-3 sm:mb-4">
 										{section.title}
 									</h3>
-									<ul className="space-y-3">
+									<ul className="space-y-2 sm:space-y-3">
 										{section.links.map((link: FooterLink) => (
 											<li key={link.label}>
 												<Link
 													href={link.href}
 													{...(link.label === "Open Source" ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-													className="text-muted-foreground text-sm hover:text-brand transition-colors"
+													className="text-muted-foreground text-xs sm:text-sm hover:text-brand transition-colors"
 												>
 													{link.label}
 												</Link>
@@ -123,15 +123,15 @@ export function Footer(): React.ReactElement {
 				</div>
 
 				{/* Bottom Section */}
-				<div className="mt-16 pt-8 border-t border-gray-400/20">
+				<div className="mt-8 sm:mt-16 pt-6 sm:pt-8 border-t border-gray-400/20">
 					<div className="flex flex-col sm:flex-row items-center justify-between gap-4">
 						<div className="flex items-center gap-6">
-							<p className="text-muted-foreground text-sm">
+							<p className="text-muted-foreground text-xs sm:text-sm text-center sm:text-left">
 								© 2025 Tucupy. All rights reserved.
 							</p>
 						</div>
 
-						<div className="flex items-center gap-6">
+						<div className="flex items-center gap-4 sm:gap-6">
 
 							<Link
 								href="https://www.instagram.com/tucupytecnologia/"

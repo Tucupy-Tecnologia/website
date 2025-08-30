@@ -16,7 +16,7 @@ export function Projects() {
 				</p>
 			</div>
 
-			<div className="w-full grid grid-cols-2 gap-8 mt-12 pb-16">
+			<div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12 pb-16">
 
 				<Link href="https://maratonadaamazonia.com.br/pt" target="_blank" rel="noopener noreferrer" className="block w-full overflow-hidden rounded-2xl bg-primary outline outline-gray-400/20 p-3 space-y-3 transition-all duration-200 ease-out hover:outline-gray-400/40" >
 					<Image unoptimized width={400} height={400} src="/maratona.png" alt="Meia Maratona Da Amazônia" className="w-full rounded-lg border border-gray-400/20" />

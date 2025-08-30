@@ -17,23 +17,23 @@ import pinheiroDiniz from '@/public/pinheiro-diniz.svg';
 const partners = [
 	{
 		name: "Meia Maratona da amazônia",
-		src: maratona.src,
+		src: maratona,
 	},
 	{
 		name: "Decktimus",
-		src: decktimus.src,
+		src: decktimus,
 	},
 	{
 		name: "Porto Exclusivo",
-		src: portoExclusivo.src,
+		src: portoExclusivo,
 	},
 	{
 		name: "Global Discounting",
-		src: globalDiscounting.src,
+		src: globalDiscounting,
 	},
 	{
 		name: "Pinheiro Diniz",
-		src: pinheiroDiniz.src,
+		src: pinheiroDiniz,
 	},
 ];
 
