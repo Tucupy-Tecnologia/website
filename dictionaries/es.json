@@ -1,14 +1,14 @@
 {
   "nav": {
     "services": "Servicios",
-    "work": "Trabajo", 
+    "work": "Trabajo",
     "about": "Acerca",
     "blog": "Blog",
     "careers": "Trabaja con nosotros"
   },
   "hero": {
     "title1": "Tu idea, nuestra ejecución",
-    "title2": "Software que simplemente funciona",
+    "title2": "Software que funciona",
     "description": "Nos asociamos con empresas ambiciosas para construir software que crece con ellas. Desde MVPs que se lanzan en semanas hasta plataformas que sirven a millones.",
     "subtitle": "Lo hacemos simple.",
     "cta": "Construyamos juntos",
@@ -17,7 +17,7 @@
   "services": {
     "website": {
       "title": "Sitio Web",
-      "subtitle": "Diseño y desarrollo", 
+      "subtitle": "Diseño y desarrollo",
       "description": "Del concepto al lanzamiento, manejamos cada paso del proceso de desarrollo."
     },
     "hosting": {
@@ -26,7 +26,7 @@
       "description": "Lanza con confianza. Nuestra experiencia en despliegue asegura que tu sitio web se ponga en línea suavemente y se mantenga así."
     },
     "security": {
-      "title": "Seguridad", 
+      "title": "Seguridad",
       "subtitle": "Protegiendo lo que más importa",
       "description": "Tus datos merecen el más alto nivel de protección, y eso es exactamente lo que entregamos."
     },
@@ -143,7 +143,7 @@
       "getInTouch": "Ponte en contacto",
       "getInTouchDescription": "¿Listo para comenzar tu proyecto? Estamos aquí para ayudar a dar vida a tu visión con soluciones de vanguardia y orientación experta.",
       "firstName": "Nombre",
-      "lastName": "Apellido", 
+      "lastName": "Apellido",
       "email": "Dirección de Email",
       "phone": "Número de Teléfono",
       "company": "Empresa",
@@ -161,7 +161,7 @@
     "info": {
       "emailUs": "Envíanos un email",
       "email": "contato@tucupy.com",
-      "callUs": "Llámanos", 
+      "callUs": "Llámanos",
       "phone": "+55 (91) 99101-1351",
       "visitUs": "Visítanos",
       "address": "Ed. Connext, Salas 807-808\nTv. Dom Romualdo de Seixas, 1560\nUmarizal, Belém - PA, 66055-200"
@@ -174,7 +174,7 @@
     },
     "validation": {
       "firstNameRequired": "El nombre es requerido",
-      "lastNameRequired": "El apellido es requerido", 
+      "lastNameRequired": "El apellido es requerido",
       "emailRequired": "El email es requerido",
       "emailInvalid": "Por favor ingresa una dirección de email válida",
       "messageRequired": "El mensaje es requerido"
@@ -193,10 +193,22 @@
       "description": "Somos un equipo práctico que se asocia con empresas ambiciosas para enviar productos que escalan. Equipos pequeños y senior. Propiedad clara. Cero drama—solo gran software."
     },
     "stats": [
-      { "label": "Usuarios Activos en Nuestros Proyectos", "value": "250.000+" },
-      { "label": "Tiempo Promedio de Lanzamiento", "value": "6–10 semanas" },
-      { "label": "Satisfacción del Cliente", "value": "98%" },
-      { "label": "Años Construyendo", "value": "10+" }
+      {
+        "label": "Usuarios Activos en Nuestros Proyectos",
+        "value": "250.000+"
+      },
+      {
+        "label": "Tiempo Promedio de Lanzamiento",
+        "value": "6–10 semanas"
+      },
+      {
+        "label": "Satisfacción del Cliente",
+        "value": "98%"
+      },
+      {
+        "label": "Años Construyendo",
+        "value": "10+"
+      }
     ],
     "principles": {
       "section": "Nuestros principios",
@@ -366,11 +378,90 @@
         }
       ]
     },
-    "openPositions": {
-      "title": "Posiciones abiertas",
-      "description": "¿Quieres construir soluciones digitales excepcionales?\nNos encantaría hablar contigo.",
-      "applyButton": "Aplicar para la posición",
-      "buttonText": "Posiciones abiertas"
+    "applicationForm": {
+      "title": "Únete a Nuestro Equipo",
+      "description": "¿Listo para construir soluciones digitales excepcionales con nosotros? Nos encantaría conocerte.",
+      "form": {
+        "name": "Nombre Completo",
+        "namePlaceholder": "Juan Pérez",
+        "email": "Correo Electrónico",
+        "emailPlaceholder": "juan@ejemplo.com",
+        "phone": "Teléfono",
+        "phonePlaceholder": "+34 123 456 789",
+        "birthDate": "Fecha de Nacimiento",
+        "birthDatePlaceholder": "DD/MM/AAAA",
+        "address": "Dirección",
+        "addressPlaceholder": "Ciudad, Estado, País",
+        "whereDoYouKnowUs": "¿Cómo nos conociste?",
+        "whereDoYouKnowUsPlaceholder": "Selecciona una opción",
+        "whereDoYouKnowUsOptions": {
+          "google": "Google",
+          "facebook": "Facebook",
+          "instagram": "Instagram",
+          "linkedin": "LinkedIn",
+          "twitter": "Twitter",
+          "recommendations": "Recomendaciones",
+          "others": "Otros"
+        },
+        "areaOfInterest": "Área de Interés",
+        "areaOfInterestPlaceholder": "Selecciona un área",
+        "areaOfInterestOptions": {
+          "frontend": "Front-End",
+          "backend": "Back-End",
+          "fullstack": "Full Stack",
+          "uiux": "UI/UX",
+          "dataScience": "Ciencia de Datos",
+          "aiml": "AI/ML",
+          "bi": "Business Intelligence",
+          "devops": "DevOps"
+        },
+        "linkedin": "LinkedIn",
+        "linkedinPlaceholder": "https://linkedin.com/in/tuperfil",
+        "portfolio": "Portafolio/GitHub",
+        "portfolioPlaceholder": "https://tuportafolio.com o github.com/tuperfil",
+        "cv": "Currículum",
+        "cvUpload": "Haz clic para cargar o arrastra y suelta",
+        "cvFormats": "PDF, DOC, DOCX (máx. 10MB)",
+        "message": "Carta de Presentación",
+        "messagePlaceholder": "Cuéntanos sobre ti y por qué te gustaría unirte a Tucupy...",
+        "optional": "(opcional)",
+        "send": "Enviar Solicitud",
+        "sending": "Enviando...",
+        "getInTouch": "Únete a Nuestro Equipo",
+        "getInTouchDescription": "Estamos buscando personas talentosas para unirse a nuestra misión. Comparte tu historia con nosotros.",
+        "fastPaced": "Ambiente Dinámico",
+        "fastPacedDesc": "Trabaja en proyectos de vanguardia con impacto real",
+        "collaborative": "Cultura Colaborativa",
+        "collaborativeDesc": "Aprende de los mejores y crece junto a nosotros",
+        "growth": "Oportunidades de Crecimiento",
+        "growthDesc": "Caminos de carrera claros y aprendizaje continuo"
+      },
+      "validation": {
+        "nameRequired": "El nombre es obligatorio",
+        "nameMin": "El nombre debe tener al menos 3 caracteres",
+        "emailRequired": "El correo electrónico es obligatorio",
+        "emailInvalid": "Por favor, ingresa un correo electrónico válido",
+        "birthDateRequired": "La fecha de nacimiento es obligatoria",
+        "birthDateInvalid": "Por favor, ingresa una fecha válida",
+        "addressRequired": "La dirección es obligatoria",
+        "whereDoYouKnowUsRequired": "Por favor, selecciona una opción",
+        "areaOfInterestRequired": "Por favor, selecciona un área de interés",
+        "linkedinInvalid": "Por favor, ingresa una URL válida de LinkedIn",
+        "portfolioInvalid": "Por favor, ingresa una URL válida",
+        "cvRequired": "Por favor, carga tu currículum",
+        "messageRequired": "La carta de presentación es obligatoria",
+        "messageMin": "La carta de presentación debe tener al menos 10 caracteres"
+      },
+      "success": {
+        "title": "¡Solicitud Enviada con Éxito!",
+        "description": "Gracias por tu interés en unirte a Tucupy. Hemos recibido tu solicitud y la revisaremos cuidadosamente. ¡Nos pondremos en contacto pronto!",
+        "sendAnother": "Enviar Otra Solicitud"
+      },
+      "error": {
+        "title": "Algo salió mal",
+        "description": "No pudimos enviar tu solicitud. Por favor, inténtalo de nuevo más tarde.",
+        "tryAgain": "Intentar de Nuevo"
+      }
     }
   },
   "blog": {
@@ -387,7 +478,7 @@
   "footer": {
     "company": "Empresa",
     "aboutUs": "Sobre Nosotros",
-    "ourWork": "Nuestro Trabajo", 
+    "ourWork": "Nuestro Trabajo",
     "blog": "Blog",
     "careers": "Carreras",
     "resources": "Recursos",

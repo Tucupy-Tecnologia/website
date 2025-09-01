@@ -1,10 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/navbar";
-import { MapPin, Clock, Users, Lightbulb, Heart, Trophy, Rocket, Target, TrendingUp, Building2, DollarSign, Gift } from "lucide-react";
+import { Clock, Users, Lightbulb, Heart, Trophy, Rocket, Target, TrendingUp, Building2, DollarSign, Gift } from "lucide-react";
 import { Footer } from "@/components/footer";
 import Link from "next/link";
 import { getDictionary } from "../dictionaries";
 import { CareersContent } from "@/components/careers-content";
+import { CareersForm } from "@/components/careers-form";
 import { createMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 
@@ -15,7 +16,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { lang } = await params;
   const dict = await getDictionary(lang);
-  
+
   return createMetadata({
     title: dict.seo.careers.title,
     description: dict.seo.careers.description,
@@ -31,203 +32,6 @@ export default async function Page({
 }) {
   const { lang } = await params;
   const dict = await getDictionary(lang);
-
-  // Define roles with translations based on language
-  const getRoles = (lang: string) => {
-    const roles = {
-      en: [
-        {
-          category: "Engineering",
-          positions: [
-            {
-              title: "Senior Full Stack Engineer",
-              location: "In-Office",
-              type: "Full-time"
-            },
-            {
-              title: "Frontend Developer",
-              location: "In-Office",
-              type: "Full-time"
-            },
-            {
-              title: "DevOps Engineer",
-              location: "In-Office",
-              type: "Full-time"
-            }
-          ]
-        },
-        {
-          category: "Design",
-          positions: [
-            {
-              title: "Product Designer",
-              location: "In-Office",
-              type: "Full-time"
-            },
-            {
-              title: "UI/UX Designer",
-              location: "In-Office",
-              type: "Contract"
-            }
-          ]
-        },
-        {
-          category: "Product",
-          positions: [
-            {
-              title: "Product Manager",
-              location: "In-Office",
-              type: "Full-time"
-            }
-          ]
-        }
-      ],
-      pt: [
-        {
-          category: "Engenharia",
-          positions: [
-            {
-              title: "Engenheiro Full Stack Sênior",
-              location: "Presencial",
-              type: "Tempo integral"
-            },
-            {
-              title: "Desenvolvedor Frontend",
-              location: "Presencial",
-              type: "Tempo integral"
-            },
-            {
-              title: "Engenheiro DevOps",
-              location: "Presencial",
-              type: "Tempo integral"
-            }
-          ]
-        },
-        {
-          category: "Design",
-          positions: [
-            {
-              title: "Designer de Produto",
-              location: "Presencial",
-              type: "Tempo integral"
-            },
-            {
-              title: "Designer UI/UX",
-              location: "Presencial",
-              type: "Contrato"
-            }
-          ]
-        },
-        {
-          category: "Produto",
-          positions: [
-            {
-              title: "Gerente de Produto",
-              location: "Presencial",
-              type: "Tempo integral"
-            }
-          ]
-        }
-      ],
-      es: [
-        {
-          category: "Ingeniería",
-          positions: [
-            {
-              title: "Ingeniero Full Stack Senior",
-              location: "En Oficina",
-              type: "Tiempo completo"
-            },
-            {
-              title: "Desarrollador Frontend",
-              location: "En Oficina",
-              type: "Tiempo completo"
-            },
-            {
-              title: "Ingeniero DevOps",
-              location: "En Oficina",
-              type: "Tiempo completo"
-            }
-          ]
-        },
-        {
-          category: "Diseño",
-          positions: [
-            {
-              title: "Diseñador de Producto",
-              location: "En Oficina",
-              type: "Tiempo completo"
-            },
-            {
-              title: "Diseñador UI/UX",
-              location: "En Oficina",
-              type: "Contrato"
-            }
-          ]
-        },
-        {
-          category: "Producto",
-          positions: [
-            {
-              title: "Gerente de Producto",
-              location: "En Oficina",
-              type: "Tiempo completo"
-            }
-          ]
-        }
-      ],
-      fr: [
-        {
-          category: "Ingénierie",
-          positions: [
-            {
-              title: "Ingénieur Full Stack Senior",
-              location: "En Bureau",
-              type: "Temps plein"
-            },
-            {
-              title: "Développeur Frontend",
-              location: "En Bureau",
-              type: "Temps plein"
-            },
-            {
-              title: "Ingénieur DevOps",
-              location: "En Bureau",
-              type: "Temps plein"
-            }
-          ]
-        },
-        {
-          category: "Design",
-          positions: [
-            {
-              title: "Designer Produit",
-              location: "En Bureau",
-              type: "Temps plein"
-            },
-            {
-              title: "Designer UI/UX",
-              location: "En Bureau",
-              type: "Contrat"
-            }
-          ]
-        },
-        {
-          category: "Produit",
-          positions: [
-            {
-              title: "Chef de Produit",
-              location: "En Bureau",
-              type: "Temps plein"
-            }
-          ]
-        }
-      ]
-    };
-    return roles[lang as keyof typeof roles] || roles.en;
-  };
-
-  const openRoles = getRoles(lang);
 
   const values = [
     {
@@ -426,63 +230,8 @@ export default async function Page({
           </div>
         </div>
 
-        {/* Open Positions Section */}
-        <div id="open-positions" className="mt-20 sm:mt-32 scroll-mt-20 mb-20">
-          <div className="mb-10">
-            <h2 className="text-2xl sm:text-3xl font-semibold text-foreground">{dict.careers.openPositions.title}</h2>
-            <p className="mt-2 text-base sm:text-lg text-muted-foreground">
-              {dict.careers.openPositions.description.split('\n').map((line, i) => (
-                <span key={i}>
-                  {line}
-                  {i < dict.careers.openPositions.description.split('\n').length - 1 && <br />}
-                </span>
-              ))}
-            </p>
-          </div>
-
-          <div className="space-y-6">
-            {openRoles.map((category, categoryIndex) => (
-              <div key={categoryIndex}>
-                <h3 className="text-sm font-semibold text-muted-foreground mb-4">{category.category}</h3>
-                <div>
-                  {category.positions.map((position, positionIndex) => (
-                    <div
-                      key={positionIndex}
-                      className="bg-primary first:border border-gray-400/20 first:border-b-0 border-x last:border-b first:rounded-t-lg last:rounded-b-lg px-4 sm:px-6 py-4 sm:py-5 hover:border-gray-400/30 transition-all duration-200 group cursor-pointer"
-                    >
-                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-                        <div className="flex-1">
-                          <h4 className="text-sm sm:text-base font-medium text-foreground">
-                            {position.title}
-                          </h4>
-                          <div className="flex items-center gap-2 mt-2 sm:hidden">
-                            <MapPin className="w-3 h-3 text-muted-foreground" />
-                            <span className="text-xs text-muted-foreground">{position.location}</span>
-                          </div>
-                        </div>
-                        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-8">
-                          <div className="hidden sm:flex items-center gap-2">
-                            <div className="bg-background border border-gray-400/20 rounded-full px-3 py-1 flex items-center gap-2">
-                              <MapPin className="w-3 h-3 text-muted-foreground" />
-                              <span className="text-sm text-muted-foreground">{position.location}</span>
-                            </div>
-                          </div>
-                          <Button
-                            variant="ghost"
-                            size="sm"
-                            className="text-xs sm:text-sm bg-neutral-500/10 font-medium hover:bg-neutral-500/5 hover:text-foreground w-full sm:w-auto"
-                          >
-                            {dict.careers.openPositions.applyButton}
-                          </Button>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+        {/* Application Form Section */}
+        <CareersForm dict={dict} />
       </main>
       <Footer lang={lang} dict={dict} />
     </div>

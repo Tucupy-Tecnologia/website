@@ -14,16 +14,45 @@ import {
 	FormLabel,
 	FormMessage,
 } from './ui/form';
+import {
+	Select,
+	SelectContent,
+	SelectItem,
+	SelectTrigger,
+	SelectValue,
+} from './ui/select';
 import { Mail, MapPin, Phone } from 'lucide-react';
 import { useState } from 'react';
+import { toast } from 'sonner';
 
 const formSchema = z.object({
-	firstName: z.string().min(1, 'validation.firstNameRequired'),
-	lastName: z.string().min(1, 'validation.lastNameRequired'),
-	email: z.email().min(1, 'validation.emailRequired'),
-	phone: z.string().optional(),
-	company: z.string().optional(),
-	message: z.string().min(1, 'validation.messageRequired'),
+	firstName: z
+		.string()
+		.min(3, "Seu primeiro nome deve ter no mínimo 3 caracteres")
+		.max(50, "Seu primeiro nome deve ter no máximo 50 caracteres"),
+	lastName: z
+		.string()
+		.min(3, "Seu sobrenome deve ter no mínimo 3 caracteres")
+		.max(50, "Seu sobrenome deve ter no máximo 50 caracteres"),
+	email: z
+		.string()
+		.optional()
+		.refine((value) => {
+			if (!value) return true;
+			return value.includes("@");
+		}, "Por favor, insira um email válido"),
+	phone: z
+		.string()
+		.min(10, "Por favor, insira um telefone válido")
+		.max(16, "Por favor, insira um telefone válido")
+		.regex(/^\+?[0-9]+$/, "Por favor, insira um telefone válido"),
+	whereDoYouKnowUs: z
+		.enum(["Google", "Facebook", "Instagram", "LinkedIn", "Twitter", "Recomendações", "Outros"])
+		.refine((value) => value !== undefined, "Por favor, selecione uma opção"),
+	message: z
+		.string()
+		.min(10, "Sua mensagem deve ter no mínimo 10 caracteres")
+		.max(500, "Sua mensagem deve ter no máximo 500 caracteres"),
 });
 
 type FormData = z.infer<typeof formSchema>;
@@ -40,7 +69,7 @@ export function Contact({ dict }: ContactProps): React.ReactElement {
 			lastName: '',
 			email: '',
 			phone: '',
-			company: '',
+			whereDoYouKnowUs: undefined,
 			message: '',
 		},
 	});
@@ -48,58 +77,52 @@ export function Contact({ dict }: ContactProps): React.ReactElement {
 	const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
 	const { isSubmitting } = form.formState;
 
+	const LOCAL_STORAGE_FORM_SUBMISSION_TIME_KEY = "tucupy@1.0.0:form-submission-time";
+
 	async function onSubmit(values: FormData) {
+		const localStorageTime = localStorage.getItem(LOCAL_STORAGE_FORM_SUBMISSION_TIME_KEY);
+
+		if (localStorageTime) {
+			const lastTime = localStorageTime;
+			const now = Date.now();
+			const diff = now - parseInt(lastTime.split(" ")[1]);
+			if (diff < 1000 * 60 * 5) {
+				toast.error("Aguarde 5 minutos antes de enviar outro formulário", {
+					closeButton: true,
+				});
+				return;
+			}
+		}
+
 		try {
-			console.log(values)
-			await new Promise(resolve => setTimeout(resolve, 1500));
+			const response = await fetch(`${process.env.NEXT_PUBLIC_API_ENDPOINT}/notification`, {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({
+					...values,
+					email: values.email === "" ? null : values.email?.toLowerCase(),
+				}),
+			});
+
+			if (!response.ok) {
+				throw new Error('Failed to submit form');
+			}
+
+			localStorage.setItem(LOCAL_STORAGE_FORM_SUBMISSION_TIME_KEY, "now " + Date.now());
 			setIsSubmitted(true);
 			form.reset();
 		} catch (error) {
-			console.error('Error submitting form:', error);
+			toast.error("Erro ao enviar formulário. Tente novamente.", {
+				closeButton: true,
+				action: {
+					label: "Enviar novamente",
+					onClick: () => onSubmit(values),
+				},
+			});
+			console.error(error);
 		}
-	}
-
-	if (isSubmitted) {
-		return (
-			<div className="bg-background">
-				<div className="mx-auto max-w-2xl lg:max-w-6xl px-4">
-					<div>
-						<h2 className="text-base/7 font-semibold text-muted-foreground">{dict.contact.section}</h2>
-						<p className="mt-2 text-4xl font-semibold tracking-tight text-pretty sm:text-5xl text-foreground" dangerouslySetInnerHTML={{ __html: dict.contact.title }} />
-						<p className="mt-6 text-lg/8 text-muted-foreground max-w-3xl">
-							{dict.contact.description}
-						</p>
-					</div>
-
-					<div className="w-full mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8">
-						<div className="bg-primary rounded-3xl p-12 flex flex-col justify-center">
-							<div className="mx-auto w-16 h-16 bg-brand/10 rounded-full flex items-center justify-center mb-6">
-								<Mail className="w-8 h-8 text-brand" />
-							</div>
-							<h3 className="text-3xl font-semibold text-foreground mb-4 text-center">
-								{dict.contact.success.title}
-							</h3>
-							<p className="text-lg text-muted-foreground mb-8 text-center">
-								{dict.contact.success.description}
-							</p>
-							<Button
-								variant="brand"
-								onClick={() => setIsSubmitted(false)}
-								className="mx-auto"
-							>
-								{dict.contact.success.sendAnother}
-							</Button>
-						</div>
-						<div className="bg-primary rounded-3xl p-12 flex items-center justify-center">
-							<div className="text-center text-muted-foreground">
-								<Mail className="w-12 h-12 mx-auto mb-4 opacity-30" />
-								<p>{dict.contact.success.onTheWay}</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		);
 	}
 
 	return (
@@ -165,24 +188,86 @@ export function Contact({ dict }: ContactProps): React.ReactElement {
 
 					{/* Contact Form */}
 					<div className="bg-primary rounded-3xl p-8">
-						<Form {...form}>
-							<form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-								<div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+						{isSubmitted ? (
+							<div className="flex flex-col items-center justify-center py-12">
+								<div className="mx-auto w-16 h-16 bg-brand/10 rounded-full flex items-center justify-center mb-6">
+									<Mail className="w-8 h-8 text-brand" />
+								</div>
+								<h3 className="text-2xl font-semibold text-foreground mb-4 text-center">
+									{dict.contact.success.title}
+								</h3>
+								<p className="text-muted-foreground mb-8 text-center">
+									{dict.contact.success.description}
+								</p>
+								<Button
+									variant="brand"
+									onClick={() => setIsSubmitted(false)}
+									className="mx-auto"
+								>
+									{dict.contact.success.sendAnother}
+								</Button>
+							</div>
+						) : (
+							<Form {...form}>
+								<form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+									<div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+										<FormField
+											control={form.control}
+											name="firstName"
+											render={({ field }) => (
+												<FormItem>
+													<FormLabel>{dict.contact.form.firstName} *</FormLabel>
+													<FormControl>
+														<Input
+															placeholder={dict.contact.form.firstNamePlaceholder}
+															className="px-4 py-3 rounded-xl"
+															{...field}
+														/>
+													</FormControl>
+													<FormMessage>
+														{form.formState.errors.firstName?.message && dict.contact[form.formState.errors.firstName.message]}
+													</FormMessage>
+												</FormItem>
+											)}
+										/>
+
+										<FormField
+											control={form.control}
+											name="lastName"
+											render={({ field }) => (
+												<FormItem>
+													<FormLabel>{dict.contact.form.lastName} *</FormLabel>
+													<FormControl>
+														<Input
+															placeholder={dict.contact.form.lastNamePlaceholder}
+															className="px-4 py-3 rounded-xl"
+															{...field}
+														/>
+													</FormControl>
+													<FormMessage>
+														{form.formState.errors.lastName?.message && dict.contact[form.formState.errors.lastName.message]}
+													</FormMessage>
+												</FormItem>
+											)}
+										/>
+									</div>
+
 									<FormField
 										control={form.control}
-										name="firstName"
+										name="email"
 										render={({ field }) => (
 											<FormItem>
-												<FormLabel>{dict.contact.form.firstName} *</FormLabel>
+												<FormLabel>{dict.contact.form.email} *</FormLabel>
 												<FormControl>
 													<Input
-														placeholder={dict.contact.form.firstNamePlaceholder}
+														type="email"
+														placeholder={dict.contact.form.emailPlaceholder}
 														className="px-4 py-3 rounded-xl"
 														{...field}
 													/>
 												</FormControl>
 												<FormMessage>
-													{form.formState.errors.firstName?.message && dict.contact[form.formState.errors.firstName.message]}
+													{form.formState.errors.email?.message && dict.contact[form.formState.errors.email.message]}
 												</FormMessage>
 											</FormItem>
 										)}
@@ -190,116 +275,85 @@ export function Contact({ dict }: ContactProps): React.ReactElement {
 
 									<FormField
 										control={form.control}
-										name="lastName"
+										name="phone"
 										render={({ field }) => (
 											<FormItem>
-												<FormLabel>{dict.contact.form.lastName} *</FormLabel>
+												<FormLabel>{dict.contact.form.phone} <span className="text-brand-yellow">*</span></FormLabel>
 												<FormControl>
 													<Input
-														placeholder={dict.contact.form.lastNamePlaceholder}
+														type="tel"
+														placeholder="(00) 00000-0000"
 														className="px-4 py-3 rounded-xl"
 														{...field}
 													/>
 												</FormControl>
-												<FormMessage>
-													{form.formState.errors.lastName?.message && dict.contact[form.formState.errors.lastName.message]}
-												</FormMessage>
+												<FormMessage />
 											</FormItem>
 										)}
 									/>
-								</div>
 
-								<FormField
-									control={form.control}
-									name="email"
-									render={({ field }) => (
-										<FormItem>
-											<FormLabel>{dict.contact.form.email} *</FormLabel>
-											<FormControl>
-												<Input
-													type="email"
-													placeholder={dict.contact.form.emailPlaceholder}
-													className="px-4 py-3 rounded-xl"
-													{...field}
-												/>
-											</FormControl>
-											<FormMessage>
-												{form.formState.errors.email?.message && dict.contact[form.formState.errors.email.message]}
-											</FormMessage>
-										</FormItem>
-									)}
-								/>
+									<FormField
+										control={form.control}
+										name="whereDoYouKnowUs"
+										render={({ field }) => (
+											<FormItem>
+												<FormLabel>Como nos conheceu? <span className="text-brand-yellow">*</span></FormLabel>
+												<Select
+													onValueChange={field.onChange}
+													defaultValue={field.value}
+												>
+													<FormControl>
+														<SelectTrigger className="px-4 py-3 rounded-xl">
+															<SelectValue placeholder="Selecione uma opção" />
+														</SelectTrigger>
+													</FormControl>
+													<SelectContent>
+														<SelectItem value="Google">Google</SelectItem>
+														<SelectItem value="Instagram">Instagram</SelectItem>
+														<SelectItem value="Facebook">Facebook</SelectItem>
+														<SelectItem value="Twitter">Twitter</SelectItem>
+														<SelectItem value="Recomendações">Recomendações</SelectItem>
+														<SelectItem value="Outros">Outros</SelectItem>
+													</SelectContent>
+												</Select>
+												<FormMessage />
+											</FormItem>
+										)}
+									/>
 
-								<FormField
-									control={form.control}
-									name="phone"
-									render={({ field }) => (
-										<FormItem>
-											<FormLabel>{dict.contact.form.phone}</FormLabel>
-											<FormControl>
-												<Input
-													type="tel"
-													placeholder={dict.contact.form.phonePlaceholder}
-													className="px-4 py-3 rounded-xl"
-													{...field}
-												/>
-											</FormControl>
-											<FormMessage />
-										</FormItem>
-									)}
-								/>
 
-								<FormField
-									control={form.control}
-									name="company"
-									render={({ field }) => (
-										<FormItem>
-											<FormLabel>{dict.contact.form.company}</FormLabel>
-											<FormControl>
-												<Input
-													placeholder={dict.contact.form.companyPlaceholder}
-													className="px-4 py-3 rounded-xl"
-													{...field}
-												/>
-											</FormControl>
-											<FormMessage />
-										</FormItem>
-									)}
-								/>
+									<FormField
+										control={form.control}
+										name="message"
+										render={({ field }) => (
+											<FormItem>
+												<FormLabel>{dict.contact.form.message} <span className="text-brand-yellow">*</span></FormLabel>
+												<FormControl>
+													<Textarea
+														rows={4}
+														placeholder={dict.contact.form.messagePlaceholder}
+														className="px-4 py-3 rounded-xl resize-none"
+														{...field}
+													/>
+												</FormControl>
+												<FormMessage />
+											</FormItem>
+										)}
+									/>
 
-								<FormField
-									control={form.control}
-									name="message"
-									render={({ field }) => (
-										<FormItem>
-											<FormLabel>{dict.contact.form.message} *</FormLabel>
-											<FormControl>
-												<Textarea
-													rows={5}
-													placeholder={dict.contact.form.messagePlaceholder}
-													className="px-4 py-3 rounded-xl resize-none"
-													{...field}
-												/>
-											</FormControl>
-											<FormMessage>
-												{form.formState.errors.message?.message && dict.contact[form.formState.errors.message.message]}
-											</FormMessage>
-										</FormItem>
-									)}
-								/>
-
-								<div className="pt-4">
-									<Button
-										type="submit"
-										variant="brand"
-										disabled={isSubmitting}
-										className="w-full"
-									>
-										{isSubmitting ? dict.contact.form.sending : dict.contact.form.send}
-									</Button>
-								</div>
-							</form>
-						</Form>
+									<div className="pt-4">
+										<Button
+											type="submit"
+											variant="brand"
+											disabled={isSubmitting}
+											className="w-full"
+										>
+											{isSubmitting ? dict.contact.form.sending : dict.contact.form.send}
+										</Button>
+									</div>
+								</form>
+							</Form>
+						)}
 					</div>
 				</div>
 			</div>

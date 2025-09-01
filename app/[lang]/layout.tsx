@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Inter } from "next/font/google";
 import { createStructuredData } from "@/lib/seo";
+import { Toaster } from "sonner";
 
 import "../globals.css";
 
@@ -94,6 +95,7 @@ export default async function RootLayout({
       >
         <ThemeProvider attribute="class" forcedTheme="dark">
           {children}
+          <Toaster position="top-center" richColors />
         </ThemeProvider>
       </body>
     </html>

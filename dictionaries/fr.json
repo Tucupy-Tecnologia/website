@@ -366,11 +366,90 @@
         }
       ]
     },
-    "openPositions": {
-      "title": "Postes ouverts",
-      "description": "Vous voulez construire des solutions numériques exceptionnelles ?\nNous adorerions vous parler.",
-      "applyButton": "Postuler pour le poste",
-      "buttonText": "Postes ouverts"
+    "applicationForm": {
+      "title": "Rejoignez Notre Équipe",
+      "description": "Prêt à construire des solutions numériques exceptionnelles avec nous ? Nous adorerions vous connaître.",
+      "form": {
+        "name": "Nom Complet",
+        "namePlaceholder": "Jean Dupont",
+        "email": "Email",
+        "emailPlaceholder": "jean@exemple.com",
+        "phone": "Téléphone",
+        "phonePlaceholder": "+33 1 23 45 67 89",
+        "birthDate": "Date de Naissance",
+        "birthDatePlaceholder": "JJ/MM/AAAA",
+        "address": "Adresse",
+        "addressPlaceholder": "Ville, État, Pays",
+        "whereDoYouKnowUs": "Comment nous avez-vous connu ?",
+        "whereDoYouKnowUsPlaceholder": "Sélectionnez une option",
+        "whereDoYouKnowUsOptions": {
+          "google": "Google",
+          "facebook": "Facebook",
+          "instagram": "Instagram",
+          "linkedin": "LinkedIn",
+          "twitter": "Twitter",
+          "recommendations": "Recommandations",
+          "others": "Autres"
+        },
+        "areaOfInterest": "Domaine d'Intérêt",
+        "areaOfInterestPlaceholder": "Sélectionnez un domaine",
+        "areaOfInterestOptions": {
+          "frontend": "Front-End",
+          "backend": "Back-End",
+          "fullstack": "Full Stack",
+          "uiux": "UI/UX",
+          "dataScience": "Science des Données",
+          "aiml": "AI/ML",
+          "bi": "Business Intelligence",
+          "devops": "DevOps"
+        },
+        "linkedin": "LinkedIn",
+        "linkedinPlaceholder": "https://linkedin.com/in/votreprofil",
+        "portfolio": "Portfolio/GitHub",
+        "portfolioPlaceholder": "https://votreportfolio.com ou github.com/votreprofil",
+        "cv": "CV",
+        "cvUpload": "Cliquez pour télécharger ou glissez-déposez",
+        "cvFormats": "PDF, DOC, DOCX (max. 10MB)",
+        "message": "Lettre de Motivation",
+        "messagePlaceholder": "Parlez-nous de vous et pourquoi vous aimeriez rejoindre Tucupy...",
+        "optional": "(optionnel)",
+        "send": "Envoyer la Candidature",
+        "sending": "Envoi en cours...",
+        "getInTouch": "Rejoignez Notre Équipe",
+        "getInTouchDescription": "Nous recherchons des personnes talentueuses pour rejoindre notre mission. Partagez votre histoire avec nous.",
+        "fastPaced": "Environnement Dynamique",
+        "fastPacedDesc": "Travaillez sur des projets de pointe avec un impact réel",
+        "collaborative": "Culture Collaborative",
+        "collaborativeDesc": "Apprenez des meilleurs et grandissez ensemble",
+        "growth": "Opportunités de Croissance",
+        "growthDesc": "Chemins de carrière clairs et apprentissage continu"
+      },
+      "validation": {
+        "nameRequired": "Le nom est requis",
+        "nameMin": "Le nom doit contenir au moins 3 caractères",
+        "emailRequired": "L'email est requis",
+        "emailInvalid": "Veuillez entrer un email valide",
+        "birthDateRequired": "La date de naissance est requise",
+        "birthDateInvalid": "Veuillez entrer une date valide",
+        "addressRequired": "L'adresse est requise",
+        "whereDoYouKnowUsRequired": "Veuillez sélectionner une option",
+        "areaOfInterestRequired": "Veuillez sélectionner un domaine d'intérêt",
+        "linkedinInvalid": "Veuillez entrer une URL LinkedIn valide",
+        "portfolioInvalid": "Veuillez entrer une URL valide",
+        "cvRequired": "Veuillez télécharger votre CV",
+        "messageRequired": "La lettre de motivation est requise",
+        "messageMin": "La lettre de motivation doit contenir au moins 10 caractères"
+      },
+      "success": {
+        "title": "Candidature Envoyée avec Succès !",
+        "description": "Merci de votre intérêt pour rejoindre Tucupy. Nous avons reçu votre candidature et l'examinerons attentivement. Nous vous contacterons bientôt !",
+        "sendAnother": "Envoyer une Autre Candidature"
+      },
+      "error": {
+        "title": "Quelque chose s'est mal passé",
+        "description": "Nous n'avons pas pu envoyer votre candidature. Veuillez réessayer plus tard.",
+        "tryAgain": "Réessayer"
+      }
     }
   },
   "blog": {

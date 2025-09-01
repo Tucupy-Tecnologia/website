@@ -366,11 +366,90 @@
         }
       ]
     },
-    "openPositions": {
-      "title": "Open positions",
-      "description": "Want to build exceptional digital solutions?\nWe'd love to talk to you.",
-      "applyButton": "Apply for position",
-      "buttonText": "Open positions"
+    "applicationForm": {
+      "title": "Join Our Team",
+      "description": "Ready to build exceptional digital solutions with us? We'd love to hear from you.",
+      "form": {
+        "name": "Full Name",
+        "namePlaceholder": "John Doe",
+        "email": "Email",
+        "emailPlaceholder": "john@example.com",
+        "phone": "Phone",
+        "phonePlaceholder": "+1 (555) 123-4567",
+        "birthDate": "Date of Birth",
+        "birthDatePlaceholder": "MM/DD/YYYY",
+        "address": "Address",
+        "addressPlaceholder": "City, State, Country",
+        "whereDoYouKnowUs": "How did you hear about us?",
+        "whereDoYouKnowUsPlaceholder": "Select an option",
+        "whereDoYouKnowUsOptions": {
+          "google": "Google",
+          "facebook": "Facebook",
+          "instagram": "Instagram",
+          "linkedin": "LinkedIn",
+          "twitter": "Twitter",
+          "recommendations": "Recommendations",
+          "others": "Others"
+        },
+        "areaOfInterest": "Area of Interest",
+        "areaOfInterestPlaceholder": "Select an area",
+        "areaOfInterestOptions": {
+          "frontend": "Front-End",
+          "backend": "Back-End",
+          "fullstack": "Full Stack",
+          "uiux": "UI/UX",
+          "dataScience": "Data Science",
+          "aiml": "AI/ML",
+          "bi": "Business Intelligence",
+          "devops": "DevOps"
+        },
+        "linkedin": "LinkedIn",
+        "linkedinPlaceholder": "https://linkedin.com/in/yourprofile",
+        "portfolio": "Portfolio/GitHub",
+        "portfolioPlaceholder": "https://yourportfolio.com or github.com/yourprofile",
+        "cv": "Resume/CV",
+        "cvUpload": "Click to upload or drag and drop",
+        "cvFormats": "PDF, DOC, DOCX (max. 10MB)",
+        "message": "Cover Letter",
+        "messagePlaceholder": "Tell us about yourself and why you'd like to join Tucupy...",
+        "optional": "(optional)",
+        "send": "Send Application",
+        "sending": "Sending...",
+        "getInTouch": "Join Our Team",
+        "getInTouchDescription": "We're looking for talented individuals to join our mission. Share your story with us.",
+        "fastPaced": "Fast-paced Environment",
+        "fastPacedDesc": "Work on cutting-edge projects with real impact",
+        "collaborative": "Collaborative Culture",
+        "collaborativeDesc": "Learn from the best and grow together",
+        "growth": "Growth Opportunities",
+        "growthDesc": "Clear career paths and continuous learning"
+      },
+      "validation": {
+        "nameRequired": "Name is required",
+        "nameMin": "Name must be at least 3 characters",
+        "emailRequired": "Email is required",
+        "emailInvalid": "Please enter a valid email",
+        "birthDateRequired": "Date of birth is required",
+        "birthDateInvalid": "Please enter a valid date",
+        "addressRequired": "Address is required",
+        "whereDoYouKnowUsRequired": "Please select an option",
+        "areaOfInterestRequired": "Please select an area of interest",
+        "linkedinInvalid": "Please enter a valid LinkedIn URL",
+        "portfolioInvalid": "Please enter a valid URL",
+        "cvRequired": "Please upload your resume",
+        "messageRequired": "Cover letter is required",
+        "messageMin": "Cover letter must be at least 10 characters"
+      },
+      "success": {
+        "title": "Application Sent Successfully!",
+        "description": "Thank you for your interest in joining Tucupy. We've received your application and will review it carefully. We'll get back to you soon!",
+        "sendAnother": "Send Another Application"
+      },
+      "error": {
+        "title": "Something went wrong",
+        "description": "We couldn't send your application. Please try again later.",
+        "tryAgain": "Try Again"
+      }
     }
   },
   "blog": {

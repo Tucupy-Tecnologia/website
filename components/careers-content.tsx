@@ -8,7 +8,7 @@ interface CareersContentProps {
 
 export function CareersContent({ dict }: CareersContentProps) {
   const handleScrollToPositions = () => {
-    document.getElementById('open-positions')?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('application-form')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -16,7 +16,7 @@ export function CareersContent({ dict }: CareersContentProps) {
       className="text-sm/6 font-semibold text-foreground ring ring-gray-400/20"
       onClick={handleScrollToPositions}
     >
-      {dict.careers.openPositions.buttonText} <span aria-hidden="true">→</span>
+      {dict.careers.applicationForm.form.send} <span aria-hidden="true">→</span>
     </Button>
   );
 }
