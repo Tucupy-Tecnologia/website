@@ -1,4 +1,4 @@
-import { UploadthingRouter } from "@/services/uploadthing-router";
+import { UploadthingRouter } from "@/lib/uploadthing-router";
 import {
   generateUploadButton,
   generateUploadDropzone,

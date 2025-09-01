@@ -10,7 +10,7 @@ export const uploadthingRouter = {
     "application/msword",
     "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
     "application/vnd.apple.pages",
-  ]).onUploadComplete(async ({ metadata, file }) => {
+  ]).onUploadComplete(async ({ file }) => {
     return { file_url: file.url };
   }),
 } satisfies FileRouter;
