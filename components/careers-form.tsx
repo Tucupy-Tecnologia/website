@@ -26,7 +26,6 @@ import { useState } from 'react';
 import { toast } from 'sonner';
 import { useUploadThing } from './uploadthing';
 import { notionService } from '@/lib/notion';
-
 const formSchema = z.object({
 	name: z
 		.string()
@@ -123,7 +122,7 @@ export function CareersForm({ dict }: CareersFormProps): React.ReactElement {
 
 	async function onSubmit(values: FormData) {
 		try {
-			// Submit to Notion
+			// Save to Notion using server action
 			await notionService({
 				name: values.name,
 				email: values.email || '',
@@ -137,11 +136,45 @@ export function CareersForm({ dict }: CareersFormProps): React.ReactElement {
 				message: values.message,
 			});
 
+			// Call external API for notification
+			const apiEndpoint = process.env.NEXT_PUBLIC_API_ENDPOINT;
+			if (apiEndpoint) {
+				try {
+					const externalResponse = await fetch(`${apiEndpoint}/notification/work-with-us`, {
+						method: 'POST',
+						headers: {
+							'Content-Type': 'application/json',
+						},
+						body: JSON.stringify({
+							name: values.name,
+							email: values.email === "" ? null : values.email?.toLowerCase(),
+							address: 'Not specified',
+							birthDate: new Date().toISOString().split('T')[0],
+							whereDoYouKnowUs: values.whereDoYouKnowUs,
+							areaOfInterest: values.areaOfInterest,
+							linkedin: values.linkedin || '',
+							github: values.portfolio || '',
+							portfolio: values.portfolio || '',
+							cv: values.cv,
+							message: values.message,
+						}),
+					});
+
+					if (!externalResponse.ok) {
+						console.error('Failed to send external notification:', externalResponse.statusText);
+						// Don't throw here - we still want to show success if Notion save worked
+					}
+				} catch (externalError) {
+					console.error('Error sending external notification:', externalError);
+					// Don't throw here - we still want to show success if Notion save worked
+				}
+			}
+
 			setIsSubmitted(true);
 			form.reset();
 		} catch (error) {
 			console.error('Error submitting form:', error);
-			toast.error(dict.careers.applicationForm.error.description);
+			toast.error(dict.careers.applicationForm.error?.description || 'Failed to submit application. Please try again.');
 		}
 	}
 
