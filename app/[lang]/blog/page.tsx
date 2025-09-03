@@ -38,8 +38,8 @@ export default async function Page({
       <Navbar lang={lang} dict={dict} />
 
       <main className="max-w-6xl mx-auto px-4 space-y-8 sm:space-y-12">
-        {featuredPost && <FeaturedPost post={featuredPost} />}
-        <PostList posts={posts} dict={dict} />
+        {featuredPost && <FeaturedPost post={featuredPost} lang={lang} />}
+        <PostList posts={posts} dict={dict} lang={lang} />
         <Footer lang={lang} dict={dict} />
       </main>
     </div>

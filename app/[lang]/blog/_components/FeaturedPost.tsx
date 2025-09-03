@@ -6,13 +6,14 @@ import type { BlogMetadata } from "@/lib/blog-types"
 
 interface FeaturedPostProps {
   post: BlogMetadata
+  lang: string
 }
 
-export function FeaturedPost({ post }: FeaturedPostProps) {
+export function FeaturedPost({ post, lang }: FeaturedPostProps) {
   const formattedDate = format(new Date(post.date), 'dd MMM yyyy')
   
   return (
-    <Link href={`/blog/${post.slug}`} className="flex flex-col lg:flex-row items-center gap-6 lg:gap-10 hover:bg-neutral-500/5 p-3 rounded-xl ease-out transition-colors cursor-pointer">
+    <Link href={`/${lang}/blog/${post.slug}`} className="flex flex-col lg:flex-row items-center gap-6 lg:gap-10 hover:bg-neutral-500/5 p-3 rounded-xl ease-out transition-colors cursor-pointer">
       <Image 
         src={post.image} 
         alt={post.title} 

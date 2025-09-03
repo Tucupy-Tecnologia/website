@@ -2,17 +2,19 @@ import { Navbar } from "@/components/navbar";
 import { getBlogPost, getAllBlogSlugs, getTableOfContents } from "@/lib/blog";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ChevronLeft, Twitter, Linkedin, Copy, ExternalLink } from "lucide-react";
+import { ChevronLeft } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { format } from "date-fns";
 import Image from "next/image";
 import { MDXRemote } from "next-mdx-remote-client/rsc";
 import { Footer } from "@/components/footer";
 import { TableOfContents } from "@/components/blog/TableOfContents";
+import { ShareButtons } from "@/components/blog/ShareButtons";
 import mdxComponents from "@/components/mdx-components";
 import { getDictionary } from "../../dictionaries";
 import { Metadata } from "next";
 import { createMetadata } from "@/lib/seo";
+import { headers } from "next/headers";
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string; lang: 'en' | 'pt' | 'es' | 'fr' }>
@@ -50,6 +52,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   const toc = getTableOfContents(post.content)
   const formattedDate = format(new Date(post.date), 'dd MMM yyyy')
+  
+  // Get the current URL for sharing
+  const headersList = await headers()
+  const host = headersList.get('host') || 'localhost:3000'
+  const protocol = process.env.NODE_ENV === 'production' ? 'https' : 'http'
+  const currentUrl = `${protocol}://${host}/${lang}/blog/${slug}`
 
   return (
     <div className="bg-background min-h-screen">
@@ -133,23 +141,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               <TableOfContents headings={toc} />
 
               {/* Share section */}
-              <div>
-                <h3 className="text-sm font-semibold mb-4">Share this article</h3>
-                <div className="flex gap-3">
-                  <button className="p-2 rounded-md border border-neutral-800 hover:bg-neutral-800 transition-colors">
-                    <Twitter className="size-4" />
-                  </button>
-                  <button className="p-2 rounded-md border border-neutral-800 hover:bg-neutral-800 transition-colors">
-                    <Linkedin className="size-4" />
-                  </button>
-                  <button className="p-2 rounded-md border border-neutral-800 hover:bg-neutral-800 transition-colors">
-                    <Copy className="size-4" />
-                  </button>
-                  <button className="p-2 rounded-md border border-neutral-800 hover:bg-neutral-800 transition-colors">
-                    <ExternalLink className="size-4" />
-                  </button>
-                </div>
-              </div>
+              <ShareButtons title={post.title} url={currentUrl} />
             </div>
           </div>
         </div>

@@ -5,13 +5,14 @@ import type { BlogMetadata } from "@/lib/blog-types";
 
 interface PostProps {
   post: BlogMetadata
+  lang: string
 }
 
-export function Post({ post }: PostProps) {
+export function Post({ post, lang }: PostProps) {
   const formattedDate = format(new Date(post.date), 'dd MMM yyyy')
 
   return (
-    <Link href={`/blog/${post.slug}`} className="flex flex-col hover:bg-neutral-500/5 p-4 rounded-xl ease-out transition-colors cursor-pointer h-full">
+    <Link href={`/${lang}/blog/${post.slug}`} className="flex flex-col hover:bg-neutral-500/5 p-4 rounded-xl ease-out transition-colors cursor-pointer h-full">
       <div className="relative w-full aspect-[16/10] mb-4">
         <Image 
           src={post.image} 

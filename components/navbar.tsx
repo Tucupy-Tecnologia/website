@@ -55,7 +55,7 @@ export function Navbar({ lang, dict }: NavbarProps) {
 	return (
 		<nav className="bg-background text-white max-w-6xl mx-auto px-4 pt-6 flex items-center justify-between relative">
 			<div className="flex items-center gap-6">
-				<Link href="/" onClick={() => setIsMenuOpen(false)}>
+				<Link href={`/${lang}`} onClick={() => setIsMenuOpen(false)}>
 					<div className={cn("flex items-center gap-2 group cursor-pointer", isMenuOpen && 'pb-4')}>
 						<Image src="/tucupy.svg" alt="logo" width={15} height={15} />
 						<h1 className={cn("text-3xl font-bold text-foreground group-hover:text-brand transition-colors ease-out mb-1", titillium.className)}>tucupy</h1>

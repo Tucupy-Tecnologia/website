@@ -12,9 +12,10 @@ import { translateCategory } from "@/lib/translate-tag";
 interface PostListProps {
   posts: BlogMetadata[]
   dict: Record<string, any>
+  lang: string
 }
 
-export function PostList({ posts, dict }: PostListProps) {
+export function PostList({ posts, dict, lang }: PostListProps) {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -91,7 +92,7 @@ export function PostList({ posts, dict }: PostListProps) {
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 mt-10">
         {filteredPosts.length > 0 ? (
           filteredPosts.map((post) => (
-            <Post key={post.slug} post={post} />
+            <Post key={post.slug} post={post} lang={lang} />
           ))
         ) : (
           <div className="col-span-full text-center py-12 text-neutral-400">
