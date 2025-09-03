@@ -20,7 +20,7 @@ export function HeroContent({ featuredPost, lang, dict }: HeroContentProps) {
             {featuredPost.title}
             <Link href={`/${lang}/blog/${featuredPost.slug}`} className="font-semibold text-brand ml-1">
               <span aria-hidden="true" className="absolute inset-0" />
-              Read more <span aria-hidden="true">&rarr;</span>
+              {dict.hero.readMore} <span aria-hidden="true">&rarr;</span>
             </Link>
           </div>
         </div>
