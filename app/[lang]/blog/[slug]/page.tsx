@@ -17,10 +17,12 @@ import { createMetadata } from "@/lib/seo";
 import { headers } from "next/headers";
 
 interface BlogPostPageProps {
-  params: Promise<{ slug: string; lang: 'en' | 'pt' | 'es' | 'fr' }>
+  params: Promise<{ slug: string; lang: "en" | "pt" | "es" | "fr" }>;
 }
 
-export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: BlogPostPageProps): Promise<Metadata> {
   const { slug, lang } = await params;
   const post = getBlogPost(slug, lang);
 
@@ -31,10 +33,10 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   return createMetadata({
     title: post.title,
     description: post.description,
-    keywords: post.tags.join(', '),
+    keywords: post.tags.join(", "),
     url: `/${lang}/blog/${slug}`,
     image: post.image,
-    type: 'article',
+    type: "article",
     publishedTime: post.date,
     author: post.author.name,
     section: post.category,
@@ -42,22 +44,22 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
-  const { slug, lang } = await params
-  const dict = await getDictionary(lang)
-  const post = getBlogPost(slug, lang)
+  const { slug, lang } = await params;
+  const dict = await getDictionary(lang);
+  const post = getBlogPost(slug, lang);
 
   if (!post) {
-    notFound()
+    notFound();
   }
 
-  const toc = getTableOfContents(post.content)
-  const formattedDate = format(new Date(post.date), 'dd MMM yyyy')
-  
+  const toc = getTableOfContents(post.content);
+  const formattedDate = format(new Date(post.date), "dd MMM yyyy");
+
   // Get the current URL for sharing
-  const headersList = await headers()
-  const host = headersList.get('host') || 'localhost:3000'
-  const protocol = process.env.NODE_ENV === 'production' ? 'https' : 'http'
-  const currentUrl = `${protocol}://${host}/${lang}/blog/${slug}`
+  const headersList = await headers();
+  const host = headersList.get("host") || "localhost:3000";
+  const protocol = process.env.NODE_ENV === "production" ? "https" : "http";
+  const currentUrl = `${protocol}://${host}/${lang}/blog/${slug}`;
 
   return (
     <div className="bg-background min-h-screen">
@@ -73,7 +75,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             <ChevronLeft className="size-4" />
             Back
           </Link>
-
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
@@ -87,7 +88,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                     {post.category.toLowerCase()}
                   </span>
                   {post.tags.map((tag) => (
-                    <span key={tag} className="bg-neutral-500/10 text-foreground px-3 py-1 rounded-full text-xs font-medium">
+                    <span
+                      key={tag}
+                      className="bg-neutral-500/10 text-foreground px-3 py-1 rounded-full text-xs font-medium"
+                    >
                       {tag}
                     </span>
                   ))}
@@ -105,13 +109,20 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
                 <div className="flex items-center gap-3 mb-8">
                   <Avatar className="size-10">
-                    <AvatarImage src={post.author.image} />
-                    <AvatarFallback>{post.author.name.slice(0, 2).toUpperCase()}</AvatarFallback>
+                    <AvatarImage
+                      className="object-cover"
+                      src={post.author.image}
+                    />
+                    <AvatarFallback>
+                      {post.author.name.slice(0, 2).toUpperCase()}
+                    </AvatarFallback>
                   </Avatar>
                   <div>
                     <div className="font-medium">{post.author.name}</div>
                     {post.author.role && (
-                      <div className="text-sm text-neutral-400">{post.author.role}</div>
+                      <div className="text-sm text-neutral-400">
+                        {post.author.role}
+                      </div>
                     )}
                   </div>
                 </div>
@@ -149,18 +160,17 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
       <Footer lang={lang} dict={dict} />
     </div>
-  )
+  );
 }
 
 export async function generateStaticParams() {
-  const locales = ['en', 'pt', 'es', 'fr']
-  const allParams: { slug: string; lang: string }[] = []
+  const locales = ["en", "pt", "es", "fr"];
+  const allParams: { slug: string; lang: string }[] = [];
 
   for (const lang of locales) {
-    const slugs = getAllBlogSlugs(lang)
-    allParams.push(...slugs.map((slug) => ({ slug, lang })))
+    const slugs = getAllBlogSlugs(lang);
+    allParams.push(...slugs.map((slug) => ({ slug, lang })));
   }
 
-  return allParams
+  return allParams;
 }
-
