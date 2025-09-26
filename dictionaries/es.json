@@ -474,7 +474,10 @@
       "Company": "Empresa",
       "Databases": "Bases de Datos",
       "Engineering": "Ingeniería"
-    }
+    },
+    "onThisPage": "En esta página",
+    "shareThisArticle": "Compartir este artículo",
+    "back": "Atrás"
   },
   "footer": {
     "company": "Empresa",

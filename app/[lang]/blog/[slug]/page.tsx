@@ -73,7 +73,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             className="flex items-center gap-2 text-sm text-neutral-400 hover:text-foreground transition-colors mb-4"
           >
             <ChevronLeft className="size-4" />
-            Back
+{dict.blog.back}
           </Link>
         </div>
 
@@ -149,10 +149,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           <div className="lg:col-span-1">
             <div className="sticky top-8">
               {/* Table of Contents */}
-              <TableOfContents headings={toc} />
+              <TableOfContents headings={toc} onThisPageText={dict.blog.onThisPage} />
 
               {/* Share section */}
-              <ShareButtons title={post.title} url={currentUrl} />
+              <ShareButtons title={post.title} url={currentUrl} shareThisArticleText={dict.blog.shareThisArticle} />
             </div>
           </div>
         </div>

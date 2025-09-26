@@ -11,9 +11,10 @@ interface TocItem {
 
 interface TableOfContentsProps {
   headings: TocItem[]
+  onThisPageText: string
 }
 
-export function TableOfContents({ headings }: TableOfContentsProps) {
+export function TableOfContents({ headings, onThisPageText }: TableOfContentsProps) {
   const [activeId, setActiveId] = useState<string>("")
 
   useEffect(() => {
@@ -79,7 +80,7 @@ export function TableOfContents({ headings }: TableOfContentsProps) {
 
   return (
     <div className="mb-8">
-      <h3 className="text-sm font-semibold mb-4">On this page</h3>
+      <h3 className="text-sm font-semibold mb-4">{onThisPageText}</h3>
       <nav className="space-y-2">
         {headings.map((heading) => (
           <Link

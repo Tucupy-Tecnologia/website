@@ -6,9 +6,10 @@ import { useState } from "react"
 interface ShareButtonsProps {
   title: string
   url: string
+  shareThisArticleText: string
 }
 
-export function ShareButtons({ title, url }: ShareButtonsProps) {
+export function ShareButtons({ title, url, shareThisArticleText }: ShareButtonsProps) {
   const [copied, setCopied] = useState(false)
 
   const shareOnTwitter = () => {
@@ -46,7 +47,7 @@ export function ShareButtons({ title, url }: ShareButtonsProps) {
 
   return (
     <div>
-      <h3 className="text-sm font-semibold mb-4">Share this article</h3>
+      <h3 className="text-sm font-semibold mb-4">{shareThisArticleText}</h3>
       <div className="flex gap-3">
         <button
           onClick={shareOnTwitter}
