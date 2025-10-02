@@ -1,0 +1,56 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "Tucupy",
+  "homepage": "https://tucupy.com",
+  "items": [
+    {
+      "name": "dashboard",
+      "type": "registry:block",
+      "title": "Dashboard",
+      "description": "A dashboard with sidebar and breadcrumbs, works by default with NextJS file-based routing.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "sidebar",
+        "breadcrumb",
+        "dropdown-menu",
+        "avatar",
+        "separator"
+      ],
+      "files": [
+        {
+          "path": "registry/dashboard/layout.tsx",
+          "type": "registry:page",
+          "target": "app/dashboard/layout.tsx"
+        },
+        {
+          "path": "registry/dashboard/page.tsx",
+          "type": "registry:page",
+          "target": "app/dashboard/page.tsx"
+        },
+        {
+          "path": "registry/dashboard/components/app-sidebar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/dashboard/components/nav-main.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/dashboard/components/nav-secondary.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/dashboard/components/nav-user.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/dashboard/components/site-header.tsx",
+          "type": "registry:component"
+        }
+      ]
+    }
+  ]
+}
