@@ -41,6 +41,7 @@ Este projeto demonstra:
 - Implementação moderna de Next.js com App Router
 - Uso eficiente do Bun como runtime e package manager
 - Integração do shadcn/ui para componentes consistentes
+- Registry de componentes - Mantemos nosso próprio registry de componentes neste repositório
 - Boas práticas de TypeScript
 - Estilização com Tailwind CSS
 - Arquitetura escalável de componentes React
