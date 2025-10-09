@@ -30,6 +30,16 @@ export function Projects({ dict }: ProjectsProps) {
 					</div>
 				</Link>
 
+				<Link href="https://www.fonsecabrasilserrao.com/" target="_blank" rel="noopener noreferrer" className="block w-full overflow-hidden rounded-2xl bg-primary outline outline-gray-400/20 p-3 space-y-3 transition-all duration-200 ease-out hover:outline-gray-400/40" >
+					<Image unoptimized width={350} height={350} src="/fonseca-brasil-serrao.png" alt="Pinheiro Diniz" className="w-full rounded-lg border border-gray-400/20" />
+					<div className="pl-2 space-y-2">
+						<h2 className="text-foreground text-xl font-semibold">
+							{dict.projects.fonsecaBrasilSerrao.title}
+						</h2>
+						<p className="text-muted-foreground text-pretty pb-1" dangerouslySetInnerHTML={{ __html: dict.projects.fonsecaBrasilSerrao.description }} />
+					</div>
+				</Link>
+
 				<Link href="https://www.globaldiscounting.com/" target="_blank" rel="noopener noreferrer" className="block w-full overflow-hidden rounded-2xl bg-primary outline outline-gray-400/20 p-3 space-y-3 transition-all duration-200 ease-out hover:outline-gray-400/40" >
 					<Image unoptimized width={350} height={350} src="/global-discounting.png" alt="Global Discounting" className="w-full rounded-lg border border-gray-400/20" />
 					<div className="pl-2 space-y-2">
@@ -72,15 +82,6 @@ export function Projects({ dict }: ProjectsProps) {
 					</div>
 				</Link>
 
-				<Link href="https://www.pinheirodiniz.com.br/" target="_blank" rel="noopener noreferrer" className="block w-full overflow-hidden rounded-2xl bg-primary outline outline-gray-400/20 p-3 space-y-3 transition-all duration-200 ease-out hover:outline-gray-400/40" >
-					<Image unoptimized width={350} height={350} src="/pinheiro-diniz.png" alt="Pinheiro Diniz" className="w-full rounded-lg border border-gray-400/20" />
-					<div className="pl-2 space-y-2">
-						<h2 className="text-foreground text-xl font-semibold">
-							{dict.projects.pinheiroDiniz.title}
-						</h2>
-						<p className="text-muted-foreground text-pretty pb-1" dangerouslySetInnerHTML={{ __html: dict.projects.pinheiroDiniz.description }} />
-					</div>
-				</Link>
 			</div>
 		</div>
 	)

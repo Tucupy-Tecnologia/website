@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "login",
+  "type": "registry:block",
+  "title": "Login",
+  "description": "A login page with a form and a button that redirects to the dashboard.",
+  "dependencies": [
+    "lucide-react",
+    "react-hook-form",
+    "zod",
+    "@hookform/resolvers",
+    "sonner"
+  ],
+  "registryDependencies": [
+    "button",
+    "card",
+    "input",
+    "form"
+  ],
+  "files": [
+    {
+      "path": "registry/login/page.tsx",
+      "content": "import { LoginForm } from \"@/registry/login/components/login-form\"\n\nexport default function Page() {\n\treturn (\n\t\t<div className=\"flex min-h-svh w-full items-center justify-center p-6 md:p-10\">\n\t\t\t<div className=\"w-full max-w-sm\">\n\t\t\t\t<LoginForm />\n\t\t\t</div>\n\t\t</div>\n\t)\n}\n",
+      "type": "registry:page",
+      "target": "app/login/page.tsx"
+    },
+    {
+      "path": "registry/login/components/login-form.tsx",
+      "content": "\"use client\"\n\nimport { cn } from \"@/lib/utils\"\nimport { Button } from \"@/components/ui/button\"\nimport {\n\tCard,\n\tCardContent,\n\tCardDescription,\n\tCardHeader,\n\tCardTitle,\n} from \"@/components/ui/card\"\nimport { Input } from \"@/components/ui/input\"\nimport {\n\tForm,\n\tFormControl,\n\tFormField,\n\tFormItem,\n\tFormLabel,\n\tFormMessage,\n} from \"@/components/ui/form\"\nimport { useForm } from \"react-hook-form\"\nimport { zodResolver } from \"@hookform/resolvers/zod\"\nimport { z } from \"zod\"\nimport { useState } from \"react\"\nimport { toast } from \"sonner\"\nimport { useRouter } from \"next/navigation\"\n\nconst loginSchema = z.object({\n\temail: z.email(),\n\tpassword: z.string().min(6, \"A senha deve ter no mínimo 6 caracteres\"),\n})\n\ntype LoginFormValues = z.infer<typeof loginSchema>\n\nexport function LoginForm({\n\tclassName,\n\t...props\n}: React.ComponentProps<\"div\">) {\n\tconst [isLoading, setIsLoading] = useState(false)\n\tconst router = useRouter()\n\n\tconst form = useForm<LoginFormValues>({\n\t\tresolver: zodResolver(loginSchema),\n\t\tdefaultValues: {\n\t\t\temail: \"\",\n\t\t\tpassword: \"\",\n\t\t},\n\t})\n\n\tasync function onSubmit(data: LoginFormValues) {\n\t\tsetIsLoading(true)\n\n\t\ttry {\n\t\t\tconst apiUrl = process.env.NEXT_PUBLIC_API_URL || \"\"\n\n\t\t\tconst response = await fetch(`${apiUrl}/login`, {\n\t\t\t\tmethod: \"POST\",\n\t\t\t\theaders: {\n\t\t\t\t\t\"Content-Type\": \"application/json\",\n\t\t\t\t},\n\t\t\t\tbody: JSON.stringify(data),\n\t\t\t})\n\n\t\t\tif (!response.ok) {\n\t\t\t\tthrow new Error(\"Falha ao fazer login\")\n\t\t\t}\n\n\t\t\tconst result = await response.json()\n\n\t\t\ttoast.success(\"Login realizado com sucesso!\")\n\n\t\t\trouter.push(\"/dashboard\")\n\t\t} catch (error) {\n\t\t\ttoast.error(error instanceof Error ? error.message : \"Erro ao fazer login\")\n\t\t} finally {\n\t\t\tsetIsLoading(false)\n\t\t}\n\t}\n\n\treturn (\n\t\t<div className={cn(\"flex flex-col gap-6\", className)} {...props}>\n\t\t\t<Card>\n\t\t\t\t<CardHeader>\n\t\t\t\t\t<CardTitle>Entre na sua conta</CardTitle>\n\t\t\t\t\t<CardDescription>\n\t\t\t\t\t\tFaça login para acessar suas informações e funcionalidades\n\t\t\t\t\t</CardDescription>\n\t\t\t\t</CardHeader>\n\t\t\t\t<CardContent>\n\t\t\t\t\t<Form {...form}>\n\t\t\t\t\t\t<form onSubmit={form.handleSubmit(onSubmit)} className=\"flex flex-col gap-6\">\n\t\t\t\t\t\t\t<FormField\n\t\t\t\t\t\t\t\tcontrol={form.control}\n\t\t\t\t\t\t\t\tname=\"email\"\n\t\t\t\t\t\t\t\trender={({ field }) => (\n\t\t\t\t\t\t\t\t\t<FormItem>\n\t\t\t\t\t\t\t\t\t\t<FormLabel>Email</FormLabel>\n\t\t\t\t\t\t\t\t\t\t<FormControl>\n\t\t\t\t\t\t\t\t\t\t\t<Input\n\t\t\t\t\t\t\t\t\t\t\t\ttype=\"email\"\n\t\t\t\t\t\t\t\t\t\t\t\t{...field}\n\t\t\t\t\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t\t\t\t\t</FormControl>\n\t\t\t\t\t\t\t\t\t\t<FormMessage />\n\t\t\t\t\t\t\t\t\t</FormItem>\n\t\t\t\t\t\t\t\t)}\n\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t\t<FormField\n\t\t\t\t\t\t\t\tcontrol={form.control}\n\t\t\t\t\t\t\t\tname=\"password\"\n\t\t\t\t\t\t\t\trender={({ field }) => (\n\t\t\t\t\t\t\t\t\t<FormItem>\n\t\t\t\t\t\t\t\t\t\t<FormLabel>Senha</FormLabel>\n\t\t\t\t\t\t\t\t\t\t<FormControl>\n\t\t\t\t\t\t\t\t\t\t\t<Input type=\"password\" {...field} />\n\t\t\t\t\t\t\t\t\t\t</FormControl>\n\t\t\t\t\t\t\t\t\t\t<FormMessage />\n\t\t\t\t\t\t\t\t\t</FormItem>\n\t\t\t\t\t\t\t\t)}\n\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t\t<Button type=\"submit\" className=\"w-full\" disabled={isLoading}>\n\t\t\t\t\t\t\t\t{isLoading ? \"Entrando...\" : \"Entrar\"}\n\t\t\t\t\t\t\t</Button>\n\t\t\t\t\t\t</form>\n\t\t\t\t\t</Form>\n\t\t\t\t</CardContent>\n\t\t\t</Card>\n\t\t</div>\n\t)\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

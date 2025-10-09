@@ -51,6 +51,36 @@
           "type": "registry:component"
         }
       ]
+    },
+    {
+      "name": "login",
+      "type": "registry:block",
+      "title": "Login",
+      "description": "A login page with a form and a button that redirects to the dashboard.",
+      "dependencies": [
+        "lucide-react",
+        "react-hook-form",
+        "zod",
+        "@hookform/resolvers",
+        "sonner"
+      ],
+      "registryDependencies": [
+        "button",
+        "card",
+        "input",
+        "form"
+      ],
+      "files": [
+        {
+          "path": "registry/login/page.tsx",
+          "type": "registry:page",
+          "target": "app/login/page.tsx"
+        },
+        {
+          "path": "registry/login/components/login-form.tsx",
+          "type": "registry:component"
+        }
+      ]
     }
   ]
 }
